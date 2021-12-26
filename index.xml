@@ -1,26 +1,62 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Better Late than Never.</title>
-        <link>https://yipxx94.github.io/</link>
+        <link>/</link>
         <description>这是我的全新 Hugo 网站</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>Yipxx@foxmail.com (叶相相)</managingEditor>
-            <webMaster>Yipxx@foxmail.com (叶相相)</webMaster><lastBuildDate>Sun, 12 Dec 2021 14:15:59 -0800</lastBuildDate>
-            <atom:link href="https://yipxx94.github.io/index.xml" rel="self" type="application/rss+xml" />
+            <webMaster>Yipxx@foxmail.com (叶相相)</webMaster><lastBuildDate>Thu, 23 Dec 2021 19:46:34 &#43;0800</lastBuildDate>
+            <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>巧用sscanf()和c_str()解题</title>
+    <link>/sscanfandc_str/</link>
+    <pubDate>Thu, 23 Dec 2021 19:46:34 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>/sscanfandc_str/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/sscanfandc_str.png" referrerpolicy="no-referrer">
+            </div>介绍sscanf()和c_str()的简单用法]]></description>
+</item><item>
+    <title>Hugo的文件配置和博客功能增强</title>
+    <link>/hugo_conf/</link>
+    <pubDate>Tue, 21 Dec 2021 20:39:15 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>/hugo_conf/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/hugo-image3.png" referrerpolicy="no-referrer">
+            </div>博客功能增强与美化（持续更新中...）]]></description>
+</item><item>
+    <title>Hugo搭建过程的踩坑记录</title>
+    <link>/hugo_error/</link>
+    <pubDate>Mon, 20 Dec 2021 22:21:47 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>/hugo_error/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/hugo-image2.png" referrerpolicy="no-referrer">
+            </div>一些Hugo搭建过程遇到的问题以及解决方法]]></description>
+</item><item>
+    <title>Hugo-在云服务上利用docker搭建博客与远程部署</title>
+    <link>/hugo_setup/</link>
+    <pubDate>Mon, 20 Dec 2021 00:52:07 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>/hugo_setup/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/hugo-image.png" referrerpolicy="no-referrer">
+            </div>利用Hugo在云服务器上搭建个人博客站点]]></description>
+</item><item>
     <title>Markdown常用扩展语法</title>
-    <link>https://yipxx94.github.io/markdown_expand/</link>
+    <link>/markdown_expand/</link>
     <pubDate>Sun, 12 Dec 2021 14:15:59 -0800</pubDate>
     <author>作者</author>
-    <guid>https://yipxx94.github.io/markdown_expand/</guid>
+    <guid>/markdown_expand/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="/images/markdown-expand.png" referrerpolicy="no-referrer">
             </div>简单介绍一些Markdown常用的扩展语法]]></description>
 </item><item>
     <title>Markdown常用基本语法</title>
-    <link>https://yipxx94.github.io/markdown_basic/</link>
+    <link>/markdown_basic/</link>
     <pubDate>Sat, 11 Dec 2021 21:15:59 -0800</pubDate>
     <author>作者</author>
-    <guid>https://yipxx94.github.io/markdown_basic/</guid>
+    <guid>/markdown_basic/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="/images/markdown-image.png" referrerpolicy="no-referrer">
             </div>简单介绍一些Markdown常用的基本语法]]></description>

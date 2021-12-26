@@ -1,0 +1,3510 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Hugo的文件配置和博客功能增强 - Better Late than Never.</title><meta name="Description" content="博客功能增强与美化（持续更新中...）"><meta property="og:title" content="Hugo的文件配置和博客功能增强" />
+<meta property="og:description" content="博客功能增强与美化（持续更新中...）" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/hugo_conf/" /><meta property="og:image" content="/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-12-21T20:39:15+08:00" />
+<meta property="article:modified_time" content="2021-12-21T20:39:15+08:00" /><meta property="og:site_name" content="Better Late than Never." />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/logo.png"/>
+
+<meta name="twitter:title" content="Hugo的文件配置和博客功能增强"/>
+<meta name="twitter:description" content="博客功能增强与美化（持续更新中...）"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="/hugo_conf/" /><link rel="prev" href="/hugo_error/" /><link rel="next" href="/sscanfandc_str/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Hugo的文件配置和博客功能增强",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "\/hugo_conf\/"
+        },"image": ["\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Hugo","wordcount":  10555 ,
+        "url": "\/hugo_conf\/","datePublished": "2021-12-21T20:39:15+08:00","dateModified": "2021-12-21T20:39:15+08:00","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": "\/images\/header.png"},"author": {
+                "@type": "Person",
+                "name": "叶相相"
+            },"description": "博客功能增强与美化（持续更新中...）"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Better Late than Never."><span class="header-title-pre"><i class='fas fa-book-reader fa-fw'></i></span>Yipxx</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 
+                        </a><a class="menu-item" href="/tags/"> 标签 
+                        </a><a class="menu-item" href="/categories/"> 分类 
+                        </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Better Late than Never."><span class="header-title-pre"><i class='fas fa-book-reader fa-fw'></i></span>Yipxx</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Hugo的文件配置和博客功能增强</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>叶相相</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/hugo%E7%B3%BB%E5%88%97/"><i class="far fa-folder fa-fw"></i>Hugo系列</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-12-21">2021-12-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 10555 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 22 分钟&nbsp;<span id="/hugo_conf/" class="leancloud_visitors" data-flag-title="Hugo的文件配置和博客功能增强">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/hugo-image3.png"
+        data-srcset="/images/hugo-image3.png, /images/hugo-image3.png 1.5x, /images/hugo-image3.png 2x"
+        data-sizes="auto"
+        alt="/images/hugo-image3.png"
+        title="博客功能增强与美化（持续更新中...）" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#配置文件">配置文件</a></li>
+    <li><a href="#添加自定义的_customscss">添加自定义的<code>_custom.scss</code></a>
+      <ul>
+        <li><a href="#注意">注意</a></li>
+      </ul>
+    </li>
+    <li><a href="#添加自定义的customjs">添加自定义的<code>custom.js</code></a></li>
+    <li><a href="#添加全局的cdn变量">添加全局的<code>CDN</code>变量</a>
+      <ul>
+        <li><a href="#在md文件中使用">在md文件中使用</a></li>
+        <li><a href="#在模板文件中使用">在模板文件中使用</a></li>
+        <li><a href="#在javascript文件中使用">在JavaScript文件中使用</a></li>
+      </ul>
+    </li>
+    <li><a href="#valine评论功能添加">Valine评论功能添加</a>
+      <ul>
+        <li><a href="#leancloud的使用">LeanCloud的使用</a></li>
+      </ul>
+    </li>
+    <li><a href="#添加站点运行时间">添加站点运行时间</a></li>
+    <li><a href="#添加不蒜子网站计数">添加不蒜子网站计数</a></li>
+    <li><a href="#主题自带的admonition样式">主题自带的admonition样式</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="前言">前言</h2>
+<p>Hugo本身可以通过修改站点配置文件来完成页面的部分定制，如按钮、多语言等功能。本博客使用的是Hugo的<strong>LoveIt</strong>主题，本文也是基于该主题而写的，不过Hugo的美化步骤应该大同小异。</p>
+<h2 id="配置文件">配置文件</h2>
+<p>Hugo默认使用根目录下的<code>config.toml</code>、<code>config.yaml</code>或<code>config.json</code>中的某一个作为站点的配置文件，可以通过<code>--config</code>来配置读取一个或多个配置文件。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">hugo --config debugconfig.toml
+hugo --config a.toml,b.toml,c.toml
+</code></pre></td></tr></table>
+</div>
+</div><p>除了<a href="https://gohugo.io/getting-started/configuration/" target="_blank" rel="noopener noreffer">Hugo 全局配置</a>之外，<strong>LoveIt</strong>主题还允许您在网站配置中定义以下参数 (这是一个示例<code>config.toml</code>，其内容为默认值)。</p>
+<p><strong><code>config.toml</code></strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span><span class="lnt">172
+</span><span class="lnt">173
+</span><span class="lnt">174
+</span><span class="lnt">175
+</span><span class="lnt">176
+</span><span class="lnt">177
+</span><span class="lnt">178
+</span><span class="lnt">179
+</span><span class="lnt">180
+</span><span class="lnt">181
+</span><span class="lnt">182
+</span><span class="lnt">183
+</span><span class="lnt">184
+</span><span class="lnt">185
+</span><span class="lnt">186
+</span><span class="lnt">187
+</span><span class="lnt">188
+</span><span class="lnt">189
+</span><span class="lnt">190
+</span><span class="lnt">191
+</span><span class="lnt">192
+</span><span class="lnt">193
+</span><span class="lnt">194
+</span><span class="lnt">195
+</span><span class="lnt">196
+</span><span class="lnt">197
+</span><span class="lnt">198
+</span><span class="lnt">199
+</span><span class="lnt">200
+</span><span class="lnt">201
+</span><span class="lnt">202
+</span><span class="lnt">203
+</span><span class="lnt">204
+</span><span class="lnt">205
+</span><span class="lnt">206
+</span><span class="lnt">207
+</span><span class="lnt">208
+</span><span class="lnt">209
+</span><span class="lnt">210
+</span><span class="lnt">211
+</span><span class="lnt">212
+</span><span class="lnt">213
+</span><span class="lnt">214
+</span><span class="lnt">215
+</span><span class="lnt">216
+</span><span class="lnt">217
+</span><span class="lnt">218
+</span><span class="lnt">219
+</span><span class="lnt">220
+</span><span class="lnt">221
+</span><span class="lnt">222
+</span><span class="lnt">223
+</span><span class="lnt">224
+</span><span class="lnt">225
+</span><span class="lnt">226
+</span><span class="lnt">227
+</span><span class="lnt">228
+</span><span class="lnt">229
+</span><span class="lnt">230
+</span><span class="lnt">231
+</span><span class="lnt">232
+</span><span class="lnt">233
+</span><span class="lnt">234
+</span><span class="lnt">235
+</span><span class="lnt">236
+</span><span class="lnt">237
+</span><span class="lnt">238
+</span><span class="lnt">239
+</span><span class="lnt">240
+</span><span class="lnt">241
+</span><span class="lnt">242
+</span><span class="lnt">243
+</span><span class="lnt">244
+</span><span class="lnt">245
+</span><span class="lnt">246
+</span><span class="lnt">247
+</span><span class="lnt">248
+</span><span class="lnt">249
+</span><span class="lnt">250
+</span><span class="lnt">251
+</span><span class="lnt">252
+</span><span class="lnt">253
+</span><span class="lnt">254
+</span><span class="lnt">255
+</span><span class="lnt">256
+</span><span class="lnt">257
+</span><span class="lnt">258
+</span><span class="lnt">259
+</span><span class="lnt">260
+</span><span class="lnt">261
+</span><span class="lnt">262
+</span><span class="lnt">263
+</span><span class="lnt">264
+</span><span class="lnt">265
+</span><span class="lnt">266
+</span><span class="lnt">267
+</span><span class="lnt">268
+</span><span class="lnt">269
+</span><span class="lnt">270
+</span><span class="lnt">271
+</span><span class="lnt">272
+</span><span class="lnt">273
+</span><span class="lnt">274
+</span><span class="lnt">275
+</span><span class="lnt">276
+</span><span class="lnt">277
+</span><span class="lnt">278
+</span><span class="lnt">279
+</span><span class="lnt">280
+</span><span class="lnt">281
+</span><span class="lnt">282
+</span><span class="lnt">283
+</span><span class="lnt">284
+</span><span class="lnt">285
+</span><span class="lnt">286
+</span><span class="lnt">287
+</span><span class="lnt">288
+</span><span class="lnt">289
+</span><span class="lnt">290
+</span><span class="lnt">291
+</span><span class="lnt">292
+</span><span class="lnt">293
+</span><span class="lnt">294
+</span><span class="lnt">295
+</span><span class="lnt">296
+</span><span class="lnt">297
+</span><span class="lnt">298
+</span><span class="lnt">299
+</span><span class="lnt">300
+</span><span class="lnt">301
+</span><span class="lnt">302
+</span><span class="lnt">303
+</span><span class="lnt">304
+</span><span class="lnt">305
+</span><span class="lnt">306
+</span><span class="lnt">307
+</span><span class="lnt">308
+</span><span class="lnt">309
+</span><span class="lnt">310
+</span><span class="lnt">311
+</span><span class="lnt">312
+</span><span class="lnt">313
+</span><span class="lnt">314
+</span><span class="lnt">315
+</span><span class="lnt">316
+</span><span class="lnt">317
+</span><span class="lnt">318
+</span><span class="lnt">319
+</span><span class="lnt">320
+</span><span class="lnt">321
+</span><span class="lnt">322
+</span><span class="lnt">323
+</span><span class="lnt">324
+</span><span class="lnt">325
+</span><span class="lnt">326
+</span><span class="lnt">327
+</span><span class="lnt">328
+</span><span class="lnt">329
+</span><span class="lnt">330
+</span><span class="lnt">331
+</span><span class="lnt">332
+</span><span class="lnt">333
+</span><span class="lnt">334
+</span><span class="lnt">335
+</span><span class="lnt">336
+</span><span class="lnt">337
+</span><span class="lnt">338
+</span><span class="lnt">339
+</span><span class="lnt">340
+</span><span class="lnt">341
+</span><span class="lnt">342
+</span><span class="lnt">343
+</span><span class="lnt">344
+</span><span class="lnt">345
+</span><span class="lnt">346
+</span><span class="lnt">347
+</span><span class="lnt">348
+</span><span class="lnt">349
+</span><span class="lnt">350
+</span><span class="lnt">351
+</span><span class="lnt">352
+</span><span class="lnt">353
+</span><span class="lnt">354
+</span><span class="lnt">355
+</span><span class="lnt">356
+</span><span class="lnt">357
+</span><span class="lnt">358
+</span><span class="lnt">359
+</span><span class="lnt">360
+</span><span class="lnt">361
+</span><span class="lnt">362
+</span><span class="lnt">363
+</span><span class="lnt">364
+</span><span class="lnt">365
+</span><span class="lnt">366
+</span><span class="lnt">367
+</span><span class="lnt">368
+</span><span class="lnt">369
+</span><span class="lnt">370
+</span><span class="lnt">371
+</span><span class="lnt">372
+</span><span class="lnt">373
+</span><span class="lnt">374
+</span><span class="lnt">375
+</span><span class="lnt">376
+</span><span class="lnt">377
+</span><span class="lnt">378
+</span><span class="lnt">379
+</span><span class="lnt">380
+</span><span class="lnt">381
+</span><span class="lnt">382
+</span><span class="lnt">383
+</span><span class="lnt">384
+</span><span class="lnt">385
+</span><span class="lnt">386
+</span><span class="lnt">387
+</span><span class="lnt">388
+</span><span class="lnt">389
+</span><span class="lnt">390
+</span><span class="lnt">391
+</span><span class="lnt">392
+</span><span class="lnt">393
+</span><span class="lnt">394
+</span><span class="lnt">395
+</span><span class="lnt">396
+</span><span class="lnt">397
+</span><span class="lnt">398
+</span><span class="lnt">399
+</span><span class="lnt">400
+</span><span class="lnt">401
+</span><span class="lnt">402
+</span><span class="lnt">403
+</span><span class="lnt">404
+</span><span class="lnt">405
+</span><span class="lnt">406
+</span><span class="lnt">407
+</span><span class="lnt">408
+</span><span class="lnt">409
+</span><span class="lnt">410
+</span><span class="lnt">411
+</span><span class="lnt">412
+</span><span class="lnt">413
+</span><span class="lnt">414
+</span><span class="lnt">415
+</span><span class="lnt">416
+</span><span class="lnt">417
+</span><span class="lnt">418
+</span><span class="lnt">419
+</span><span class="lnt">420
+</span><span class="lnt">421
+</span><span class="lnt">422
+</span><span class="lnt">423
+</span><span class="lnt">424
+</span><span class="lnt">425
+</span><span class="lnt">426
+</span><span class="lnt">427
+</span><span class="lnt">428
+</span><span class="lnt">429
+</span><span class="lnt">430
+</span><span class="lnt">431
+</span><span class="lnt">432
+</span><span class="lnt">433
+</span><span class="lnt">434
+</span><span class="lnt">435
+</span><span class="lnt">436
+</span><span class="lnt">437
+</span><span class="lnt">438
+</span><span class="lnt">439
+</span><span class="lnt">440
+</span><span class="lnt">441
+</span><span class="lnt">442
+</span><span class="lnt">443
+</span><span class="lnt">444
+</span><span class="lnt">445
+</span><span class="lnt">446
+</span><span class="lnt">447
+</span><span class="lnt">448
+</span><span class="lnt">449
+</span><span class="lnt">450
+</span><span class="lnt">451
+</span><span class="lnt">452
+</span><span class="lnt">453
+</span><span class="lnt">454
+</span><span class="lnt">455
+</span><span class="lnt">456
+</span><span class="lnt">457
+</span><span class="lnt">458
+</span><span class="lnt">459
+</span><span class="lnt">460
+</span><span class="lnt">461
+</span><span class="lnt">462
+</span><span class="lnt">463
+</span><span class="lnt">464
+</span><span class="lnt">465
+</span><span class="lnt">466
+</span><span class="lnt">467
+</span><span class="lnt">468
+</span><span class="lnt">469
+</span><span class="lnt">470
+</span><span class="lnt">471
+</span><span class="lnt">472
+</span><span class="lnt">473
+</span><span class="lnt">474
+</span><span class="lnt">475
+</span><span class="lnt">476
+</span><span class="lnt">477
+</span><span class="lnt">478
+</span><span class="lnt">479
+</span><span class="lnt">480
+</span><span class="lnt">481
+</span><span class="lnt">482
+</span><span class="lnt">483
+</span><span class="lnt">484
+</span><span class="lnt">485
+</span><span class="lnt">486
+</span><span class="lnt">487
+</span><span class="lnt">488
+</span><span class="lnt">489
+</span><span class="lnt">490
+</span><span class="lnt">491
+</span><span class="lnt">492
+</span><span class="lnt">493
+</span><span class="lnt">494
+</span><span class="lnt">495
+</span><span class="lnt">496
+</span><span class="lnt">497
+</span><span class="lnt">498
+</span><span class="lnt">499
+</span><span class="lnt">500
+</span><span class="lnt">501
+</span><span class="lnt">502
+</span><span class="lnt">503
+</span><span class="lnt">504
+</span><span class="lnt">505
+</span><span class="lnt">506
+</span><span class="lnt">507
+</span><span class="lnt">508
+</span><span class="lnt">509
+</span><span class="lnt">510
+</span><span class="lnt">511
+</span><span class="lnt">512
+</span><span class="lnt">513
+</span><span class="lnt">514
+</span><span class="lnt">515
+</span><span class="lnt">516
+</span><span class="lnt">517
+</span><span class="lnt">518
+</span><span class="lnt">519
+</span><span class="lnt">520
+</span><span class="lnt">521
+</span><span class="lnt">522
+</span><span class="lnt">523
+</span><span class="lnt">524
+</span><span class="lnt">525
+</span><span class="lnt">526
+</span><span class="lnt">527
+</span><span class="lnt">528
+</span><span class="lnt">529
+</span><span class="lnt">530
+</span><span class="lnt">531
+</span><span class="lnt">532
+</span><span class="lnt">533
+</span><span class="lnt">534
+</span><span class="lnt">535
+</span><span class="lnt">536
+</span><span class="lnt">537
+</span><span class="lnt">538
+</span><span class="lnt">539
+</span><span class="lnt">540
+</span><span class="lnt">541
+</span><span class="lnt">542
+</span><span class="lnt">543
+</span><span class="lnt">544
+</span><span class="lnt">545
+</span><span class="lnt">546
+</span><span class="lnt">547
+</span><span class="lnt">548
+</span><span class="lnt">549
+</span><span class="lnt">550
+</span><span class="lnt">551
+</span><span class="lnt">552
+</span><span class="lnt">553
+</span><span class="lnt">554
+</span><span class="lnt">555
+</span><span class="lnt">556
+</span><span class="lnt">557
+</span><span class="lnt">558
+</span><span class="lnt">559
+</span><span class="lnt">560
+</span><span class="lnt">561
+</span><span class="lnt">562
+</span><span class="lnt">563
+</span><span class="lnt">564
+</span><span class="lnt">565
+</span><span class="lnt">566
+</span><span class="lnt">567
+</span><span class="lnt">568
+</span><span class="lnt">569
+</span><span class="lnt">570
+</span><span class="lnt">571
+</span><span class="lnt">572
+</span><span class="lnt">573
+</span><span class="lnt">574
+</span><span class="lnt">575
+</span><span class="lnt">576
+</span><span class="lnt">577
+</span><span class="lnt">578
+</span><span class="lnt">579
+</span><span class="lnt">580
+</span><span class="lnt">581
+</span><span class="lnt">582
+</span><span class="lnt">583
+</span><span class="lnt">584
+</span><span class="lnt">585
+</span><span class="lnt">586
+</span><span class="lnt">587
+</span><span class="lnt">588
+</span><span class="lnt">589
+</span><span class="lnt">590
+</span><span class="lnt">591
+</span><span class="lnt">592
+</span><span class="lnt">593
+</span><span class="lnt">594
+</span><span class="lnt">595
+</span><span class="lnt">596
+</span><span class="lnt">597
+</span><span class="lnt">598
+</span><span class="lnt">599
+</span><span class="lnt">600
+</span><span class="lnt">601
+</span><span class="lnt">602
+</span><span class="lnt">603
+</span><span class="lnt">604
+</span><span class="lnt">605
+</span><span class="lnt">606
+</span><span class="lnt">607
+</span><span class="lnt">608
+</span><span class="lnt">609
+</span><span class="lnt">610
+</span><span class="lnt">611
+</span><span class="lnt">612
+</span><span class="lnt">613
+</span><span class="lnt">614
+</span><span class="lnt">615
+</span><span class="lnt">616
+</span><span class="lnt">617
+</span><span class="lnt">618
+</span><span class="lnt">619
+</span><span class="lnt">620
+</span><span class="lnt">621
+</span><span class="lnt">622
+</span><span class="lnt">623
+</span><span class="lnt">624
+</span><span class="lnt">625
+</span><span class="lnt">626
+</span><span class="lnt">627
+</span><span class="lnt">628
+</span><span class="lnt">629
+</span><span class="lnt">630
+</span><span class="lnt">631
+</span><span class="lnt">632
+</span><span class="lnt">633
+</span><span class="lnt">634
+</span><span class="lnt">635
+</span><span class="lnt">636
+</span><span class="lnt">637
+</span><span class="lnt">638
+</span><span class="lnt">639
+</span><span class="lnt">640
+</span><span class="lnt">641
+</span><span class="lnt">642
+</span><span class="lnt">643
+</span><span class="lnt">644
+</span><span class="lnt">645
+</span><span class="lnt">646
+</span><span class="lnt">647
+</span><span class="lnt">648
+</span><span class="lnt">649
+</span><span class="lnt">650
+</span><span class="lnt">651
+</span><span class="lnt">652
+</span><span class="lnt">653
+</span><span class="lnt">654
+</span><span class="lnt">655
+</span><span class="lnt">656
+</span><span class="lnt">657
+</span><span class="lnt">658
+</span><span class="lnt">659
+</span><span class="lnt">660
+</span><span class="lnt">661
+</span><span class="lnt">662
+</span><span class="lnt">663
+</span><span class="lnt">664
+</span><span class="lnt">665
+</span><span class="lnt">666
+</span><span class="lnt">667
+</span><span class="lnt">668
+</span><span class="lnt">669
+</span><span class="lnt">670
+</span><span class="lnt">671
+</span><span class="lnt">672
+</span><span class="lnt">673
+</span><span class="lnt">674
+</span><span class="lnt">675
+</span><span class="lnt">676
+</span><span class="lnt">677
+</span><span class="lnt">678
+</span><span class="lnt">679
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">baseURL = &#34;http://example.org/&#34;
+# [en, zh-cn, fr, ...] 设置默认的语言
+defaultContentLanguage = &#34;zh-cn&#34;
+# 网站语言, 仅在这里 CN 大写
+languageCode = &#34;zh-CN&#34;
+# 是否包括中日韩文字
+hasCJKLanguage = true
+# 网站标题
+title = &#34;我的全新 Hugo 网站&#34;
+
+# 更改使用 Hugo 构建网站时使用的默认主题
+theme = &#34;LoveIt&#34;
+
+[params]
+  # LoveIt 主题版本
+  version = &#34;0.2.X&#34;
+
+[menu]
+  [[menu.main]]
+    identifier = &#34;posts&#34;
+    # 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标
+    pre = &#34;&#34;
+    # 你可以在名称 (允许 HTML 格式) 之后添加其他信息, 例如图标
+    post = &#34;&#34;
+    name = &#34;文章&#34;
+    url = &#34;/posts/&#34;
+    # 当你将鼠标悬停在此菜单链接上时, 将显示的标题
+    title = &#34;&#34;
+    weight = 1
+  [[menu.main]]
+    identifier = &#34;tags&#34;
+    pre = &#34;&#34;
+    post = &#34;&#34;
+    name = &#34;标签&#34;
+    url = &#34;/tags/&#34;
+    title = &#34;&#34;
+    weight = 2
+  [[menu.main]]
+    identifier = &#34;categories&#34;
+    pre = &#34;&#34;
+    post = &#34;&#34;
+    name = &#34;分类&#34;
+    url = &#34;/categories/&#34;
+    title = &#34;&#34;
+    weight = 3
+
+# Hugo 解析文档的配置
+[markup]
+  # 语法高亮设置 (https://gohugo.io/content-management/syntax-highlighting)
+  [markup.highlight]
+    # false 是必要的设置 (https://github.com/dillonzq/LoveIt/issues/158)
+    noClasses = false
+
+# [en, zh-cn, fr, pl, ...] 设置默认的语言
+defaultContentLanguage = &#34;zh-cn&#34;
+
+[languages]
+  [languages.en]
+    weight = 1
+    title = &#34;My New Hugo Site&#34;
+    languageCode = &#34;en&#34;
+    languageName = &#34;English&#34;
+    [[languages.en.menu.main]]
+      identifier = &#34;posts&#34;
+      pre = &#34;&#34;
+      post = &#34;&#34;
+      name = &#34;Posts&#34;
+      url = &#34;/posts/&#34;
+      title = &#34;&#34;
+      weight = 1
+    [[languages.en.menu.main]]
+      identifier = &#34;tags&#34;
+      pre = &#34;&#34;
+      post = &#34;&#34;
+      name = &#34;Tags&#34;
+      url = &#34;/tags/&#34;
+      title = &#34;&#34;
+      weight = 2
+    [[languages.en.menu.main]]
+      identifier = &#34;categories&#34;
+      pre = &#34;&#34;
+      post = &#34;&#34;
+      name = &#34;Categories&#34;
+      url = &#34;/categories/&#34;
+      title = &#34;&#34;
+      weight = 3
+
+  [languages.zh-cn]
+    weight = 2
+    title = &#34;我的全新 Hugo 网站&#34;
+    # 网站语言, 仅在这里 CN 大写
+    languageCode = &#34;zh-CN&#34;
+    languageName = &#34;简体中文&#34;
+    # 是否包括中日韩文字
+    hasCJKLanguage = true
+    [[languages.zh-cn.menu.main]]
+      identifier = &#34;posts&#34;
+      pre = &#34;&#34;
+      post = &#34;&#34;
+      name = &#34;文章&#34;
+      url = &#34;/posts/&#34;
+      title = &#34;&#34;
+      weight = 1
+    [[languages.zh-cn.menu.main]]
+      identifier = &#34;tags&#34;
+      pre = &#34;&#34;
+      post = &#34;&#34;
+      name = &#34;标签&#34;
+      url = &#34;/tags/&#34;
+      title = &#34;&#34;
+      weight = 2
+    [[languages.zh-cn.menu.main]]
+      identifier = &#34;categories&#34;
+      pre = &#34;&#34;
+      post = &#34;&#34;
+      name = &#34;分类&#34;
+      url = &#34;/categories/&#34;
+      title = &#34;&#34;
+      weight = 3
+
+  [languages.fr]
+    weight = 3
+    title = &#34;Mon nouveau site Hugo&#34;
+    languageCode = &#34;fr&#34;
+    languageName = &#34;Français&#34;
+    [[languages.fr.menu.main]]
+      identifier = &#34;posts&#34;
+      pre = &#34;&#34;
+      post = &#34;&#34;
+      name = &#34;Postes&#34;
+      url = &#34;/posts/&#34;
+      title = &#34;&#34;
+      weight = 1
+    [[languages.fr.menu.main]]
+      identifier = &#34;tags&#34;
+      pre = &#34;&#34;
+      post = &#34;&#34;
+      name = &#34;Balises&#34;
+      url = &#34;/tags/&#34;
+      title = &#34;&#34;
+      weight = 2
+    [[languages.fr.menu.main]]
+      identifier = &#34;categories&#34;
+      pre = &#34;&#34;
+      post = &#34;&#34;
+      name = &#34;Catégories&#34;
+      url = &#34;/categories/&#34;
+      title = &#34;&#34;
+      weight = 3
+
+[params]
+  #  LoveIt 主题版本
+  version = &#34;0.2.X&#34;
+  # 网站描述
+  description = &#34;这是我的全新 Hugo 网站&#34;
+  # 网站关键词
+  keywords = [&#34;Theme&#34;, &#34;Hugo&#34;]
+  # 网站默认主题样式 (&#34;light&#34;, &#34;dark&#34;, &#34;auto&#34;)
+  defaultTheme = &#34;auto&#34;
+  # 公共 git 仓库路径，仅在 enableGitInfo 设为 true 时有效
+  gitRepo = &#34;&#34;
+  #  哪种哈希函数用来 SRI, 为空时表示不使用 SRI
+  # (&#34;sha256&#34;, &#34;sha384&#34;, &#34;sha512&#34;, &#34;md5&#34;)
+  fingerprint = &#34;&#34;
+  #  日期格式
+  dateFormat = &#34;2006-01-02&#34;
+  # 网站图片, 用于 Open Graph 和 Twitter Cards
+  images = [&#34;/logo.png&#34;]
+
+  #  应用图标配置
+  [params.app]
+    # 当添加到 iOS 主屏幕或者 Android 启动器时的标题, 覆盖默认标题
+    title = &#34;LoveIt&#34;
+    # 是否隐藏网站图标资源链接
+    noFavicon = false
+    # 更现代的 SVG 网站图标, 可替代旧的 .png 和 .ico 文件
+    svgFavicon = &#34;&#34;
+    # Android 浏览器主题色
+    themeColor = &#34;#ffffff&#34;
+    # Safari 图标颜色
+    iconColor = &#34;#5bbad5&#34;
+    # Windows v8-10磁贴颜色
+    tileColor = &#34;#da532c&#34;
+
+  #  搜索配置
+  [params.search]
+    enable = true
+    # 搜索引擎的类型 (&#34;lunr&#34;, &#34;algolia&#34;)
+    type = &#34;lunr&#34;
+    # 文章内容最长索引长度
+    contentLength = 4000
+    # 搜索框的占位提示语
+    placeholder = &#34;&#34;
+    #  最大结果数目
+    maxResultLength = 10
+    #  结果内容片段长度
+    snippetLength = 50
+    #  搜索结果中高亮部分的 HTML 标签
+    highlightTag = &#34;em&#34;
+    #  是否在搜索索引中使用基于 baseURL 的绝对路径
+    absoluteURL = false
+    [params.search.algolia]
+      index = &#34;&#34;
+      appID = &#34;&#34;
+      searchKey = &#34;&#34;
+
+  # 页面头部导航栏配置
+  [params.header]
+    # 桌面端导航栏模式 (&#34;fixed&#34;, &#34;normal&#34;, &#34;auto&#34;)
+    desktopMode = &#34;fixed&#34;
+    # 移动端导航栏模式 (&#34;fixed&#34;, &#34;normal&#34;, &#34;auto&#34;)
+    mobileMode = &#34;auto&#34;
+    #  页面头部导航栏标题配置
+    [params.header.title]
+      # LOGO 的 URL
+      logo = &#34;&#34;
+      # 标题名称
+      name = &#34;&#34;
+      # 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标
+      pre = &#34;&#34;
+      # 你可以在名称 (允许 HTML 格式) 之后添加其他信息, 例如图标
+      post = &#34;&#34;
+      #  是否为标题显示打字机动画
+      typeit = false
+
+  # 页面底部信息配置
+  [params.footer]
+    enable = true
+    #  自定义内容 (支持 HTML 格式)
+    custom = &#39;&#39;
+    #  是否显示 Hugo 和主题信息
+    hugo = true
+    #  是否显示版权信息
+    copyright = true
+    #  是否显示作者
+    author = true
+    # 网站创立年份
+    since = 2019
+    # ICP 备案信息，仅在中国使用 (支持 HTML 格式)
+    icp = &#34;&#34;
+    # 许可协议信息 (支持 HTML 格式)
+    license = &#39;&lt;a rel=&#34;license external nofollow noopener noreffer&#34; href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34;&gt;CC BY-NC 4.0&lt;/a&gt;&#39;
+
+  #  Section (所有文章) 页面配置
+  [params.section]
+    # section 页面每页显示文章数量
+    paginate = 20
+    # 日期格式 (月和日)
+    dateFormat = &#34;01-02&#34;
+    # RSS 文章数目
+    rss = 10
+
+  #  List (目录或标签) 页面配置
+  [params.list]
+    # list 页面每页显示文章数量
+    paginate = 20
+    # 日期格式 (月和日)
+    dateFormat = &#34;01-02&#34;
+    # RSS 文章数目
+    rss = 10
+
+  # 主页配置
+  [params.home]
+    #  RSS 文章数目
+    rss = 10
+    # 主页个人信息
+    [params.home.profile]
+      enable = true
+      # Gravatar 邮箱，用于优先在主页显示的头像
+      gravatarEmail = &#34;&#34;
+      # 主页显示头像的 URL
+      avatarURL = &#34;/images/avatar.png&#34;
+      #  主页显示的网站标题 (支持 HTML 格式)
+      title = &#34;&#34;
+      # 主页显示的网站副标题
+      subtitle = &#34;这是我的全新 Hugo 网站&#34;
+      # 是否为副标题显示打字机动画
+      typeit = true
+      # 是否显示社交账号
+      social = true
+      #  免责声明 (支持 HTML 格式)
+      disclaimer = &#34;&#34;
+    # 主页文章列表
+    [params.home.posts]
+      enable = true
+      # 主页每页显示文章数量
+      paginate = 6
+      #  被 params.page 中的 hiddenFromHomePage 替代
+      # 当你没有在文章前置参数中设置 &#34;hiddenFromHomePage&#34; 时的默认行为
+      defaultHiddenFromHomePage = false
+
+  # 作者的社交信息设置
+  [params.social]
+    GitHub = &#34;xxxx&#34;
+    Linkedin = &#34;&#34;
+    Twitter = &#34;xxxx&#34;
+    Instagram = &#34;xxxx&#34;
+    Facebook = &#34;xxxx&#34;
+    Telegram = &#34;xxxx&#34;
+    Medium = &#34;&#34;
+    Gitlab = &#34;&#34;
+    Youtubelegacy = &#34;&#34;
+    Youtubecustom = &#34;&#34;
+    Youtubechannel = &#34;&#34;
+    Tumblr = &#34;&#34;
+    Quora = &#34;&#34;
+    Keybase = &#34;&#34;
+    Pinterest = &#34;&#34;
+    Reddit = &#34;&#34;
+    Codepen = &#34;&#34;
+    FreeCodeCamp = &#34;&#34;
+    Bitbucket = &#34;&#34;
+    Stackoverflow = &#34;&#34;
+    Weibo = &#34;&#34;
+    Odnoklassniki = &#34;&#34;
+    VK = &#34;&#34;
+    Flickr = &#34;&#34;
+    Xing = &#34;&#34;
+    Snapchat = &#34;&#34;
+    Soundcloud = &#34;&#34;
+    Spotify = &#34;&#34;
+    Bandcamp = &#34;&#34;
+    Paypal = &#34;&#34;
+    Fivehundredpx = &#34;&#34;
+    Mix = &#34;&#34;
+    Goodreads = &#34;&#34;
+    Lastfm = &#34;&#34;
+    Foursquare = &#34;&#34;
+    Hackernews = &#34;&#34;
+    Kickstarter = &#34;&#34;
+    Patreon = &#34;&#34;
+    Steam = &#34;&#34;
+    Twitch = &#34;&#34;
+    Strava = &#34;&#34;
+    Skype = &#34;&#34;
+    Whatsapp = &#34;&#34;
+    Zhihu = &#34;&#34;
+    Douban = &#34;&#34;
+    Angellist = &#34;&#34;
+    Slidershare = &#34;&#34;
+    Jsfiddle = &#34;&#34;
+    Deviantart = &#34;&#34;
+    Behance = &#34;&#34;
+    Dribbble = &#34;&#34;
+    Wordpress = &#34;&#34;
+    Vine = &#34;&#34;
+    Googlescholar = &#34;&#34;
+    Researchgate = &#34;&#34;
+    Mastodon = &#34;&#34;
+    Thingiverse = &#34;&#34;
+    Devto = &#34;&#34;
+    Gitea = &#34;&#34;
+    XMPP = &#34;&#34;
+    Matrix = &#34;&#34;
+    Bilibili = &#34;&#34;
+    Email = &#34;xxxx@xxxx.com&#34;
+    RSS = true # 
+
+  #  文章页面配置
+  [params.page]
+    #  是否在主页隐藏一篇文章
+    hiddenFromHomePage = false
+    #  是否在搜索结果中隐藏一篇文章
+    hiddenFromSearch = false
+    #  是否使用 twemoji
+    twemoji = false
+    # 是否使用 lightgallery
+    lightgallery = false
+    #  是否使用 ruby 扩展语法
+    ruby = true
+    #  是否使用 fraction 扩展语法
+    fraction = true
+    #  是否使用 fontawesome 扩展语法
+    fontawesome = true
+    # 是否在文章页面显示原始 Markdown 文档链接
+    linkToMarkdown = true
+    #  是否在 RSS 中显示全文内容
+    rssFullText = false
+    #  目录配置
+    [params.page.toc]
+      # 是否使用目录
+      enable = true
+      #  是否保持使用文章前面的静态目录
+      keepStatic = true
+      # 是否使侧边目录自动折叠展开
+      auto = true
+    #  代码配置
+    [params.page.code]
+      # 是否显示代码块的复制按钮
+      copy = true
+      # 默认展开显示的代码行数
+      maxShownLines = 10
+    #  KaTeX 数学公式
+    [params.page.math]
+      enable = true
+      # 默认块定界符是 $$ ... $$ 和 \\[ ... \\]
+      blockLeftDelimiter = &#34;&#34;
+      blockRightDelimiter = &#34;&#34;
+      # 默认行内定界符是 $ ... $ 和 \\( ... \\)
+      inlineLeftDelimiter = &#34;&#34;
+      inlineRightDelimiter = &#34;&#34;
+      # KaTeX 插件 copy_tex
+      copyTex = true
+      # KaTeX 插件 mhchem
+      mhchem = true
+    #  Mapbox GL JS 配置
+    [params.page.mapbox]
+      # Mapbox GL JS 的 access token
+      accessToken = &#34;&#34;
+      # 浅色主题的地图样式
+      lightStyle = &#34;mapbox://styles/mapbox/light-v9&#34;
+      # 深色主题的地图样式
+      darkStyle = &#34;mapbox://styles/mapbox/dark-v9&#34;
+      # 是否添加 NavigationControl
+      navigation = true
+      # 是否添加 GeolocateControl
+      geolocate = true
+      # 是否添加 ScaleControl
+      scale = true
+      # 是否添加 FullscreenControl
+      fullscreen = true
+    #  文章页面的分享信息设置
+    [params.page.share]
+      enable = true
+      Twitter = true
+      Facebook = true
+      Linkedin = false
+      Whatsapp = true
+      Pinterest = false
+      Tumblr = false
+      HackerNews = false
+      Reddit = false
+      VK = false
+      Buffer = false
+      Xing = false
+      Line = true
+      Instapaper = false
+      Pocket = false
+      Digg = false
+      Stumbleupon = false
+      Flipboard = false
+      Weibo = true
+      Renren = false
+      Myspace = true
+      Blogger = true
+      Baidu = false
+      Odnoklassniki = false
+      Evernote = true
+      Skype = false
+      Trello = false
+      Mix = false
+    #  评论系统设置
+    [params.page.comment]
+      enable = true
+      # Disqus 评论系统设置
+      [params.page.comment.disqus]
+        # 
+        enable = false
+        # Disqus 的 shortname，用来在文章中启用 Disqus 评论系统
+        shortname = &#34;&#34;
+      # Gitalk 评论系统设置
+      [params.page.comment.gitalk]
+        # 
+        enable = false
+        owner = &#34;&#34;
+        repo = &#34;&#34;
+        clientId = &#34;&#34;
+        clientSecret = &#34;&#34;
+      # Valine 评论系统设置
+      [params.page.comment.valine]
+        enable = false
+        appId = &#34;&#34;
+        appKey = &#34;&#34;
+        placeholder = &#34;&#34;
+        avatar = &#34;mp&#34;
+        meta= &#34;&#34;
+        pageSize = 10
+        lang = &#34;&#34;
+        visitor = true
+        recordIP = true
+        highlight = true
+        enableQQ = false
+        serverURLs = &#34;&#34;
+        #  emoji 数据文件名称, 默认是 &#34;google.yml&#34;
+        # (&#34;apple.yml&#34;, &#34;google.yml&#34;, &#34;facebook.yml&#34;, &#34;twitter.yml&#34;)
+        # 位于 &#34;themes/LoveIt/assets/data/emoji/&#34; 目录
+        # 可以在你的项目下相同路径存放你自己的数据文件:
+        # &#34;assets/data/emoji/&#34;
+        emoji = &#34;&#34;
+      # Facebook 评论系统设置
+      [params.page.comment.facebook]
+        enable = false
+        width = &#34;100%&#34;
+        numPosts = 10
+        appId = &#34;&#34;
+        languageCode = &#34;zh_CN&#34;
+      #  Telegram Comments 评论系统设置
+      [params.page.comment.telegram]
+        enable = false
+        siteID = &#34;&#34;
+        limit = 5
+        height = &#34;&#34;
+        color = &#34;&#34;
+        colorful = true
+        dislikes = false
+        outlined = false
+      #  Commento 评论系统设置
+      [params.page.comment.commento]
+        enable = false
+      #  Utterances 评论系统设置
+      [params.page.comment.utterances]
+        enable = false
+        # owner/repo
+        repo = &#34;&#34;
+        issueTerm = &#34;pathname&#34;
+        label = &#34;&#34;
+        lightTheme = &#34;github-light&#34;
+        darkTheme = &#34;github-dark&#34;
+    #  第三方库配置
+    [params.page.library]
+      [params.page.library.css]
+        # someCSS = &#34;some.css&#34;
+        # 位于 &#34;assets/&#34;
+        # 或者
+        # someCSS = &#34;https://cdn.example.com/some.css&#34;
+      [params.page.library.js]
+        # someJavascript = &#34;some.js&#34;
+        # 位于 &#34;assets/&#34;
+        # 或者
+        # someJavascript = &#34;https://cdn.example.com/some.js&#34;
+    #  页面 SEO 配置
+    [params.page.seo]
+      # 图片 URL
+      images = []
+      # 出版者信息
+      [params.page.seo.publisher]
+        name = &#34;&#34;
+        logoUrl = &#34;&#34;
+
+  #  TypeIt 配置
+  [params.typeit]
+    # 每一步的打字速度 (单位是毫秒)
+    speed = 100
+    # 光标的闪烁速度 (单位是毫秒)
+    cursorSpeed = 1000
+    # 光标的字符 (支持 HTML 格式)
+    cursorChar = &#34;|&#34;
+    # 打字结束之后光标的持续时间 (单位是毫秒, &#34;-1&#34; 代表无限大)
+    duration = -1
+
+  # 网站验证代码，用于 Google/Bing/Yandex/Pinterest/Baidu
+  [params.verification]
+    google = &#34;&#34;
+    bing = &#34;&#34;
+    yandex = &#34;&#34;
+    pinterest = &#34;&#34;
+    baidu = &#34;&#34;
+
+  #  网站 SEO 配置
+  [params.seo]
+    # 图片 URL
+    image = &#34;&#34;
+    # 缩略图 URL
+    thumbnailUrl = &#34;&#34;
+
+  #  网站分析配置
+  [params.analytics]
+    enable = false
+    # Google Analytics
+    [params.analytics.google]
+      id = &#34;&#34;
+      # 是否匿名化用户 IP
+      anonymizeIP = true
+    # Fathom Analytics
+    [params.analytics.fathom]
+      id = &#34;&#34;
+      # 自行托管追踪器时的主机路径
+      server = &#34;&#34;
+
+  #  Cookie 许可配置
+  [params.cookieconsent]
+    enable = true
+    # 用于 Cookie 许可横幅的文本字符串
+    [params.cookieconsent.content]
+      message = &#34;&#34;
+      dismiss = &#34;&#34;
+      link = &#34;&#34;
+
+  #  第三方库文件的 CDN 设置
+  [params.cdn]
+    # CDN 数据文件名称, 默认不启用
+    # (&#34;jsdelivr.yml&#34;)
+    # 位于 &#34;themes/LoveIt/assets/data/cdn/&#34; 目录
+    # 可以在你的项目下相同路径存放你自己的数据文件:
+    # &#34;assets/data/cdn/&#34;
+    data = &#34;&#34;
+
+  #  兼容性设置
+  [params.compatibility]
+    # 是否使用 Polyfill.io 来兼容旧式浏览器
+    polyfill = false
+    # 是否使用 object-fit-images 来兼容旧式浏览器
+    objectFit = false
+
+# Hugo 解析文档的配置
+[markup]
+  # 语法高亮设置
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNos = true
+    lineNumbersInTable = true
+    # false 是必要的设置
+    # (https://github.com/dillonzq/LoveIt/issues/158)
+    noClasses = false
+  # Goldmark 是 Hugo 0.60 以来的默认 Markdown 解析库
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      definitionList = true
+      footnote = true
+      linkify = true
+      strikethrough = true
+      table = true
+      taskList = true
+      typographer = true
+    [markup.goldmark.renderer]
+      # 是否在文档中直接使用 HTML 标签
+      unsafe = true
+  # 目录设置
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 6
+
+# 作者配置
+[author]
+  name = &#34;xxxx&#34;
+  email = &#34;&#34;
+  link = &#34;&#34;
+
+# 网站地图配置
+[sitemap]
+  changefreq = &#34;weekly&#34;
+  filename = &#34;sitemap.xml&#34;
+  priority = 0.5
+
+# Permalinks 配置
+[Permalinks]
+  # posts = &#34;:year/:month/:filename&#34;
+  posts = &#34;:filename&#34;
+
+# 隐私信息配置
+[privacy]
+  #  Google Analytics 相关隐私 (被 params.analytics.google 替代)
+  [privacy.googleAnalytics]
+    # ...
+  [privacy.twitter]
+    enableDNT = true
+  [privacy.youtube]
+    privacyEnhanced = true
+
+# 用于输出 Markdown 格式文档的设置
+[mediaTypes]
+  [mediaTypes.&#34;text/plain&#34;]
+    suffixes = [&#34;md&#34;]
+
+# 用于输出 Markdown 格式文档的设置
+[outputFormats.MarkDown]
+  mediaType = &#34;text/plain&#34;
+  isPlainText = true
+  isHTML = false
+
+# 用于 Hugo 输出文档的设置
+[outputs]
+  # 
+  home = [&#34;HTML&#34;, &#34;RSS&#34;, &#34;JSON&#34;]
+  page = [&#34;HTML&#34;, &#34;MarkDown&#34;]
+  section = [&#34;HTML&#34;, &#34;RSS&#34;]
+  taxonomy = [&#34;HTML&#34;, &#34;RSS&#34;]
+  taxonomyTerm = [&#34;HTML&#34;]
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="添加自定义的_customscss">添加自定义的<code>_custom.scss</code></h2>
+<p><code>LoveIt</code>主题提供了一个自定义的<code>_custom.scss</code>，可以在该文件里添加自定义的<code>css</code>样式。该文件目录位于<code>\themes\LoveIt\assets\css\_custom.scss</code>，不建议直接在该文件里写<code>css</code>代码。</p>
+<p>Hugo在渲染页面时优先读取站点根目录下的同名字的目录和文件，所以可以利用这个特点来美化主题。只需要把想修改的主题模板文件拷贝到根目录下同样的目录中并进行修改，这样就可以在不改动原本的主题文件的情况下实现主题美化。</p>
+<p>首先在站点根目录下创建一个自定义的文件：<code>\assets\css\_custom.scss</code>，这样Hugo就会最终以该文件来渲染页面的样式。</p>
+<p><strong><code>_custom.scss</code></strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span><span class="lnt">172
+</span><span class="lnt">173
+</span><span class="lnt">174
+</span><span class="lnt">175
+</span><span class="lnt">176
+</span><span class="lnt">177
+</span><span class="lnt">178
+</span><span class="lnt">179
+</span><span class="lnt">180
+</span><span class="lnt">181
+</span><span class="lnt">182
+</span><span class="lnt">183
+</span><span class="lnt">184
+</span><span class="lnt">185
+</span><span class="lnt">186
+</span><span class="lnt">187
+</span><span class="lnt">188
+</span><span class="lnt">189
+</span><span class="lnt">190
+</span><span class="lnt">191
+</span><span class="lnt">192
+</span><span class="lnt">193
+</span><span class="lnt">194
+</span><span class="lnt">195
+</span><span class="lnt">196
+</span><span class="lnt">197
+</span><span class="lnt">198
+</span><span class="lnt">199
+</span><span class="lnt">200
+</span><span class="lnt">201
+</span><span class="lnt">202
+</span><span class="lnt">203
+</span><span class="lnt">204
+</span><span class="lnt">205
+</span><span class="lnt">206
+</span><span class="lnt">207
+</span><span class="lnt">208
+</span><span class="lnt">209
+</span><span class="lnt">210
+</span><span class="lnt">211
+</span><span class="lnt">212
+</span><span class="lnt">213
+</span><span class="lnt">214
+</span><span class="lnt">215
+</span><span class="lnt">216
+</span><span class="lnt">217
+</span><span class="lnt">218
+</span><span class="lnt">219
+</span><span class="lnt">220
+</span><span class="lnt">221
+</span><span class="lnt">222
+</span><span class="lnt">223
+</span><span class="lnt">224
+</span><span class="lnt">225
+</span><span class="lnt">226
+</span><span class="lnt">227
+</span><span class="lnt">228
+</span><span class="lnt">229
+</span><span class="lnt">230
+</span><span class="lnt">231
+</span><span class="lnt">232
+</span><span class="lnt">233
+</span><span class="lnt">234
+</span><span class="lnt">235
+</span><span class="lnt">236
+</span><span class="lnt">237
+</span><span class="lnt">238
+</span><span class="lnt">239
+</span><span class="lnt">240
+</span><span class="lnt">241
+</span><span class="lnt">242
+</span><span class="lnt">243
+</span><span class="lnt">244
+</span><span class="lnt">245
+</span><span class="lnt">246
+</span><span class="lnt">247
+</span><span class="lnt">248
+</span><span class="lnt">249
+</span><span class="lnt">250
+</span><span class="lnt">251
+</span><span class="lnt">252
+</span><span class="lnt">253
+</span><span class="lnt">254
+</span><span class="lnt">255
+</span><span class="lnt">256
+</span><span class="lnt">257
+</span><span class="lnt">258
+</span><span class="lnt">259
+</span><span class="lnt">260
+</span><span class="lnt">261
+</span><span class="lnt">262
+</span><span class="lnt">263
+</span><span class="lnt">264
+</span><span class="lnt">265
+</span><span class="lnt">266
+</span><span class="lnt">267
+</span><span class="lnt">268
+</span><span class="lnt">269
+</span><span class="lnt">270
+</span><span class="lnt">271
+</span><span class="lnt">272
+</span><span class="lnt">273
+</span><span class="lnt">274
+</span><span class="lnt">275
+</span><span class="lnt">276
+</span><span class="lnt">277
+</span><span class="lnt">278
+</span><span class="lnt">279
+</span><span class="lnt">280
+</span><span class="lnt">281
+</span><span class="lnt">282
+</span><span class="lnt">283
+</span><span class="lnt">284
+</span><span class="lnt">285
+</span><span class="lnt">286
+</span><span class="lnt">287
+</span><span class="lnt">288
+</span><span class="lnt">289
+</span><span class="lnt">290
+</span><span class="lnt">291
+</span><span class="lnt">292
+</span><span class="lnt">293
+</span><span class="lnt">294
+</span><span class="lnt">295
+</span><span class="lnt">296
+</span><span class="lnt">297
+</span><span class="lnt">298
+</span><span class="lnt">299
+</span><span class="lnt">300
+</span><span class="lnt">301
+</span><span class="lnt">302
+</span><span class="lnt">303
+</span><span class="lnt">304
+</span><span class="lnt">305
+</span><span class="lnt">306
+</span><span class="lnt">307
+</span><span class="lnt">308
+</span><span class="lnt">309
+</span><span class="lnt">310
+</span><span class="lnt">311
+</span><span class="lnt">312
+</span><span class="lnt">313
+</span><span class="lnt">314
+</span><span class="lnt">315
+</span><span class="lnt">316
+</span><span class="lnt">317
+</span><span class="lnt">318
+</span><span class="lnt">319
+</span><span class="lnt">320
+</span><span class="lnt">321
+</span><span class="lnt">322
+</span><span class="lnt">323
+</span><span class="lnt">324
+</span><span class="lnt">325
+</span><span class="lnt">326
+</span><span class="lnt">327
+</span><span class="lnt">328
+</span><span class="lnt">329
+</span><span class="lnt">330
+</span><span class="lnt">331
+</span><span class="lnt">332
+</span><span class="lnt">333
+</span><span class="lnt">334
+</span><span class="lnt">335
+</span><span class="lnt">336
+</span><span class="lnt">337
+</span><span class="lnt">338
+</span><span class="lnt">339
+</span><span class="lnt">340
+</span><span class="lnt">341
+</span><span class="lnt">342
+</span><span class="lnt">343
+</span><span class="lnt">344
+</span><span class="lnt">345
+</span><span class="lnt">346
+</span><span class="lnt">347
+</span><span class="lnt">348
+</span><span class="lnt">349
+</span><span class="lnt">350
+</span><span class="lnt">351
+</span><span class="lnt">352
+</span><span class="lnt">353
+</span><span class="lnt">354
+</span><span class="lnt">355
+</span><span class="lnt">356
+</span><span class="lnt">357
+</span><span class="lnt">358
+</span><span class="lnt">359
+</span><span class="lnt">360
+</span><span class="lnt">361
+</span><span class="lnt">362
+</span><span class="lnt">363
+</span><span class="lnt">364
+</span><span class="lnt">365
+</span><span class="lnt">366
+</span><span class="lnt">367
+</span><span class="lnt">368
+</span><span class="lnt">369
+</span><span class="lnt">370
+</span><span class="lnt">371
+</span><span class="lnt">372
+</span><span class="lnt">373
+</span><span class="lnt">374
+</span><span class="lnt">375
+</span><span class="lnt">376
+</span><span class="lnt">377
+</span><span class="lnt">378
+</span><span class="lnt">379
+</span><span class="lnt">380
+</span><span class="lnt">381
+</span><span class="lnt">382
+</span><span class="lnt">383
+</span><span class="lnt">384
+</span><span class="lnt">385
+</span><span class="lnt">386
+</span><span class="lnt">387
+</span><span class="lnt">388
+</span><span class="lnt">389
+</span><span class="lnt">390
+</span><span class="lnt">391
+</span><span class="lnt">392
+</span><span class="lnt">393
+</span><span class="lnt">394
+</span><span class="lnt">395
+</span><span class="lnt">396
+</span><span class="lnt">397
+</span><span class="lnt">398
+</span><span class="lnt">399
+</span><span class="lnt">400
+</span><span class="lnt">401
+</span><span class="lnt">402
+</span><span class="lnt">403
+</span><span class="lnt">404
+</span><span class="lnt">405
+</span><span class="lnt">406
+</span><span class="lnt">407
+</span><span class="lnt">408
+</span><span class="lnt">409
+</span><span class="lnt">410
+</span><span class="lnt">411
+</span><span class="lnt">412
+</span><span class="lnt">413
+</span><span class="lnt">414
+</span><span class="lnt">415
+</span><span class="lnt">416
+</span><span class="lnt">417
+</span><span class="lnt">418
+</span><span class="lnt">419
+</span><span class="lnt">420
+</span><span class="lnt">421
+</span><span class="lnt">422
+</span><span class="lnt">423
+</span><span class="lnt">424
+</span><span class="lnt">425
+</span><span class="lnt">426
+</span><span class="lnt">427
+</span><span class="lnt">428
+</span><span class="lnt">429
+</span><span class="lnt">430
+</span><span class="lnt">431
+</span><span class="lnt">432
+</span><span class="lnt">433
+</span><span class="lnt">434
+</span><span class="lnt">435
+</span><span class="lnt">436
+</span><span class="lnt">437
+</span><span class="lnt">438
+</span><span class="lnt">439
+</span><span class="lnt">440
+</span><span class="lnt">441
+</span><span class="lnt">442
+</span><span class="lnt">443
+</span><span class="lnt">444
+</span><span class="lnt">445
+</span><span class="lnt">446
+</span><span class="lnt">447
+</span><span class="lnt">448
+</span><span class="lnt">449
+</span><span class="lnt">450
+</span><span class="lnt">451
+</span><span class="lnt">452
+</span><span class="lnt">453
+</span><span class="lnt">454
+</span><span class="lnt">455
+</span><span class="lnt">456
+</span><span class="lnt">457
+</span><span class="lnt">458
+</span><span class="lnt">459
+</span><span class="lnt">460
+</span><span class="lnt">461
+</span><span class="lnt">462
+</span><span class="lnt">463
+</span><span class="lnt">464
+</span><span class="lnt">465
+</span><span class="lnt">466
+</span><span class="lnt">467
+</span><span class="lnt">468
+</span><span class="lnt">469
+</span><span class="lnt">470
+</span><span class="lnt">471
+</span><span class="lnt">472
+</span><span class="lnt">473
+</span><span class="lnt">474
+</span><span class="lnt">475
+</span><span class="lnt">476
+</span><span class="lnt">477
+</span><span class="lnt">478
+</span><span class="lnt">479
+</span><span class="lnt">480
+</span><span class="lnt">481
+</span><span class="lnt">482
+</span><span class="lnt">483
+</span><span class="lnt">484
+</span><span class="lnt">485
+</span><span class="lnt">486
+</span><span class="lnt">487
+</span><span class="lnt">488
+</span><span class="lnt">489
+</span><span class="lnt">490
+</span><span class="lnt">491
+</span><span class="lnt">492
+</span><span class="lnt">493
+</span><span class="lnt">494
+</span><span class="lnt">495
+</span><span class="lnt">496
+</span><span class="lnt">497
+</span><span class="lnt">498
+</span><span class="lnt">499
+</span><span class="lnt">500
+</span><span class="lnt">501
+</span><span class="lnt">502
+</span><span class="lnt">503
+</span><span class="lnt">504
+</span><span class="lnt">505
+</span><span class="lnt">506
+</span><span class="lnt">507
+</span><span class="lnt">508
+</span><span class="lnt">509
+</span><span class="lnt">510
+</span><span class="lnt">511
+</span><span class="lnt">512
+</span><span class="lnt">513
+</span><span class="lnt">514
+</span><span class="lnt">515
+</span><span class="lnt">516
+</span><span class="lnt">517
+</span><span class="lnt">518
+</span><span class="lnt">519
+</span><span class="lnt">520
+</span><span class="lnt">521
+</span><span class="lnt">522
+</span><span class="lnt">523
+</span><span class="lnt">524
+</span><span class="lnt">525
+</span><span class="lnt">526
+</span><span class="lnt">527
+</span><span class="lnt">528
+</span><span class="lnt">529
+</span><span class="lnt">530
+</span><span class="lnt">531
+</span><span class="lnt">532
+</span><span class="lnt">533
+</span><span class="lnt">534
+</span><span class="lnt">535
+</span><span class="lnt">536
+</span><span class="lnt">537
+</span><span class="lnt">538
+</span><span class="lnt">539
+</span><span class="lnt">540
+</span><span class="lnt">541
+</span><span class="lnt">542
+</span><span class="lnt">543
+</span><span class="lnt">544
+</span><span class="lnt">545
+</span><span class="lnt">546
+</span><span class="lnt">547
+</span><span class="lnt">548
+</span><span class="lnt">549
+</span><span class="lnt">550
+</span><span class="lnt">551
+</span><span class="lnt">552
+</span><span class="lnt">553
+</span><span class="lnt">554
+</span><span class="lnt">555
+</span><span class="lnt">556
+</span><span class="lnt">557
+</span><span class="lnt">558
+</span><span class="lnt">559
+</span><span class="lnt">560
+</span><span class="lnt">561
+</span><span class="lnt">562
+</span><span class="lnt">563
+</span><span class="lnt">564
+</span><span class="lnt">565
+</span><span class="lnt">566
+</span><span class="lnt">567
+</span><span class="lnt">568
+</span><span class="lnt">569
+</span><span class="lnt">570
+</span><span class="lnt">571
+</span><span class="lnt">572
+</span><span class="lnt">573
+</span><span class="lnt">574
+</span><span class="lnt">575
+</span><span class="lnt">576
+</span><span class="lnt">577
+</span><span class="lnt">578
+</span><span class="lnt">579
+</span><span class="lnt">580
+</span><span class="lnt">581
+</span><span class="lnt">582
+</span><span class="lnt">583
+</span><span class="lnt">584
+</span><span class="lnt">585
+</span><span class="lnt">586
+</span><span class="lnt">587
+</span><span class="lnt">588
+</span><span class="lnt">589
+</span><span class="lnt">590
+</span><span class="lnt">591
+</span><span class="lnt">592
+</span><span class="lnt">593
+</span><span class="lnt">594
+</span><span class="lnt">595
+</span><span class="lnt">596
+</span><span class="lnt">597
+</span><span class="lnt">598
+</span><span class="lnt">599
+</span><span class="lnt">600
+</span><span class="lnt">601
+</span><span class="lnt">602
+</span><span class="lnt">603
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">// ==============================
+// Custom style
+// 自定义样式
+// ==============================
+/* Custom styles. */
+
+/* 滚动条 */
+::-webkit-scrollbar {
+    width: 1rem;
+    height: .5rem;
+}
+
+/* 右下角按钮 */
+.fixed-button {
+    margin-bottom: 5rem;
+}
+
+/* 图片 */
+figcaption {
+    display: none !important;
+}
+
+img[data-sizes=&#34;auto&#34;] {
+    display: block;
+/*    width: 50%;*/
+}
+
+
+/* 菜单栏 */
+#header-desktop .header-wrapper {
+    padding: 0 2rem 0 5vh;
+}
+#header-desktop .header-wrapper .menu .menu-item {
+    margin: 0 .3rem;
+}
+
+.menu .menu-item i {
+    margin-right: 2px;
+}
+
+/* 子菜单栏 */
+.dropdown {
+  display: inline-block;
+}
+
+/* 子菜单的内容 (默认隐藏) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  line-height: 1.3rem;
+}
+
+/* 子菜单的链接 */
+.dropdown-content a {
+  padding: 10px 18px 10px 14px;
+  text-decoration: none;
+  display: block;
+  &amp; i {
+    margin-right: 3px;
+  }
+}
+
+/* 鼠标移上去后修改子菜单链接颜色 */
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+  border-radius: 4px;
+}
+
+/* 在鼠标移上去后显示子菜单 */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+@media screen and (max-width: 680px) {
+    .dropdown {
+      display: inline;
+    }
+  .dropdown:hover .dropdown-content {
+    display: inline;
+    z-index: 1;
+    margin-top: -2em;
+    margin-left: 3em;
+  }
+  .dropdown-content a:hover {
+    background-color: transparent;
+  }
+}
+
+
+/* Github Corner */
+.github-corner:hover .octo-arm {
+	animation: octocat-wave 560ms ease-in-out
+}
+
+@keyframes octocat-wave {
+	0%,100% {
+		transform: rotate(0)
+	}
+
+	20%,60% {
+		transform: rotate(-25deg)
+	}
+
+	40%,80% {
+		transform: rotate(10deg)
+	}
+}
+
+@media (max-width:500px) {
+	.github-corner:hover .octo-arm {
+		animation: none
+	}
+
+	.github-corner .octo-arm {
+		animation: octocat-wave 560ms ease-in-out
+	}
+}
+
+/* 头像旋转 */
+.home .home-profile .home-avatar img {
+    width: 5rem;
+
+  /* 设置循环动画
+  [animation: 
+	(play)动画名称
+	(2s)动画播放时长单位秒或微秒
+	(ease-out)动画播放的速度曲线为以低速结束 
+	(1s)等待1秒然后开始动画
+	(1)动画播放次数(infinite为循环播放) ]*/
+ 
+  /* 鼠标经过头像旋转360度 */
+  -webkit-transition: -webkit-transform 1.0s ease-out;
+  -moz-transition: -moz-transform 1.0s ease-out;
+  transition: transform 1.0s ease-out;
+    &amp;:hover {
+      /* 鼠标经过停止头像旋转 
+      -webkit-animation-play-state:paused;
+      animation-play-state:paused;*/
+
+      /* 鼠标经过头像旋转360度 */
+      -webkit-transform: rotateZ(360deg);
+      -moz-transform: rotateZ(360deg);
+      transform: rotateZ(360deg);
+    }
+}
+/* Z 轴旋转动画 */
+@-webkit-keyframes play {
+  0% {
+    -webkit-transform: rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(-360deg);
+  }
+}
+@-moz-keyframes play {
+  0% {
+    -moz-transform: rotateZ(0deg);
+  }
+  100% {
+    -moz-transform: rotateZ(-360deg);
+  }
+}
+@keyframes play {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(-360deg);
+  }
+}
+
+
+/* 首页头部 */
+.home[posts] .home-profile {
+    padding-top: 0;
+}
+
+.home-avatar {
+    padding-top: 2rem !important;
+}
+
+.home-profile {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    background: white;
+	opacity: .85;
+}
+[theme=dark] .home-profile {
+    background: #3a3535;
+	opacity: .8;
+}
+
+.home .home-profile .home-title {
+    margin-top: .67em;
+}
+
+/* 首页文章摘要 */
+.home[posts] .summary {
+	margin-bottom: .1rem;
+    margin-left: -1rem;
+    margin-right: -1rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+    background: white;
+	opacity: .95;
+}
+[theme=dark] .home[posts] .summary {
+    background: #3a3535;
+}
+
+/* 首页的分页页码 */
+.pagination {
+    margin-top: .1rem;
+    margin-bottom: 0;
+    margin-left: -1rem;
+    margin-right: 1rem;
+	padding: 1rem 2rem .5rem 0;
+    background: white;
+	opacity: .95;
+}
+[theme=dark] .pagination {
+    background: #3a3535;
+}
+
+/* 首页的阅读全文按钮 */
+.single.summary .post-footer a:first-child {
+    position: relative;
+    z-index: 1;
+    &amp;::before {
+      content: &#39;&#39;;
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      bottom: 0;
+      left: -0.25em;
+      right: -0.25em;
+      background-color: hsla(341, 97%, 59%, 0.75);
+      transform-origin: center right;
+      transform: scaleX(0);
+      transition: transform 0.2s ease-in-out;
+    }
+
+    &amp;:hover::before {
+      transform: scaleX(1);
+      transform-origin: center left;
+    }
+}
+
+
+/* 字体 */
+.home[posts] .summary .content {
+    color: #161209;
+}
+[theme=dark] .home[posts] .summary .content {
+    color: #949494;
+}
+[theme=dark] .single .post-meta {
+    color: #7e7979;
+}
+
+.single .single-title {
+	font-size: 1.8rem;
+}
+
+
+/* 文章正文 */
+.page.single .content p {
+    margin: 1rem 0;
+    padding: 0 1rem;
+}
+
+/* 文章脚部 */
+.page.single .post-footer {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+/* 文章元数据meta */
+.post-meta .post-meta-line:nth-child(2) i:nth-child(1) {
+    margin-left: 0;
+}
+.post-meta .post-meta-line:nth-child(2) i {
+    margin-left: 0.3rem;
+}
+.post-meta .post-meta-line:nth-child(2) span i {
+    margin-left: 0.3rem !important;
+}
+.post-meta a#post-meta-vcount {
+    color: #a9a9b3;
+    &amp;:hover {
+        color: #2d96bd;
+    }
+}
+
+
+/* 文章的标签 */
+.post-tags a {
+    position: relative;
+    &amp;::before, &amp;::after {
+      content: &#39;&#39;;
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background-color: #fc2f70;
+      transform: scaleX(0);
+      transition: transform 0.5s ease;
+    }
+
+    &amp;::before {
+      top: 0;
+      transform-origin: center right;
+    }
+
+    &amp;:hover::before {
+      transform-origin: center left;
+      transform: scaleX(1);
+    }
+
+    &amp;::after {
+      bottom: 0;
+      transform-origin: center left;
+    }
+
+    &amp;:hover::after {
+      transform-origin: center right;
+      transform: scaleX(1);
+    }
+
+}
+
+
+/* 页面脚部 */
+.footer {
+    display: block;
+	border-top-width: 3px;
+    border-top-style: solid;
+    border-top-color: #a166ab;
+    position: relative;
+    z-index: -1;
+    max-width: 800px;
+    width: 60%;
+    margin: .1rem auto 0 auto;
+	padding-left: 1rem;
+	padding-right: 1rem;
+    background: white;
+	opacity: .95;
+}
+[theme=dark] .footer {
+    background: #3a3535;
+}
+
+@media only screen and (max-width: 1440px) {
+    .footer {
+        width:54.5%
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .footer {
+        width:50.5%
+    }
+}
+
+@media only screen and (max-width: 960px) {
+    .footer {
+        width: 77%
+    }
+}
+
+@media only screen and (max-width: 680px) {
+    .footer {
+        width: 95%
+    }
+}
+
+
+/* 目录 */
+.toc {
+    background: white;
+	opacity: .95;
+}
+[theme=dark] .toc {
+    background: #3a3535;
+}
+[theme=dark] #toc-auto {
+    border-left-color: #6f6a6a;
+}
+
+.toc .toc-content {
+    font-size: .8rem;
+}
+
+.toc .toc-content code {
+    border: none;
+    color: #f7ab01;
+    font-size: 1em;
+}
+
+nav#TableOfContents ol {
+    padding-inline-start: 30px;
+
+    &amp; ol {
+        padding-inline-start: 15px;
+        font-size: .75rem;
+        display: none;
+    }
+
+    &amp; li.has-active ol {
+        display: block;
+    }
+}
+
+/* 分隔线 */
+hr {
+    border: none;
+    border-bottom: 2px dashed #7a7a7a !important;
+}
+
+/* 标题 */
+.page.single h2 {
+    box-shadow: rgb(95, 90, 75) 0px 0px 0px 1px, rgba(10, 10, 0, 0.5) 1px 1px 6px 1px;
+    color: rgb(255, 255, 255);
+    font-family: 微软雅黑, 宋体, 黑体, Arial;
+    font-weight: bold;
+    line-height: 1.3;
+    text-shadow: rgb(34, 34, 34) 2px 2px 3px;
+    background: rgb(43, 102, 149);
+    border-radius: 6px;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    padding: 7px;
+    margin: 18px 0px 18px -5px !important;
+}
+
+
+/* 打赏 */
+article .post-reward {
+    margin-top: 20px;
+    padding-top: 10px;
+    text-align: center;
+    border-top: 1px dashed #e6e6e6
+}
+
+article .post-reward .reward-button {
+    margin: 15px 0;
+    padding: 3px 7px;
+    display: inline-block;
+    color: #c05b4d;
+    border: 1px solid #c05b4d;
+    border-radius: 5px;
+    cursor: pointer
+}
+
+article .post-reward .reward-button:hover {
+    color: #fefefe;
+    background-color: #c05b4d;
+    transition: .5s
+}
+
+article .post-reward #reward:checked~.qr-code {
+    display: block
+}
+
+article .post-reward #reward:checked~.reward-button {
+    display: none
+}
+
+article .post-reward .qr-code {
+    display: none
+}
+
+article .post-reward .qr-code .qr-code-image {
+    display: inline-block;
+    min-width: 200px;
+    width: 40%;
+    margin-top: 15px
+}
+
+article .post-reward .qr-code .qr-code-image span {
+    display: inline-block;
+    width: 100%;
+    margin: 8px 0
+}
+
+article .post-reward .qr-code .image {
+    width: 200px;
+    height: 200px
+}
+
+
+/* 评论 */
+.v[data-class=v] .veditor {
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: right !important;
+    font-weight: bold;
+    opacity: 0.75;
+    color: black;
+}
+
+.v[data-class=v] .vcards .vcard .vh {
+    border-bottom: 1px dashed #ccb5b5 !important;
+}
+
+.single #comments {
+    padding: 4rem 0 0 0;
+}
+
+/* 评论表情包 */
+.v[data-class=&#39;v&#39;] .vcontent img[src^=&#34;https://cdn.jsdelivr.net/gh/lewky/lewky.github.io@master/images/emoji&#34;] {
+  width: 45px !important;
+  margin: 0.25em;
+  vertical-align: bottom !important;
+}
+.v[data-class=&#39;v&#39;] .vcontent .vemoji {
+  width: 45px !important;
+  margin: 0.25em;
+  vertical-align: bottom !important;
+}
+
+
+/* 归档、标签、分类、特殊页面 */
+.page.archive, .page.single, .page.single.special {
+	padding-left: 1rem;
+	padding-right: 1rem;
+    padding-bottom: 1rem;
+    background: white;	
+	opacity: .95;
+}
+[theme=dark] .page.archive,
+[theme=dark] .page.single,
+[theme=dark] .page.single.special {
+    background: #3a3535;
+}
+
+.archive-item-date2 {
+    color: #a9a9b3;
+}
+
+[theme=dark] .archive .archive-item-date {
+    color: #a9a9b3;
+}
+
+.page.single.special .single-title.animated.pulse.faster {
+    padding-right: 1rem;
+}
+
+.archive .card-item-title a sup {
+    color: #a9a9b3;
+	font-weight: initial;
+}
+
+.archive .group-title sup {
+    color: #a9a9b3;
+	font-weight: initial;
+}
+
+.archive .single-title.animated.pulse.faster sup {
+	margin-left: .4rem;
+    color: #a9a9b3;
+	font-weight: initial;
+}
+
+[theme=dark] .archive .tag-cloud-tags a sup {
+    color: #a9a9b3;
+}
+
+/* 分类页面 */
+.archive .categories-card {
+    margin-top: 1rem;
+
+    &amp; .card-item {
+        margin-top: 1rem;
+    }
+}
+
+/* 行内代码块 */
+code {
+    margin: 0 .2rem;
+    font-size: .9em;
+    border: 1px solid #d6d6d6;
+    border-radius: .2rem;
+}
+
+/* 预格式代码块(用tab键插入的代码块) */
+pre code {
+    margin: 0;
+    border: none;
+    font-size: .875rem;
+}
+
+/* 标题里的代码块样式 */
+.page.single .content&gt;h2 code {
+    color: #f7ab01;
+    background: transparent !important;
+    border: none;
+}
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="注意">注意</h3>
+<p>只有使用的是扩展版本的Hugo，才能令<code>_custom.scss</code>文件生效！！！</p>
+<p>请查看你所使用的Hugo版本，如果不是<code>hugo_extended</code>版本，请前往<a href="https://github.com/gohugoio/hugo/releases" target="_blank" rel="noopener noreffer">Hugo Release</a>页面下载你当前版本Hugo所对应的<code>hugo_extended</code>版本。</p>
+<h2 id="添加自定义的customjs">添加自定义的<code>custom.js</code></h2>
+<p>LoveIt主题并没有提供一个文件来让我们自定义<code>JavaScript</code>，所以需要自己创建一个<code>js</code>文件来自定义<code>JavaScript</code>。</p>
+<p>首先在站点根目录下创建一个自定义的<code>JavaScript</code>文件：<code>\static\js\custom.js</code>。这个文件需要在<code>body</code>的闭合标签之前引入，并且要在<code>theme.min.js</code>的引入顺序之后。这样可以防止样式被其他文件覆盖，并且不会因为<code>JavaScript</code>文件假装太久导致页面长时间的空白。</p>
+<p>对于LoveIt主题，<code>custom.js</code>添加在<code>\themes\LoveIt\layouts\partials\assets.html</code>里。</p>
+<p>首先把该文件拷贝到根目录下的<code>\layouts\partials\assets.html</code>，然后打开拷贝后的文件，把自定义的<code>JavaScript</code>文件添加到最末尾的<code>{{- partial &quot;plugin/analytics.html&quot; . -}}</code>的上一行：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">{{- /* 自定义的js文件 */ -}}
+&lt;script type=&#34;text/javascript&#34; src=&#34;/js/custom.js&#34;&gt;&lt;/script&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>如果有其他的<code>JavaScript</code>文件要引入，加在一样的地方就可以，但是要放在自定义的<code>custom.js</code>之前。</p>
+<p><strong><code>custom.js</code></strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span><span class="lnt">86
+</span><span class="lnt">87
+</span><span class="lnt">88
+</span><span class="lnt">89
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">/* 返回随机颜色 */
+function randomColor() {
+	return &#34;rgb(&#34;+~~(255*Math.random())+&#34;,&#34;+~~(255*Math.random())+&#34;,&#34;+~~(255*Math.random())+&#34;)&#34;;
+}
+
+/* 鼠标点击文字特效 */
+var a_idx = 0;
+var a_click = 1;
+var a = new Array(&#34;道可道&#34;, &#34;非常道&#34;, &#34;名可名&#34;, &#34;非常名&#34;, &#34;虚其心&#34;, &#34;实其腹&#34;, &#34;和其光&#34; ,&#34;同其尘&#34;, &#34;居善地&#34;, &#34;心善渊&#34;, &#34;少则得&#34;, &#34;敝则新&#34;,
+    &#34;上善若水&#34;, &#34;知人者智&#34;, &#34;自知者明&#34;, &#34;道生一&#34;, &#34;一生二&#34;, &#34;二生三&#34;, &#34;三生万物&#34;,
+    &#34;人法地&#34;, &#34;地法天&#34;, &#34;天法道&#34;, &#34;道法自然&#34;, &#34;大直若曲&#34;, &#34;大巧若拙&#34;, &#34;大辩若讷&#34;, &#34;合抱之木&#34;,
+    &#34;生于毫末&#34;, &#34;九层之台&#34;, &#34;起于累土&#34;, &#34;千里之行&#34;, &#34;始于足下&#34;, &#34;无为&#34;,
+    &#34;无我&#34;, &#34;无欲&#34;, &#34;居下&#34;, &#34;清虚&#34;, &#34;自然&#34;, &#34;万物之始&#34;, &#34;大道至简&#34;, &#34;衍化至繁&#34;,
+    &#34;澹兮其若海&#34;, &#34;旷兮其若谷&#34;, &#34;致虚极&#34;, &#34;守静笃&#34;, &#34;善行无辙迹&#34;,
+    &#34;知其白&#34;, &#34;守其黑&#34;, &#34;知其荣&#34;, &#34;守其辱&#34;, &#34;道常无为而无不为&#34;,
+    &#34;上德无为而无以为&#34;, &#34;万物得一以生&#34;, &#34;清静为天下正&#34;, &#34;圣人不病&#34;, &#34;以其病病&#34;, &#34;夫惟病病&#34;, &#34;是以不病&#34;,
+    &#34;一曰慈&#34;, &#34;二曰俭&#34;, &#34;三曰不敢为天下先&#34;, &#34;勇于敢则杀&#34;);
+jQuery(document).ready(function($) {
+    $(&#34;body&#34;).click(function(e) {
+		/* 点击频率，点击几次就换文字 */
+		var frequency = 2;
+		if (a_click % frequency === 0) {
+			
+			var $i = $(&#34;&lt;span/&gt;&#34;).text(a[a_idx]);
+			a_idx = (a_idx + 1) % a.length;
+			var x = e.pageX,
+			y = e.pageY;
+			$i.css({
+				&#34;z-index&#34;: 9999,
+				&#34;top&#34;: y - 20,
+				&#34;left&#34;: x,
+				&#34;position&#34;: &#34;absolute&#34;,
+				&#34;font-weight&#34;: &#34;bold&#34;,
+				&#34;color&#34;: randomColor(),
+				&#34;-webkit-user-select&#34;: &#34;none&#34;,
+				&#34;-moz-user-select&#34;: &#34;none&#34;,
+				&#34;-ms-user-select&#34;: &#34;none&#34;,
+				&#34;user-select&#34;: &#34;none&#34;
+			});
+			$(&#34;body&#34;).append($i);
+			$i.animate({
+				&#34;top&#34;: y - 180,
+				&#34;opacity&#34;: 0
+			},
+			1500,
+			function() {
+				$i.remove();
+			});
+			
+		}
+	a_click ++;
+		
+    });
+});
+
+	/* 评论框加载背景图片 */
+	$(&#34;.v[data-class=v] .veditor&#34;).attr(&#39;style&#39;, &#34;background-image: url(&#34; + $cdnPrefix + &#34;/images/common/valinebg.webp) !important;&#34;);
+});
+
+function getCurrentDateString() {
+	var now = new Date();
+	var month = now.getMonth() + 1;
+	var day = now.getDate();
+	var hour = now.getHours();
+	return &#34;&#34; + now.getFullYear() + (month &lt; 10 ? &#34;0&#34; + month : month) + (day &lt; 10 ? &#34;0&#34; + day : day) + (hour &lt; 10 ? &#34;0&#34; + hour : hour);
+}
+
+/* 站点运行时间 */
+function runtime() {
+	window.setTimeout(&#34;runtime()&#34;, 1000);
+	/* 请修改这里的起始时间 */
+    let startTime = new Date(&#39;12/10/2021 21:00:00&#39;);
+    let endTime = new Date();
+    let usedTime = endTime - startTime;
+    let days = Math.floor(usedTime / (24 * 3600 * 1000));
+    let leavel = usedTime % (24 * 3600 * 1000);
+    let hours = Math.floor(leavel / (3600 * 1000));
+    let leavel2 = leavel % (3600 * 1000);
+    let minutes = Math.floor(leavel2 / (60 * 1000));
+    let leavel3 = leavel2 % (60 * 1000);
+    let seconds = Math.floor(leavel3 / (1000));
+    let runbox = document.getElementById(&#39;run-time&#39;);
+    runbox.innerHTML = &#39;本站已运行&lt;i class=&#34;far fa-clock fa-fw&#34;&gt;&lt;/i&gt; &#39;
+        + ((days &lt; 10) ? &#39;0&#39; : &#39;&#39;) + days + &#39; 天 &#39;
+        + ((hours &lt; 10) ? &#39;0&#39; : &#39;&#39;) + hours + &#39; 时 &#39;
+        + ((minutes &lt; 10) ? &#39;0&#39; : &#39;&#39;) + minutes + &#39; 分 &#39;
+        + ((seconds &lt; 10) ? &#39;0&#39; : &#39;&#39;) + seconds + &#39; 秒 &#39;;
+}
+runtime();
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="添加全局的cdn变量">添加全局的<code>CDN</code>变量</h2>
+<p>对于一些静态资源，比如图片、音乐文件、第三方库等，如果有自己的cdn或者图床等，可以在站点配置文件自定义一个<code>cdn</code>变量，如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">[params]
+  # cdn变量，末尾不需要加/
+  cdnPrefix = &#34;http://xxxx&#34;
+</code></pre></td></tr></table>
+</div>
+</div><p>默认的 CDN 数据文件位于<code>themes/LoveIt/assets/data/cdn/</code>目录，可以在你的项目下相同路径存放你自己的数据文件：<code>assets/data/cdn/</code>。接下来就可以在你需要的地方使用该变量，大概有如下3种用法。</p>
+<h3 id="在md文件中使用">在md文件中使用</h3>
+<p>在md文件中可以用内置的<strong>shortcodes</strong>来使用该变量。</p>
+<h3 id="在模板文件中使用">在模板文件中使用</h3>
+<p>在layouts目录下有很多html文件，这些是用来渲染站点的模板文件，可以用Hugo的语法来引入该变量：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">{{ .Site.Params.cdnPrefix }}
+</code></pre></td></tr></table>
+</div>
+</div><p>如果在一个模板文件里有多个地方使用到该变量，可以定义一个局部变量来使用：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">{{- $cdn := .Site.Params.cdnPrefix -}}
+
+/* 使用局部变量 */
+{{ $cdn }}
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="在javascript文件中使用">在JavaScript文件中使用</h3>
+<p>由于JavaScript文件中不能使用上述的<strong>shortcodes</strong>或Hugo语法来引用变量，只能通过在<code>\layouts\partials\assets.html</code>中用JavaScript语法来引入该变量，如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">/* 这是可以应用于JavaScript文件的全局变量 */
+&lt;script&gt;
+	/* cdn for some static resources */
+	var $cdnPrefix = {{ .Site.Params.cdnPrefix }};
+&lt;/script&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>这样就可以在其他被引入的JavaScript文件中使用这个<code>$cdnPrefix</code>变量：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">$(function () {
+	$.backstretch([
+		  $cdnPrefix + &#34;/images/background/saber1.jpg&#34;
+	], { duration: 60000, fade: 1500 });
+});
+</code></pre></td></tr></table>
+</div>
+</div><p>如果是想在模板文件里引入某个自定义的JavaScript文件，如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">{{- /* 自定义的js文件 */ -}}
+&lt;script type=&#34;text/javascript&#34; src=&#34;{{ .Site.Params.cdnPrefix }}/js/custom.js&#34;&gt;&lt;/script&gt;
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="valine评论功能添加">Valine评论功能添加</h2>
+<ol>
+<li>
+<p>把<code>\themes\LoveIt\layouts\partials\comment.html</code>拷贝到站点根目录下的<code>\layouts\partials\comment.html</code>。</p>
+</li>
+<li>
+<p>打开拷贝后的<code>comment.html</code>，找到<code>Valine</code>相关的代码，把<code>{{- if $valine.enable -}}</code>和<code>{{- end -}}</code>之间的代码改成如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">{{- if $valine.enable -}}
+    &lt;div id=&#34;valine&#34; class=&#34;comment&#34;&gt;&lt;/div&gt;
+    &lt;script src=&#34;//unpkg.com/valine@latest/dist/Valine.min.js&#34;&gt;&lt;/script&gt;
+
+	&lt;script type=&#34;text/javascript&#34;&gt;
+		new Valine({
+			el: &#39;#valine&#39; ,
+			appId: &#39;{{ $valine.appId }}&#39;,
+			appKey: &#39;{{ $valine.appKey }}&#39;,
+			notify: &#39;{{ $valine.notify }}&#39;, 
+			verify: &#39;{{ $valine.verify }}&#39;, 
+			avatar:&#39;{{ $valine.avatar }}&#39;, 
+			placeholder: &#39;{{ $valine.placeholder }}&#39;,
+			visitor: &#39;{{ $valine.visitor }}&#39;
+		});
+	&lt;/script&gt;
+{{- end -}}
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<p>之后在站点配置文件里启用<code>valine</code>，然后填上从<code>LeanCloud</code>的应用中得到的<code>appId</code>和<code>appKey</code>就可以用了。并且在使用了<code>valine</code>的同时，还可以顺带启用阅读次数的统计功能。</p>
+<h3 id="leancloud的使用">LeanCloud的使用</h3>
+<ol>
+<li>
+<p>在<code>LeanCloud</code>官网注册账号；</p>
+</li>
+<li>
+<p>创建一个应用，然后进入该应用的配置，选择设置 -&gt; 应用凭证，然后复制该应用的<code>AppId</code>和<code>AppKey</code>到站点配置文件里;</p>
+</li>
+<li>
+<p>选择设置 -&gt; 安全中心，在Web安全域名中输入站点域名，或<code>http://localhost:1313</code>；</p>
+</li>
+<li>
+<p>选择数据存储 -&gt; 结构化数据，创建两个新的<code>Class</code>，<code>Comment</code>（评论会存在这里）和<code>Counter</code>（阅读次数统计）。</p>
+</li>
+</ol>
+<h2 id="添加站点运行时间">添加站点运行时间</h2>
+<p>将<code>\themes\LoveIt\layouts\partials\footer.html</code>拷贝到<code>\layouts\partials\footer.html</code>，打开拷贝后的文件，在<code>&lt;div class=&quot;footer-container&quot;&gt;</code>的下方添加如下代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">&lt;div class=&#34;footer-line&#34;&gt;
+	&lt;span id=&#34;run-time&#34;&gt;&lt;/span&gt;
+&lt;/div&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>然后在<code>custom.js</code>中添加如下代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">/* 站点运行时间 */
+function runtime() {
+	window.setTimeout(&#34;runtime()&#34;, 1000);
+	/* 请修改这里的起始时间 */
+    let startTime = new Date(&#39;12/10/2021 21:00:00&#39;);
+    let endTime = new Date();
+    let usedTime = endTime - startTime;
+    let days = Math.floor(usedTime / (24 * 3600 * 1000));
+    let leavel = usedTime % (24 * 3600 * 1000);
+    let hours = Math.floor(leavel / (3600 * 1000));
+    let leavel2 = leavel % (3600 * 1000);
+    let minutes = Math.floor(leavel2 / (60 * 1000));
+    let leavel3 = leavel2 % (60 * 1000);
+    let seconds = Math.floor(leavel3 / (1000));
+    let runbox = document.getElementById(&#39;run-time&#39;);
+    runbox.innerHTML = &#39;本站已运行&lt;i class=&#34;far fa-clock fa-fw&#34;&gt;&lt;/i&gt; &#39;
+        + ((days &lt; 10) ? &#39;0&#39; : &#39;&#39;) + days + &#39; 天 &#39;
+        + ((hours &lt; 10) ? &#39;0&#39; : &#39;&#39;) + hours + &#39; 时 &#39;
+        + ((minutes &lt; 10) ? &#39;0&#39; : &#39;&#39;) + minutes + &#39; 分 &#39;
+        + ((seconds &lt; 10) ? &#39;0&#39; : &#39;&#39;) + seconds + &#39; 秒 &#39;;
+}
+runtime();
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="添加不蒜子网站计数">添加不蒜子网站计数</h2>
+<p>本站只在页面底部增加了网站的总访问量，打开<code>\layouts\partials\footer.html</code>，在最底部<code>{{- end -}}</code>之前添加如下代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">   本站访问量
+   &lt;div&gt;
+           &lt;link rel=&#34;stylesheet&#34; href=&#34;//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css&#34;&gt;
+           &lt;i class=&#34;fa fa-user&#34;&gt;&lt;/i&gt;  &lt;span id=&#34;busuanzi_value_site_pv&#34;&gt;&lt;/span&gt;|
+           &lt;i class=&#34;fa fa-eye&#34;&gt;&lt;/i&gt; &lt;span id=&#34;busuanzi_value_site_uv&#34;&gt;&lt;/span&gt;人次
+    &lt;/div&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>如果需要更多的网站统计功能，可参考<a href="http://ibruce.info/2015/04/04/busuanzi/" target="_blank" rel="noopener noreffer">不蒜子博客</a>。</p>
+<h2 id="主题自带的admonition样式">主题自带的admonition样式</h2>
+<p><code>LoveIt</code>提供了<code>admonition</code><strong>shortcode</strong>，支持<strong>12</strong>种样式，可以在页面中插入提示的横幅。代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>注意<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">一个 <strong>注意</strong> 横幅</div>
+        </div>
+    </div>
+
+<div class="details admonition abstract open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-list-ul fa-fw"></i>摘要<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">一个 <strong>摘要</strong> 横幅</div>
+        </div>
+    </div>
+
+<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw"></i>信息<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">一个 <strong>信息</strong> 横幅</div>
+        </div>
+    </div>
+
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>技巧<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">一个 <strong>技巧</strong> 横幅</div>
+        </div>
+    </div>
+
+<div class="details admonition success open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-check-circle fa-fw"></i>成功<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">一个 <strong>成功</strong> 横幅</div>
+        </div>
+    </div>
+
+<div class="details admonition question open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-question-circle fa-fw"></i>问题<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">一个 <strong>问题</strong> 横幅</div>
+        </div>
+    </div>
+
+<div class="details admonition warning open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-exclamation-triangle fa-fw"></i>警告<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">一个 <strong>警告</strong> 横幅</div>
+        </div>
+    </div>
+
+<div class="details admonition failure open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-times-circle fa-fw"></i>失败<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">一个 <strong>失败</strong> 横幅</div>
+        </div>
+    </div>
+
+<div class="details admonition danger open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-skull-crossbones fa-fw"></i>危险<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">一个 <strong>危险</strong> 横幅</div>
+        </div>
+    </div>
+
+<div class="details admonition bug open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-bug fa-fw"></i>Bug<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">一个 <strong>Bug</strong> 横幅</div>
+        </div>
+    </div>
+
+<div class="details admonition example open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-list-ol fa-fw"></i>示例<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">一个 <strong>示例</strong> 横幅</div>
+        </div>
+    </div>
+
+<div class="details admonition quote open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-quote-right fa-fw"></i>引用<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">一个 <strong>引用</strong> 横幅</div>
+        </div>
+    </div>
+</code></pre></td></tr></table>
+</div>
+</div><p>效果如下：</p>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>注意<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">一个 <strong>注意</strong> 横幅</div>
+        </div>
+    </div>
+<div class="details admonition abstract open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-list-ul fa-fw"></i>摘要<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">一个 <strong>摘要</strong> 横幅</div>
+        </div>
+    </div>
+<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw"></i>信息<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">一个 <strong>信息</strong> 横幅</div>
+        </div>
+    </div>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>技巧<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">一个 <strong>技巧</strong> 横幅</div>
+        </div>
+    </div>
+<div class="details admonition success open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-check-circle fa-fw"></i>成功<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">一个 <strong>成功</strong> 横幅</div>
+        </div>
+    </div>
+<div class="details admonition question open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-question-circle fa-fw"></i>问题<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">一个 <strong>问题</strong> 横幅</div>
+        </div>
+    </div>
+<div class="details admonition warning open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-exclamation-triangle fa-fw"></i>警告<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">一个 <strong>警告</strong> 横幅</div>
+        </div>
+    </div>
+<div class="details admonition failure open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-times-circle fa-fw"></i>失败<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">一个 <strong>失败</strong> 横幅</div>
+        </div>
+    </div>
+<div class="details admonition danger open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-skull-crossbones fa-fw"></i>危险<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">一个 <strong>危险</strong> 横幅</div>
+        </div>
+    </div>
+<div class="details admonition bug open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-bug fa-fw"></i>Bug<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">一个 <strong>Bug</strong> 横幅</div>
+        </div>
+    </div>
+<div class="details admonition example open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-list-ol fa-fw"></i>示例<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">一个 <strong>示例</strong> 横幅</div>
+        </div>
+    </div>
+<div class="details admonition quote open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-quote-right fa-fw"></i>引用<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">一个 <strong>引用</strong> 横幅</div>
+        </div>
+    </div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2021-12-21</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/hugo_conf/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="/hugo_conf/" data-title="Hugo的文件配置和博客功能增强" data-hashtags="Hugo"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="/hugo_conf/" data-hashtag="Hugo"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="/hugo_conf/" data-title="Hugo的文件配置和博客功能增强" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="/hugo_conf/" data-title="Hugo的文件配置和博客功能增强"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="/hugo_conf/" data-title="Hugo的文件配置和博客功能增强" data-image="/images/hugo-image3.png"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="/hugo_conf/" data-title="Hugo的文件配置和博客功能增强" data-description="博客功能增强与美化（持续更新中...）"><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="/hugo_conf/" data-title="Hugo的文件配置和博客功能增强" data-description="博客功能增强与美化（持续更新中...）"><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="/hugo_conf/" data-title="Hugo的文件配置和博客功能增强"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/hugo/">Hugo</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/hugo_error/" class="prev" rel="prev" title="Hugo搭建过程的踩坑记录"><i class="fas fa-angle-left fa-fw"></i>Hugo搭建过程的踩坑记录</a>
+            <a href="/sscanfandc_str/" class="next" rel="next" title="巧用sscanf()和c_str()解题">巧用sscanf()和c_str()解题<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div>
+        
+        
+
+
+        
+
+            <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+
+            
+            
+
+            
+
+            <script type="text/javascript">
+                new Valine({
+                    el: '#valine' ,
+                    appId: 'zlq3iEuV1rvEQ2yrFzXkq1c2-9Nh9j0Va',
+                    appKey: 'yrX5V77JCi9iaJD3USgI9fAh',
+                    notify: '', 
+                    verify: '', 
+                    avatar:'mp', 
+                    placeholder: '说点什么吧...',
+                    visitor: 'true'
+                });
+            </script>
+            </div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container">
+            <div class="footer-line">
+                <span id="run-time"></span>
+            </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">叶相相</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer>
+
+    本站访问量
+    <div>
+           <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+           <i class="fa fa-user"></i>  <span id="busuanzi_value_site_pv"></span>|
+           <i class="fa fa-eye"></i> <span id="busuanzi_value_site_uv"></span>人次
+    </div>
+
+    &nbsp;</div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js"></script><script type="text/javascript" src="/js/custom.js"></script></body>
+</html>

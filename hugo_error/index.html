@@ -5,37 +5,37 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>Markdown常用基本语法 - Better Late than Never.</title><meta name="Description" content="简单介绍一些Markdown常用的基本语法"><meta property="og:title" content="Markdown常用基本语法" />
-<meta property="og:description" content="简单介绍一些Markdown常用的基本语法" />
+        <title>Hugo搭建过程的踩坑记录 - Better Late than Never.</title><meta name="Description" content="一些Hugo搭建过程遇到的问题以及解决方法"><meta property="og:title" content="Hugo搭建过程的踩坑记录" />
+<meta property="og:description" content="一些Hugo搭建过程遇到的问题以及解决方法" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/markdown_basic/" /><meta property="og:image" content="/logo.png"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-12-11T21:15:59-08:00" />
-<meta property="article:modified_time" content="2021-12-13T11:01:33+00:00" /><meta property="og:site_name" content="Better Late than Never." />
+<meta property="og:url" content="/hugo_error/" /><meta property="og:image" content="/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-12-20T22:21:47+08:00" />
+<meta property="article:modified_time" content="2021-12-20T22:21:47+08:00" /><meta property="og:site_name" content="Better Late than Never." />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="/logo.png"/>
 
-<meta name="twitter:title" content="Markdown常用基本语法"/>
-<meta name="twitter:description" content="简单介绍一些Markdown常用的基本语法"/>
+<meta name="twitter:title" content="Hugo搭建过程的踩坑记录"/>
+<meta name="twitter:description" content="一些Hugo搭建过程遇到的问题以及解决方法"/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="/markdown_basic/" /><link rel="next" href="/markdown_expand/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="/hugo_error/" /><link rel="prev" href="/hugo_setup/" /><link rel="next" href="/hugo_conf/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "Markdown常用基本语法",
+        "headline": "Hugo搭建过程的踩坑记录",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "\/markdown_basic\/"
-        },"image": ["\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Markdown","wordcount":  569 ,
-        "url": "\/markdown_basic\/","datePublished": "2021-12-11T21:15:59-08:00","dateModified": "2021-12-13T11:01:33+00:00","publisher": {
+            "@id": "\/hugo_error\/"
+        },"image": ["\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Hugo","wordcount":  812 ,
+        "url": "\/hugo_error\/","datePublished": "2021-12-20T22:21:47+08:00","dateModified": "2021-12-20T22:21:47+08:00","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": "\/images\/header.png"},"author": {
                 "@type": "Person",
                 "name": "叶相相"
-            },"description": "简单介绍一些Markdown常用的基本语法"
+            },"description": "一些Hugo搭建过程遇到的问题以及解决方法"
     }
     </script></head>
     <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
@@ -110,294 +110,225 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">Markdown常用基本语法</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>叶相相</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%96%87%E6%A1%A3/"><i class="far fa-folder fa-fw"></i>文档</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-12-11">2021-12-11</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 569 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/markdown_basic/" class="leancloud_visitors" data-flag-title="Markdown常用基本语法">
+        </div><article class="page single"><h1 class="single-title animated flipInX">Hugo搭建过程的踩坑记录</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>叶相相</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/hugo%E7%B3%BB%E5%88%97/"><i class="far fa-folder fa-fw"></i>Hugo系列</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-12-20">2021-12-20</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 812 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/hugo_error/" class="leancloud_visitors" data-flag-title="Hugo搭建过程的踩坑记录">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/images/markdown-image.png"
-        data-srcset="/images/markdown-image.png, /images/markdown-image.png 1.5x, /images/markdown-image.png 2x"
+        data-src="/images/hugo-image2.png"
+        data-srcset="/images/hugo-image2.png, /images/hugo-image2.png 1.5x, /images/hugo-image2.png 2x"
         data-sizes="auto"
-        alt="/images/markdown-image.png"
-        title="简单介绍一些Markdown常用的基本语法" /></div><div class="details toc" id="toc-static"  kept="">
+        alt="/images/hugo-image2.png"
+        title="一些Hugo搭建过程遇到的问题以及解决方法" /></div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>目录</span>
                     <span><i class="details-icon fas fa-angle-right"></i></span>
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#1-标题">1. 标题</a></li>
-    <li><a href="#2-字体">2. 字体</a></li>
-    <li><a href="#3-引用">3. 引用</a></li>
-    <li><a href="#4-分割线">4. 分割线</a></li>
-    <li><a href="#5-列表">5. 列表</a>
-      <ul>
-        <li><a href="#有序列表">有序列表</a></li>
-        <li><a href="#无序列表">无序列表</a></li>
-        <li><a href="#列表嵌套">列表嵌套</a></li>
-      </ul>
-    </li>
-    <li><a href="#6-图片">6. 图片</a></li>
-    <li><a href="#7-超链接">7. 超链接</a></li>
-    <li><a href="#8-表格">8. 表格</a></li>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#添加国内软件源">添加国内软件源</a></li>
+    <li><a href="#git-clone主题报错">git clone主题报错</a></li>
+    <li><a href="#部署到github-pages不显示页面">部署到GitHub Pages不显示页面</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h2 id="1-标题">1. 标题</h2>
-<p>语法</p>
+            </div><div class="content" id="content"><h2 id="前言">前言</h2>
+<p>本文主要记录在整个站点搭建过程遇到的一些bug以及相应的解决方案。希望能给朋友们一些参考。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">云服务器系统
+ubuntu 20.04LTS
+
+docker版本
+docker 20.10.11
+
+hugo版本
+hugo v0.90.1-48907889+extended linux/amd64 BuildDate=2021-12-10T10:56:41Z VendorInfo=gohugoio
+
+主题
+LoveIt
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="添加国内软件源">添加国内软件源</h2>
+<p>在安装软件的过程中，个别的地区会出现下载速度缓慢的问题，这个时候就需要添加国内的软件源，如清华源，在<code>/etc/apt/sources.list</code>文件中的内容替换为下面的内容。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"># 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security main restricted universe multiverse
+
+# 预发布软件源，不建议启用
+# deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse
+</code></pre></td></tr></table>
+</div>
+</div><p>添加源以后，需要执行<code>sudo apt-get update</code>，此时可能会出现错误。</p>
+<p>解决办法：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"># 标题1
-## 标题2
-### 标题3
-#### 标题4
-##### 标题5
-###### 标题6，最多到标题6
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">sudo gpg --keyserver keyserver.ubuntu.com --recv 3B4FE6ACC0B21F32 （公钥）
+sudo gpg --export --armor 3B4FE6ACC0B21F32 | sudo apt-key add -
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="2-字体">2. 字体</h2>
-<p><em>斜体</em></p>
-<p><strong>粗体</strong></p>
-<p><del>删除线</del></p>
-<p><em><strong>斜体加粗体</strong></em></p>
-<p>~缩小~</p>
-<p>==高亮==</p>
-<p><u>下划线</u></p>
-<p>语法</p>
+</div><p><strong>注意</strong>：公钥根据错误提示信息来填写。</p>
+<h2 id="git-clone主题报错">git clone主题报错</h2>
+<p>报错情况：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">*斜体* 
-**粗体**
-~~删除线~~
-***斜体加粗体***
-~缩小~
-==高亮==
-&lt;u&gt;下划线&lt;/u&gt;
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">error: RPC failed; curl 56 GnuTLS recv error (-110): The TLS connection was non-properly terminated.
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="3-引用">3. 引用</h2>
-<blockquote>
-<p>引用</p>
-<blockquote>
-<p>引用嵌套</p>
-</blockquote>
-</blockquote>
-<p>语法</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">&gt; 引用
-&gt;&gt; 引用嵌套
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="4-分割线">4. 分割线</h2>
-<hr>
-<hr>
-<p>语法</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">-------
-*******
----
-***
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="5-列表">5. 列表</h2>
-<h3 id="有序列表">有序列表</h3>
+</div><p>解决方法：</p>
 <ol>
-<li>快速排序</li>
-<li>归并排序</li>
-<li>冒泡排序</li>
+<li>使用下面命令安装 build-essential、fakeroot 和 dpkg-dev。</li>
 </ol>
-<p>语法</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">1. 快速排序
-2. 归并排序
-3. 冒泡排序
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="无序列表">无序列表</h3>
-<ul>
-<li>快速排序</li>
-</ul>
-<ul>
-<li>归并排序</li>
-</ul>
-<ul>
-<li>冒泡排序</li>
-</ul>
-<p>语法</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">*/+/- 快速排序
-*/+/- 归并排序
-*/+/- 冒泡排序
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="列表嵌套">列表嵌套</h3>
-<p>语法：在二级嵌套的符号前面加四个空格。</p>
-<ul>
-<li>一级列表</li>
-<li>二级列表</li>
-</ul>
-<p>语法</p>
+<p><code>sudo apt-get install build-essential fakeroot dpkg-dev</code></p>
+<ol start="2">
+<li>使用下面命令在家目录中创建一个名为 git-rectify 的目录。</li>
+</ol>
+<p><code>mkdir ~/git-rectify</code></p>
+<ol start="3">
+<li>进入 get-rectify 目录并获取 git 源文件。</li>
+</ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">* 一级列表
-*二级列表
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">cd ~/git-rectify
+apt-get source git
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="6-图片">6. 图片</h2>
-<p><figure><a class="lightgallery" href="https://octodex.github.com/images/dojocat.jpg" title="https://octodex.github.com/images/dojocat.jpg" data-thumbnail="https://octodex.github.com/images/dojocat.jpg" data-sub-html="<h2>The Dojocat</h2>">
-        <img
-            class="lazyload"
-            src="/svg/loading.min.svg"
-            data-src="https://octodex.github.com/images/dojocat.jpg"
-            data-srcset="https://octodex.github.com/images/dojocat.jpg, https://octodex.github.com/images/dojocat.jpg 1.5x, https://octodex.github.com/images/dojocat.jpg 2x"
-            data-sizes="auto"
-            alt="https://octodex.github.com/images/dojocat.jpg" />
-    </a><figcaption class="image-caption">The Dojocat</figcaption>
-    </figure></p>
-<p>语法</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">![图片名称](图片地址 &#39;&#39;图片title&#39;&#39;)
-图片名称就是显示在图片下面的文字，相当于对图片内容的解释，可加可不加。
-图片title是图片的标题，当鼠标移到图片上时显示的内容，可加可不加。
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="7-超链接">7. 超链接</h2>
-<p><a href="https://gohugo.io/getting-started/quick-start/" target="_blank" rel="noopener noreffer">Hugo</a></p>
-<p>语法</p>
+</div><ol start="4">
+<li>安装所有 git 依赖项。</li>
+</ol>
+<p><code>sudo apt-get build-dep git</code></p>
+<ol start="5">
+<li>安装 libcurl的依赖文件。</li>
+</ol>
+<p><code>sudo apt-get install libcurl4-openssl-dev</code></p>
+<ol start="6">
+<li>进入git目录。</li>
+</ol>
+<p><code>cd git-2.25.1/</code></p>
+<p>路径名后面2.*是版本号，需要看一下自己的版本。</p>
+<ol start="7">
+<li>修改文件内容，需要修改两个文件。</li>
+</ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">[超链接名](超链接地址 &#34;超链接title&#34;)
-title可加可不加
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">gedit ./debian/control     # 把libcurl4-gnutls-dev 修改为 libcurl4-openssl-dev
+gedit ./debian/rules        # 把TEST =test整行删除
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="8-表格">8. 表格</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">表头</th>
-<th style="text-align:center">表头</th>
-<th style="text-align:center">表头</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">单元格</td>
-<td style="text-align:center">单元格</td>
-<td style="text-align:center">单元格</td>
-</tr>
-</tbody>
-</table>
-<p>语法</p>
+</div><ol start="8">
+<li>编译和构建安装包。</li>
+</ol>
+<p><code>sudo dpkg-buildpackage -rfakeroot -b</code></p>
+<ol start="9">
+<li>退回上一级目录，安装编译好的安装包。</li>
+</ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
-</span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">| 表头 | 表头 | 表头 |
-| :----: | :----: | :----: |
-| 单元格 | 单元格 | 单元格 |
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">cd ..
+sudo dpkg -i git_2.25.1-1ubuntu3_amd64.deb
 </code></pre></td></tr></table>
 </div>
-</div><p>对齐方式：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">-: 设置内容和标题栏居右对齐。
-:- 设置内容和标题栏居左对齐。
-:-: 设置内容和标题栏居中对齐。
-</code></pre></td></tr></table>
-</div>
-</div></div><div class="post-footer" id="post-footer">
+</div><p>用git进行clone时提示“服务器验证失败”，在命令行下输入：</p>
+<p><code>export GIT_SSL_NO_VERIFY=1</code></p>
+<h2 id="部署到github-pages不显示页面">部署到GitHub Pages不显示页面</h2>
+<p>解决方法：</p>
+<ol>
+<li>
+<p>在github进入仓库，选择<strong>Settings</strong>，找到<strong>Pages</strong>。</p>
+</li>
+<li>
+<p>选择<strong>Change theme</strong>。</p>
+</li>
+<li>
+<p>点击<strong>Link to another page</strong>，再随便选一个主题即可。</p>
+</li>
+</ol></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2021-12-13</span>
+                <span>更新于 2021-12-20</span>
             </div>
             <div class="post-info-license"></div>
         </div>
         <div class="post-info-line">
             <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="/markdown_basic/index.md" target="_blank">阅读原始文档</a>
+                            <a class="link-to-markdown" href="/hugo_error/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="/markdown_basic/" data-title="Markdown常用基本语法" data-hashtags="Markdown"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="/markdown_basic/" data-hashtag="Markdown"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="/markdown_basic/" data-title="Markdown常用基本语法" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="/markdown_basic/" data-title="Markdown常用基本语法"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="/markdown_basic/" data-title="Markdown常用基本语法" data-image="/images/markdown-image.png"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="/markdown_basic/" data-title="Markdown常用基本语法" data-description="简单介绍一些Markdown常用的基本语法"><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="/markdown_basic/" data-title="Markdown常用基本语法" data-description="简单介绍一些Markdown常用的基本语法"><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="/markdown_basic/" data-title="Markdown常用基本语法"><i class="fab fa-evernote fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="/hugo_error/" data-title="Hugo搭建过程的踩坑记录" data-hashtags="Hugo"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="/hugo_error/" data-hashtag="Hugo"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="/hugo_error/" data-title="Hugo搭建过程的踩坑记录" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="/hugo_error/" data-title="Hugo搭建过程的踩坑记录"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="/hugo_error/" data-title="Hugo搭建过程的踩坑记录" data-image="/images/hugo-image2.png"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="/hugo_error/" data-title="Hugo搭建过程的踩坑记录" data-description="一些Hugo搭建过程遇到的问题以及解决方法"><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="/hugo_error/" data-title="Hugo搭建过程的踩坑记录" data-description="一些Hugo搭建过程遇到的问题以及解决方法"><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="/hugo_error/" data-title="Hugo搭建过程的踩坑记录"><i class="fab fa-evernote fa-fw"></i></a></span>
             </div>
         </div>
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/markdown/">Markdown</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/hugo/">Hugo</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
         </section>
     </div>
 
-    <div class="post-nav">
-            <a href="/markdown_expand/" class="next" rel="next" title="Markdown常用扩展语法">Markdown常用扩展语法<i class="fas fa-angle-right fa-fw"></i></a></div>
+    <div class="post-nav"><a href="/hugo_setup/" class="prev" rel="prev" title="Hugo-在云服务上利用docker搭建博客与远程部署"><i class="fas fa-angle-left fa-fw"></i>Hugo-在云服务上利用docker搭建博客与远程部署</a>
+            <a href="/hugo_conf/" class="next" rel="next" title="Hugo的文件配置和博客功能增强">Hugo的文件配置和博客功能增强<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div>
         
