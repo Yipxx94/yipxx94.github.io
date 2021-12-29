@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>C&#43;&#43;的Lambda表达式 - Better Late than Never.</title><meta name="Description" content="C&#43;&#43;11的lambda表达式精讲"><meta property="og:title" content="C&#43;&#43;的Lambda表达式" />
+<meta property="og:description" content="C&#43;&#43;11的lambda表达式精讲" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/lambda/" /><meta property="og:image" content="/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-12-29T21:57:51+08:00" />
+<meta property="article:modified_time" content="2021-12-29T21:57:51+08:00" /><meta property="og:site_name" content="Better Late than Never." />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/logo.png"/>
+
+<meta name="twitter:title" content="C&#43;&#43;的Lambda表达式"/>
+<meta name="twitter:description" content="C&#43;&#43;11的lambda表达式精讲"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="/lambda/" /><link rel="prev" href="/sscanfandc_str/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "C++的Lambda表达式",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "\/lambda\/"
+        },"image": ["\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "C\/C\u002b\u002b","wordcount":  3021 ,
+        "url": "\/lambda\/","datePublished": "2021-12-29T21:57:51+08:00","dateModified": "2021-12-29T21:57:51+08:00","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": "\/images\/header.png"},"author": {
+                "@type": "Person",
+                "name": "叶相相"
+            },"description": "C++11的lambda表达式精讲"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Better Late than Never."><span class="header-title-pre"><i class='fas fa-book-reader fa-fw'></i></span>Yipxx</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 
+                        </a><a class="menu-item" href="/tags/"> 标签 
+                        </a><a class="menu-item" href="/categories/"> 分类 
+                        </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Better Late than Never."><span class="header-title-pre"><i class='fas fa-book-reader fa-fw'></i></span>Yipxx</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">C&#43;&#43;的Lambda表达式</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>叶相相</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/c/c++%E8%AF%AD%E6%B3%95/"><i class="far fa-folder fa-fw"></i>C/C++语法</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-12-29">2021-12-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3021 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 7 分钟&nbsp;<span id="/lambda/" class="leancloud_visitors" data-flag-title="C&#43;&#43;的Lambda表达式">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/lambda.png"
+        data-srcset="/images/lambda.png, /images/lambda.png 1.5x, /images/lambda.png 2x"
+        data-sizes="auto"
+        alt="/images/lambda.png"
+        title="C&#43;&#43;11的lambda表达式精讲" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a>
+      <ul>
+        <li><a href="#lambda的优点"><code>lambda</code>的优点</a></li>
+      </ul>
+    </li>
+    <li><a href="#lambda的基本概念"><code>lambda</code>的基本概念</a></li>
+    <li><a href="#向lambda传递参数">向<code>lambda</code>传递参数</a></li>
+    <li><a href="#使用lambda捕获列表">使用<code>lambda</code>捕获列表</a></li>
+    <li><a href="#实例">实例</a></li>
+    <li><a href="#可变lambda">可变<code>lambda</code></a></li>
+    <li><a href="#指定lambda的返回类型">指定<code>lambda</code>的返回类型</a></li>
+    <li><a href="#lambda表达式的类型"><code>lambda</code>表达式的类型</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="前言">前言</h2>
+<p>c++在c++11标准中引入了<code>lambda</code>表达式，一般用于定义匿名函数，使得代码更加灵活简洁。<code>lambda</code>表达式与普通函数类似，也有参数列表、返回值类型和函数体，只是它的定义方式更简洁，并且可以在函数内部定义。</p>
+<p>lambda 来源于函数式编程的概念，也是现代编程语言的一个特点。</p>
+<h3 id="lambda的优点"><code>lambda</code>的优点</h3>
+<ul>
+<li>
+<p>声明式编程风格：就地匿名定义目标函数或函数对象，不需要额外写一个命名函数或者函数对象。以更直接的方式去写程序，好的可读性和可维护性。</p>
+</li>
+<li>
+<p>简洁：不需要额外再写一个函数或者函数对象，避免了代码膨胀和功能分散，让开发者更加集中精力在手边的问题，同时也获取了更高的生产率。</p>
+</li>
+<li>
+<p>在需要的时间和地点实现功能闭包，使程序更灵活。</p>
+</li>
+</ul>
+<h2 id="lambda的基本概念"><code>lambda</code>的基本概念</h2>
+<p>一个<code>lambda</code>表达式表示一个可调用的代码单元。我们可以将其理解为一个未命名的<strong>内联函数</strong>。与任何函数类似，一个<code>lambda</code>具有一个返回类型、一个参数列表和一个函数体。但与函数不同，<code>lambda</code>可能定义在函数内部。</p>
+<p>一个<code>lambda</code>表达式具有如下形式：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">[capture list](parameter list) -&gt; return type {function body}
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>capture list：捕获列表，是一个<code>lambda</code>所在函数中定义的局部变量的列表，通常为空。</li>
+<li>parameter list：参数列表，与普通函数一样。</li>
+</ul>
+<p>我们可以忽略<strong>参数列表</strong>和<strong>返回类型</strong>，但必须永远包含捕获列表和函数体。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">auto f = [] {return 27; };
+cout &lt;&lt; f() &lt;&lt;endl; 	#打印27
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="向lambda传递参数">向<code>lambda</code>传递参数</h2>
+<p>与一个普通函数调用类似，调用一个<code>lambda</code>时给定的实参被用来初始化<code>lambda</code>的形参。通常，实参和形参的类型必须匹配。但与普通函数不同，<code>lambda</code>不能有默认参数。因此，一个<code>lambda</code>调用点实参数目永远与形参数目相等。</p>
+<p>如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">[](const string&amp; a, const string&amp; b){
+	return a.size() &lt; b.size();
+}
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>空捕获列表表明此<code>lambda</code>不使用它所在函数中的任何局部变量。</li>
+</ul>
+<p>可以使用此<code>lambda</code>来调用<code>stable_sort</code>：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">//按长度排序，长度相同的单词维持字典序
+stable_sort(words.begin(), words.end(), [](const string&amp; a, const string&amp; b){
+	return a.size() &lt; b.size();
+});
+</code></pre></td></tr></table>
+</div>
+</div><p>当<code>stable_sort</code>需要比较两个元素时，它就会调用给定的这个<code>lambda</code>表达式。</p>
+<h2 id="使用lambda捕获列表">使用<code>lambda</code>捕获列表</h2>
+<p><strong>值捕获</strong>：类似参数传递，变量的捕获方式也可以是值或引用。采用值捕获的前提是变量可以拷贝，与参数不同，被捕获的变量的值是在<code>lambda</code>创建时拷贝，而不是调用时拷贝。</p>
+<p><strong>引用捕获</strong>：如果采用引用方式捕获一个变量，就必须确保被引用的对象在<code>lambda</code>执行的时候是存在的。<u><code>lambda</code>捕获的都是局部变量，这些变量在在函数结束后就不复存在了。</u></p>
+<p><strong>隐式捕获</strong>：&amp; 告诉编译器采用引用捕获方式，= 则表示采用值捕获方式。</p>
+<p><strong>Tips</strong>：当我们混合使用隐式捕获和显示捕获时，捕获列表中的第一个元素必须是一个 &amp; 或 = 。此符号指定了默认捕获方式为引用或值。</p>
+<p><code>lambda</code>表达式还可以通过捕获列表捕获一定范围内的变量：</p>
+<ul>
+<li>[]：不捕获任何变量。</li>
+<li>[&amp;]：捕获外部作用域中所有变量，并作为引用在函数体中使用（按引用捕获）。</li>
+<li>[=]：捕获外部作用域中所有变量，并作为副本（<strong>复制</strong>）在函数体中使用（按值捕获）。</li>
+<li>[=, &amp;x]：按值捕获外部作用域中所有变量，并按引用捕获x变量。</li>
+<li>[&amp;, x]：默认以引用捕获所有变量，但是x是例外，通过复制捕获（按值捕获）。</li>
+<li><i class="far fa-check-square fa-fw"></i> ：按值捕获x变量，同时不捕获其他变量。</li>
+<li>[x&hellip;]：以包展开方式复制捕获参数包变量。</li>
+<li>[&amp;x]：仅以引用捕获x，其它变量不捕获。</li>
+<li>[this]：捕获当前类中的 this 指针，让<code>lambda</code>表达式拥有和当前类成员函数同样的访问权限。如果已经使用了 &amp; 或者 =，就默认添加此选项。捕获 this 的目的是可以在<code>lambda</code>中使用当前类的成员函数和成员变量。</li>
+<li>[*this]：通过复制方式捕获当前对象。</li>
+</ul>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>注意<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">一个<code>lambda</code>只有在其捕获列表中捕获一个它所在函数中的局部变量，才能在函数体中使用该变量。</div>
+        </div>
+    </div>
+<h2 id="实例">实例</h2>
+<p>有一个按单词长度从小到大排列的字符串数组words(<code>vector&lt;string&gt; words</code>)。</p>
+<ol>
+<li>调用 find_if</li>
+</ol>
+<p>使用此<code>lambda</code>，我们可以查找第一个长度大于<code>sz</code>的元素：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">//获取一个迭代器，指向第一个满足size() &gt;= sz的元素
+auto f = find_if(words.begin(), words.end(), [sz](const string&amp; a){
+	return a.size() &gt;= sz;
+});
+</code></pre></td></tr></table>
+</div>
+</div><p>这里对 find_if 的调用返回一个迭代器，指向第一个长度不小于给定参数<code>sz</code>的元素。如果这样的元素不存在，则返回 <code>words.end()</code>（尾迭代器）的一个拷贝。</p>
+<ol start="2">
+<li>for_each 算法</li>
+</ol>
+<p>打印 words 中长度大于等于<code>sz</code>的元素。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">//打印长度大于等于给定值的单词，每个单词后面接一个空格
+for_each(f, words.end(), [](const string&amp; s){
+	cout &lt;&lt; s &lt;&lt; &#34; &#34;;
+});
+</code></pre></td></tr></table>
+</div>
+</div><p>此<code>lamnda</code>中的捕获列表为空，是因为我们只对<code>lambda</code>所在函数中定义的（非<code>static</code>）变量使用捕获列表。</p>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>注意<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">捕获列表只用于局部非<code>static</code>变量，<code>lambda</code>可以直接使用局部<code>static</code>变量和在它所在函数之外声明的名字。</div>
+        </div>
+    </div>
+<h2 id="可变lambda">可变<code>lambda</code></h2>
+<p>默认情况下，对于一个值被拷贝的变量，<code>lambda</code>不会改变其值。如果我们希望能改变一个值捕获的变量的值，就必须在参数列表后加上关键字<code>mutable</code>。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">int main()
+{
+	int t = 27;	//局部变量
+	//f可以改变它所捕获的变量的值
+	auto f = [t]() mutable { return t++; };
+	cout &lt;&lt; f() &lt;&lt; endl;
+	cout &lt;&lt; f() &lt;&lt; endl;
+	cout &lt;&lt; t &lt;&lt; endl;
+	
+	return 0;
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>结果：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">28
+29
+27
+</code></pre></td></tr></table>
+</div>
+</div><p>一个引用捕获的变量是否可以修改依赖于此引用指向的是一个<code>const</code>类型还是一个非<code>const</code>类型。</p>
+<h2 id="指定lambda的返回类型">指定<code>lambda</code>的返回类型</h2>
+<p>默认情况下，如果一个<code>lambda</code>体包含<code>return</code>之外的任何语句，则编译器假定此<code>lambda</code>返回<code>void</code>。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">auto f = [](int i){
+	return i &lt; 0 ? -i : i;
+};
+</code></pre></td></tr></table>
+</div>
+</div><p>在本例中，<code>lambda</code>体是单一的<code>return</code>语句，返回一个条件表达式的结果。我们无须指定返回类型，因为可以根据条件运算符的类型推断出来。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">//错误：不能判断lambda的返回类型
+auto f = [](int i){
+	if (i &lt; 0)
+		return -i;
+	else
+		return i;
+};
+</code></pre></td></tr></table>
+</div>
+</div><p>编译器推断这个版本的<code>lambda</code>返回类型为<code>void</code>，但它返回了一个<code>int</code>值。</p>
+<p>当我们需要为一个<code>lambda</code>定义返回类型时，必须使用<strong>尾置</strong>返回类型：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">auto f = [](int i) -&gt; int {
+	if (i &lt; 0)
+		return -i;
+	else
+		return i;
+};
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="lambda表达式的类型"><code>lambda</code>表达式的类型</h2>
+<p><code>lambda</code>表达式的类型在 C++11 中被称为“闭包类型（Closure Type）”。</p>
+<p>因此，我们可以认为它是一个带有<code>operator()</code>的类，即仿函数。因此，我们可以使用<code>std::function</code>和<code>std::bind</code>来存储和操作<code>lambda</code>表达式：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">std::function&lt;int(int)&gt;  f1 = [](int a){ return a; };
+std::function&lt;int(void)&gt; f2 = std::bind([](int a){ return a; }, 123);
+</code></pre></td></tr></table>
+</div>
+</div><p>另外，对于没有捕获任何变量的 lambda 表达式，还可以被转换成一个普通的函数指针：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">using func_t = int(*)(int);
+func_t f = [](int a){ return a; };
+f(123);
+</code></pre></td></tr></table>
+</div>
+</div><p><code>lambda</code>表达式可以说是就地定义仿函数闭包的**”语法糖“**。它的捕获列表捕获住的任何外部变量，最终均会变为闭包类型的成员变量。而一个使用了成员变量的类的<code>operator()</code>，如果能直接被转换为普通的函数指针，那么<code>lambda</code>表达式本身的 this 指针就丢失掉了。而没有捕获任何外部变量的<code>lambda</code>表达式则不存在这个问题。</p>
+<p>这里也可以很自然地解释为何按值捕获无法修改捕获的外部变量。因为按照 C++ 标准，<code>lambda</code>表达式的<code>operator()</code>默认是<code>const</code>的。一个<code>const</code>成员函数是无法修改成员变量的值的。而<code>mutable</code>的作用，就在于取消<code>operator()</code>的<code>const</code>。</p>
+<p>需要注意的是，没有捕获变量的 lambda 表达式可以直接转换为函数指针，而捕获变量的 lambda 表达式则不能转换为函数指针：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">typedef void(*Ptr)(int*);
+Ptr p = [](int* p){delete p;};	// 正确，没有状态的lambda（没有捕获）的lambda表达式可以直接转换为函数指针
+Ptr p1 = [&amp;](int* p){delete p;};	// 错误，有状态的lambda不能直接转换为函数指针
+</code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2021-12-29</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/lambda/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="/lambda/" data-title="C&#43;&#43;的Lambda表达式" data-hashtags="C/C&#43;&#43;"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="/lambda/" data-hashtag="C/C&#43;&#43;"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="/lambda/" data-title="C&#43;&#43;的Lambda表达式" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="/lambda/" data-title="C&#43;&#43;的Lambda表达式"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="/lambda/" data-title="C&#43;&#43;的Lambda表达式" data-image="/images/lambda.png"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="/lambda/" data-title="C&#43;&#43;的Lambda表达式" data-description="C&#43;&#43;11的lambda表达式精讲"><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="/lambda/" data-title="C&#43;&#43;的Lambda表达式" data-description="C&#43;&#43;11的lambda表达式精讲"><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="/lambda/" data-title="C&#43;&#43;的Lambda表达式"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/c/c&#43;&#43;/">C/C&#43;&#43;</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/sscanfandc_str/" class="prev" rel="prev" title="巧用sscanf()和c_str()解题"><i class="fas fa-angle-left fa-fw"></i>巧用sscanf()和c_str()解题</a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div>
+        
+        
+
+
+        
+
+            <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+
+            
+            
+
+            
+
+            <script type="text/javascript">
+                new Valine({
+                    el: '#valine' ,
+                    appId: 'zlq3iEuV1rvEQ2yrFzXkq1c2-9Nh9j0Va',
+                    appKey: 'yrX5V77JCi9iaJD3USgI9fAh',
+                    notify: '', 
+                    verify: '', 
+                    avatar:'mp', 
+                    placeholder: '说点什么吧...',
+                    visitor: 'true'
+                });
+            </script>
+            </div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container">
+            <div class="footer-line">
+                <span id="run-time"></span>
+            </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">叶相相</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer>
+
+    本站访问量
+    <div>
+           <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+           <i class="fa fa-user"></i>  <span id="busuanzi_value_site_pv"></span>|
+           <i class="fa fa-eye"></i> <span id="busuanzi_value_site_uv"></span>人次
+    </div>
+
+    &nbsp;</div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js"></script><script type="text/javascript" src="/js/custom.js"></script></body>
+</html>
