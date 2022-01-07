@@ -95,8 +95,8 @@ apt-get source git
 7. 修改文件内容，需要修改两个文件。
 
 ```
-gedit ./debian/control     # 把libcurl4-gnutls-dev 修改为 libcurl4-openssl-dev
-gedit ./debian/rules        # 把TEST =test整行删除
+vim ./debian/control     # 把libcurl4-gnutls-dev 修改为 libcurl4-openssl-dev
+vim ./debian/rules        # 把TEST =test整行删除
 ```
 
 8. 编译和构建安装包。
@@ -107,7 +107,7 @@ gedit ./debian/rules        # 把TEST =test整行删除
 
 ```
 cd ..
-sudo dpkg -i git_2.25.1-1ubuntu3_amd64.deb
+sudo dpkg -i git_2.25.1-1ubuntu3.2_amd64.deb
 ```
 
 用git进行clone时提示“服务器验证失败”，在命令行下输入：

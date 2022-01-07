@@ -267,8 +267,8 @@ apt-get source git
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">gedit ./debian/control     # 把libcurl4-gnutls-dev 修改为 libcurl4-openssl-dev
-gedit ./debian/rules        # 把TEST =test整行删除
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">vim ./debian/control     # 把libcurl4-gnutls-dev 修改为 libcurl4-openssl-dev
+vim ./debian/rules        # 把TEST =test整行删除
 </code></pre></td></tr></table>
 </div>
 </div><ol start="8">
@@ -285,7 +285,7 @@ gedit ./debian/rules        # 把TEST =test整行删除
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">cd ..
-sudo dpkg -i git_2.25.1-1ubuntu3_amd64.deb
+sudo dpkg -i git_2.25.1-1ubuntu3.2_amd64.deb
 </code></pre></td></tr></table>
 </div>
 </div><p>用git进行clone时提示“服务器验证失败”，在命令行下输入：</p>
@@ -361,7 +361,8 @@ sudo dpkg -i git_2.25.1-1ubuntu3_amd64.deb
         <div class="footer-container">
             <div class="footer-line">
                 <span id="run-time"></span>
-            </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">叶相相</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+            </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">叶相相</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span><span class="icp-splitter">&nbsp;|&nbsp;</span><br class="icp-br"/>
+                    <span class="icp"><a href="http://www.beian.miit.gov.cn/"  style="color:#4169E1" target="_blank">浙ICP备2022000618号-1</a></span></div>
         </div>
     </footer>
 
