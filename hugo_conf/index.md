@@ -1580,15 +1580,35 @@ runtime();
 
 ## 添加不蒜子网站计数
 
-本站只在页面底部增加了网站的总访问量，打开`\layouts\partials\footer.html`，在最底部`{{- end -}}`之前添加如下代码：
+在根目录的`config.toml`文件中加入如下代码：
 
 ```
-   本站访问量
-   <div>
-           <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-           <i class="fa fa-user"></i>  <span id="busuanzi_value_site_pv"></span>|
-           <i class="fa fa-eye"></i> <span id="busuanzi_value_site_uv"></span>人次
-    </div>
+[params]
+...
+# 以下为需添加内容 #
+# busuanzi
+busuanzi = true
+busuanzi_site_offset = 100000
+```
+
+打开`\layouts\partials\footer.html`，在最底部`{{- end -}}`之前添加如下代码：
+
+```
+{{- if ne .Site.Params.footer.enable false -}}
+    <footer class="footer">
+        <div class="footer-container">
+            ...
+            <!-- 以下为需添加内容 -->
+            <span id="busuanzi_container_site_pv">
+                本站访问量：<span id="busuanzi_value_site_pv"></span>次
+            </span> | 
+            <span id="busuanzi_container_site_uv">
+                您是本站第 <span id="busuanzi_value_site_uv"></span> 位访问者
+            </span>
+            <!-- 以上为需添加内容 -->
+        </div>
+    </footer>
+{{- end -}}
 ```
 
 如果需要更多的网站统计功能，可参考[不蒜子博客](http://ibruce.info/2015/04/04/busuanzi/)。
@@ -1699,4 +1719,27 @@ runtime();
 {{< /admonition >}}
 
 
+## 为图标添加动画效果
+
+```
+<div class="fa-3x">
+  <i class="fas fa-spinner fa-spin"></i>
+  <i class="fas fa-circle-notch fa-spin"></i>
+  <i class="fas fa-sync fa-spin"></i>
+  <i class="fas fa-cog fa-spin"></i>
+  <i class="fas fa-spinner fa-pulse"></i>
+  <i class="fas fa-stroopwafel fa-spin"></i>
+</div>
+```
+
+代码效果展示：
+
+<div class="fa-3x">
+  <i class="fas fa-spinner fa-spin"></i>
+  <i class="fas fa-circle-notch fa-spin"></i>
+  <i class="fas fa-sync fa-spin"></i>
+  <i class="fas fa-cog fa-spin"></i>
+  <i class="fas fa-spinner fa-pulse"></i>
+  <i class="fas fa-stroopwafel fa-spin"></i>
+</div>
 
