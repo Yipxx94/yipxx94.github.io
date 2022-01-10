@@ -1,6 +1,6 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title></title>
+        <title>叶相相的博客</title>
         <link>https://www.yexxweb.com/</link>
         <description>这是我的全新 Hugo 网站</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>Yipxx@foxmail.com (叶相相)</managingEditor>

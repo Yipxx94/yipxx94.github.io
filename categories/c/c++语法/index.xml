@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>C/C&#43;&#43;语法 - 分类 - </title>
+        <title>C/C&#43;&#43;语法 - 分类 - 叶相相的博客</title>
         <link>https://www.yexxweb.com/categories/c/c&#43;&#43;%E8%AF%AD%E6%B3%95/</link>
-        <description>C/C&#43;&#43;语法 - 分类 - </description>
+        <description>C/C&#43;&#43;语法 - 分类 - 叶相相的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>Yipxx@foxmail.com (叶相相)</managingEditor>
             <webMaster>Yipxx@foxmail.com (叶相相)</webMaster><atom:link href="https://www.yexxweb.com/categories/c/c&#43;&#43;%E8%AF%AD%E6%B3%95/" rel="self" type="application/rss+xml" /><item>
     <title>C&#43;&#43;的Lambda表达式</title>

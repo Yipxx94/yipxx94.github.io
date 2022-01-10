@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Markdown - 标签 - </title>
+        <title>Markdown - 标签 - 叶相相的博客</title>
         <link>https://www.yexxweb.com/tags/markdown/</link>
-        <description>Markdown - 标签 - </description>
+        <description>Markdown - 标签 - 叶相相的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>Yipxx@foxmail.com (叶相相)</managingEditor>
             <webMaster>Yipxx@foxmail.com (叶相相)</webMaster><lastBuildDate>Sun, 12 Dec 2021 14:15:59 -0800</lastBuildDate><atom:link href="https://www.yexxweb.com/tags/markdown/" rel="self" type="application/rss+xml" /><item>
     <title>Markdown常用扩展语法</title>

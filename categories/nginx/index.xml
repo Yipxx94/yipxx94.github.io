@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Nginx - 分类 - </title>
+        <title>Nginx - 分类 - 叶相相的博客</title>
         <link>https://www.yexxweb.com/categories/nginx/</link>
-        <description>Nginx - 分类 - </description>
+        <description>Nginx - 分类 - 叶相相的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>Yipxx@foxmail.com (叶相相)</managingEditor>
             <webMaster>Yipxx@foxmail.com (叶相相)</webMaster><lastBuildDate>Sun, 09 Jan 2022 20:30:51 &#43;0800</lastBuildDate><atom:link href="https://www.yexxweb.com/categories/nginx/" rel="self" type="application/rss+xml" /><item>
     <title>Nginx的安装与配置</title>
