@@ -2,7 +2,7 @@
     <channel>
         <title>叶相相的博客</title>
         <link>https://www.yexxweb.com/</link>
-        <description>这是我的全新 Hugo 网站</description>
+        <description>个人学习与记录的网站</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>Yipxx@foxmail.com (叶相相)</managingEditor>
             <webMaster>Yipxx@foxmail.com (叶相相)</webMaster><lastBuildDate>Sun, 09 Jan 2022 20:30:51 &#43;0800</lastBuildDate>
             <atom:link href="https://www.yexxweb.com/index.xml" rel="self" type="application/rss+xml" />
