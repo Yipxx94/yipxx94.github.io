@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/www.yexxweb.com\/hugo_conf\/"
-        },"image": ["https:\/\/www.yexxweb.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Hugo","wordcount":  10696 ,
+        },"image": ["https:\/\/www.yexxweb.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Hugo","wordcount":  10824 ,
         "url": "https:\/\/www.yexxweb.com\/hugo_conf\/","datePublished": "2021-12-21T20:39:15+08:00","dateModified": "2021-12-21T20:39:15+08:00","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": "https:\/\/www.yexxweb.com\/images\/header.png"},"author": {
@@ -49,6 +49,7 @@
             <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 
                         </a><a class="menu-item" href="/tags/"> 标签 
                         </a><a class="menu-item" href="/categories/"> 分类 
+                        </a><a class="menu-item" href="/about/"> 关于 
                         </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
                         <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
                         <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
@@ -92,7 +93,7 @@
                     <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
                         取消
                     </a>
-                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
                 <i class="fas fa-adjust fa-fw"></i>
             </a></div>
     </div>
@@ -110,7 +111,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Hugo的文件配置和博客功能增强</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>叶相相</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/hugo%E7%B3%BB%E5%88%97/"><i class="far fa-folder fa-fw"></i>Hugo系列</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-12-21">2021-12-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 10696 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-12-21">2021-12-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 10824 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 22 分钟&nbsp;<span id="/hugo_conf/" class="leancloud_visitors" data-flag-title="Hugo的文件配置和博客功能增强">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -3258,115 +3259,79 @@ busuanzi_site_offset = 100000
 </span><span class="lnt">21
 </span><span class="lnt">22
 </span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><div class="details admonition note open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-pencil-alt fa-fw"></i>注意<i class="details-icon fas fa-angle-right fa-fw"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content">一个 <strong>注意</strong> 横幅</div>
-        </div>
-    </div>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">{{&lt; admonition &gt;}}
+一个 **注意** 横幅
+{{&lt; /admonition &gt;}}
 
-<div class="details admonition abstract open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-list-ul fa-fw"></i>摘要<i class="details-icon fas fa-angle-right fa-fw"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content">一个 <strong>摘要</strong> 横幅</div>
-        </div>
-    </div>
+{{&lt; admonition abstract &gt;}}
+一个 **摘要** 横幅
+{{&lt; /admonition &gt;}}
 
-<div class="details admonition info open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-info-circle fa-fw"></i>信息<i class="details-icon fas fa-angle-right fa-fw"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content">一个 <strong>信息</strong> 横幅</div>
-        </div>
-    </div>
+{{&lt; admonition info &gt;}}
+一个 **信息** 横幅
+{{&lt; /admonition &gt;}}
 
-<div class="details admonition tip open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-lightbulb fa-fw"></i>技巧<i class="details-icon fas fa-angle-right fa-fw"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content">一个 <strong>技巧</strong> 横幅</div>
-        </div>
-    </div>
+{{&lt; admonition tip &gt;}}
+一个 **技巧** 横幅
+{{&lt; /admonition &gt;}}
 
-<div class="details admonition success open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-check-circle fa-fw"></i>成功<i class="details-icon fas fa-angle-right fa-fw"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content">一个 <strong>成功</strong> 横幅</div>
-        </div>
-    </div>
+{{&lt; admonition success &gt;}}
+一个 **成功** 横幅
+{{&lt; /admonition &gt;}}
 
-<div class="details admonition question open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-question-circle fa-fw"></i>问题<i class="details-icon fas fa-angle-right fa-fw"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content">一个 <strong>问题</strong> 横幅</div>
-        </div>
-    </div>
+{{&lt; admonition question &gt;}}
+一个 **问题** 横幅
+{{&lt; /admonition &gt;}}
 
-<div class="details admonition warning open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-exclamation-triangle fa-fw"></i>警告<i class="details-icon fas fa-angle-right fa-fw"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content">一个 <strong>警告</strong> 横幅</div>
-        </div>
-    </div>
+{{&lt; admonition warning &gt;}}
+一个 **警告** 横幅
+{{&lt; /admonition &gt;}}
 
-<div class="details admonition failure open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-times-circle fa-fw"></i>失败<i class="details-icon fas fa-angle-right fa-fw"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content">一个 <strong>失败</strong> 横幅</div>
-        </div>
-    </div>
+{{&lt; admonition failure &gt;}}
+一个 **失败** 横幅
+{{&lt; /admonition &gt;}}
 
-<div class="details admonition danger open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-skull-crossbones fa-fw"></i>危险<i class="details-icon fas fa-angle-right fa-fw"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content">一个 <strong>危险</strong> 横幅</div>
-        </div>
-    </div>
+{{&lt; admonition danger &gt;}}
+一个 **危险** 横幅
+{{&lt; /admonition &gt;}}
 
-<div class="details admonition bug open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-bug fa-fw"></i>Bug<i class="details-icon fas fa-angle-right fa-fw"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content">一个 <strong>Bug</strong> 横幅</div>
-        </div>
-    </div>
+{{&lt; admonition bug &gt;}}
+一个 **Bug** 横幅
+{{&lt; /admonition &gt;}}
 
-<div class="details admonition example open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-list-ol fa-fw"></i>示例<i class="details-icon fas fa-angle-right fa-fw"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content">一个 <strong>示例</strong> 横幅</div>
-        </div>
-    </div>
+{{&lt; admonition example &gt;}}
+一个 **示例** 横幅
+{{&lt; /admonition &gt;}}
 
-<div class="details admonition quote open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-quote-right fa-fw"></i>引用<i class="details-icon fas fa-angle-right fa-fw"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content">一个 <strong>引用</strong> 横幅</div>
-        </div>
-    </div>
+{{&lt; admonition quote &gt;}}
+一个 **引用** 横幅
+{{&lt; /admonition &gt;}}
 </code></pre></td></tr></table>
 </div>
 </div><p>效果如下：</p>

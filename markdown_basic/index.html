@@ -49,6 +49,7 @@
             <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 
                         </a><a class="menu-item" href="/tags/"> 标签 
                         </a><a class="menu-item" href="/categories/"> 分类 
+                        </a><a class="menu-item" href="/about/"> 关于 
                         </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
                         <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
                         <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
@@ -92,7 +93,7 @@
                     <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
                         取消
                     </a>
-                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
                 <i class="fas fa-adjust fa-fw"></i>
             </a></div>
     </div>
@@ -156,13 +157,13 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"># 标题1
-## 标题2
-### 标题3
-#### 标题4
-##### 标题5
-###### 标题6，最多到标题6
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="gh"># 标题1
+</span><span class="gh"></span><span class="gu">## 标题2
+</span><span class="gu">### 标题3
+</span><span class="gu">#### 标题4
+</span><span class="gu">##### 标题5
+</span><span class="gu">###### 标题6，最多到标题6
+</span></code></pre></td></tr></table>
 </div>
 </div><h2 id="2-字体">2. 字体</h2>
 <p><em>斜体</em></p>
@@ -184,13 +185,13 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">*斜体* 
-**粗体**
-~~删除线~~
-***斜体加粗体***
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown">*斜体* 
+<span class="gs">**粗体**</span>
+<span class="gd">~~删除线~~</span>
+<span class="ge">**</span>*斜体加粗体***
 ~缩小~
 ==高亮==
-&lt;u&gt;下划线&lt;/u&gt;
+<span class="p">&lt;</span><span class="nt">u</span><span class="p">&gt;</span>下划线<span class="p">&lt;/</span><span class="nt">u</span><span class="p">&gt;</span>
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="3-引用">3. 引用</h2>
@@ -207,8 +208,8 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">&gt; 引用
-&gt;&gt; 引用嵌套
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="k">&gt; </span><span class="ge">引用
+</span><span class="ge"></span>&gt;&gt; 引用嵌套
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="4-分割线">4. 分割线</h2>
@@ -223,10 +224,10 @@
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">-------
-*******
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown">-------
+<span class="ge">**</span>*****
 ---
-***
+<span class="ge">**</span>*
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="5-列表">5. 列表</h2>
@@ -244,9 +245,9 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">1. 快速排序
-2. 归并排序
-3. 冒泡排序
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="k">1.</span> 快速排序
+<span class="k">2.</span> 归并排序
+<span class="k">3.</span> 冒泡排序
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="无序列表">无序列表</h3>
@@ -267,7 +268,7 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">*/+/- 快速排序
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown">*/+/- 快速排序
 */+/- 归并排序
 */+/- 冒泡排序
 </code></pre></td></tr></table>
@@ -285,7 +286,7 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">* 一级列表
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="k">*</span> 一级列表
 *二级列表
 </code></pre></td></tr></table>
 </div>
@@ -308,7 +309,7 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">![图片名称](图片地址 &#39;&#39;图片title&#39;&#39;)
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown">![<span class="nt">图片名称</span>](<span class="na">图片地址 &#39;&#39;图片title&#39;&#39;</span>)
 图片名称就是显示在图片下面的文字，相当于对图片内容的解释，可加可不加。
 图片title是图片的标题，当鼠标移到图片上时显示的内容，可加可不加。
 </code></pre></td></tr></table>
@@ -322,7 +323,7 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">[超链接名](超链接地址 &#34;超链接title&#34;)
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown">[<span class="nt">超链接名</span>](<span class="na">超链接地址 &#34;超链接title&#34;</span>)
 title可加可不加
 </code></pre></td></tr></table>
 </div>
@@ -351,7 +352,7 @@ title可加可不加
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">| 表头 | 表头 | 表头 |
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown">| 表头 | 表头 | 表头 |
 | :----: | :----: | :----: |
 | 单元格 | 单元格 | 单元格 |
 </code></pre></td></tr></table>
@@ -364,7 +365,7 @@ title可加可不加
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">-: 设置内容和标题栏居右对齐。
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown">-: 设置内容和标题栏居右对齐。
 :- 设置内容和标题栏居左对齐。
 :-: 设置内容和标题栏居中对齐。
 </code></pre></td></tr></table>
