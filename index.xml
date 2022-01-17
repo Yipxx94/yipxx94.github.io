@@ -4,9 +4,18 @@
         <link>https://www.yexxweb.com/</link>
         <description>个人学习与记录的网站</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>Yipxx@foxmail.com (叶相相)</managingEditor>
-            <webMaster>Yipxx@foxmail.com (叶相相)</webMaster><lastBuildDate>Sun, 09 Jan 2022 20:30:51 &#43;0800</lastBuildDate>
+            <webMaster>Yipxx@foxmail.com (叶相相)</webMaster><lastBuildDate>Mon, 17 Jan 2022 21:25:05 &#43;0800</lastBuildDate>
             <atom:link href="https://www.yexxweb.com/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>C&#43;&#43; 就地建堆的方法</title>
+    <link>https://www.yexxweb.com/make_heap/</link>
+    <pubDate>Mon, 17 Jan 2022 21:25:05 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://www.yexxweb.com/make_heap/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/make_heap.png" referrerpolicy="no-referrer">
+            </div>利用C++的库函数实现O(n)的复杂度就地建堆]]></description>
+</item><item>
     <title>Nginx的安装与配置</title>
     <link>https://www.yexxweb.com/nginx_conf/</link>
     <pubDate>Sun, 09 Jan 2022 20:30:51 &#43;0800</pubDate>

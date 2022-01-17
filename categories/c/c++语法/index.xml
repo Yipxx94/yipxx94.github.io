@@ -5,6 +5,15 @@
         <description>C/C&#43;&#43;语法 - 分类 - 叶相相的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>Yipxx@foxmail.com (叶相相)</managingEditor>
             <webMaster>Yipxx@foxmail.com (叶相相)</webMaster><atom:link href="https://www.yexxweb.com/categories/c/c&#43;&#43;%E8%AF%AD%E6%B3%95/" rel="self" type="application/rss+xml" /><item>
+    <title>C&#43;&#43; 就地建堆的方法</title>
+    <link>https://www.yexxweb.com/make_heap/</link>
+    <pubDate>Mon, 17 Jan 2022 21:25:05 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://www.yexxweb.com/make_heap/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/make_heap.png" referrerpolicy="no-referrer">
+            </div>利用C++的库函数实现O(n)的复杂度就地建堆]]></description>
+</item><item>
     <title>C&#43;&#43;的Lambda表达式</title>
     <link>https://www.yexxweb.com/lambda/</link>
     <pubDate>Wed, 29 Dec 2021 21:57:51 &#43;0800</pubDate>
