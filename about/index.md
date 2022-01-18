@@ -20,7 +20,7 @@
 
 <font face="华文新魏" size=5>回首向来萧瑟处，归去，也无风雨也无晴。</font>  
 
-<font face="华文新魏" size=4>—— 苏轼 《定风波·莫听穿林打叶声》</font>
+<font face="华文新魏" size=4>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;—— 苏轼 《定风波·莫听穿林打叶声》</font>
 
 &nbsp;
 
