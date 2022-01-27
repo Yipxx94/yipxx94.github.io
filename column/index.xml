@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Columns on 叶相相的博客</title>
+    <link>https://www.yexxweb.com/column/</link>
+    <description>Recent content in Columns on 叶相相的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <managingEditor>Yipxx@foxmail.com (叶相相)</managingEditor>
+    <webMaster>Yipxx@foxmail.com (叶相相)</webMaster><atom:link href="https://www.yexxweb.com/column/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>音乐</title>
+      <link>https://www.yexxweb.com/column/music/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>Yipxx@foxmail.com (叶相相)</author>
+      <guid>https://www.yexxweb.com/column/music/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

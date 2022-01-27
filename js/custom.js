@@ -1,5 +1,5 @@
 /* 控制台输出 */
-/*
+
 if(window.console) {
     var cons = console; 
     if(cons) { 
@@ -11,7 +11,7 @@ if(window.console) {
         cons.groupEnd();
     }
 }
-*/
+
 
 /* 返回随机颜色 */
 function randomColor() {

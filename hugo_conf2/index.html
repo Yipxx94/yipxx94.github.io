@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Hugo的文件配置和博客功能增强（二） - 叶相相的博客</title><meta name="Description" content="博客功能增强与美化（持续更新中...）"><meta property="og:title" content="Hugo的文件配置和博客功能增强（二）" />
+<meta property="og:description" content="博客功能增强与美化（持续更新中...）" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.yexxweb.com/hugo_conf2/" /><meta property="og:image" content="https://www.yexxweb.com/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-01-27T23:40:58+08:00" />
+<meta property="article:modified_time" content="2022-01-27T23:40:58+08:00" /><meta property="og:site_name" content="叶相相的博客" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.yexxweb.com/logo.png"/>
+
+<meta name="twitter:title" content="Hugo的文件配置和博客功能增强（二）"/>
+<meta name="twitter:description" content="博客功能增强与美化（持续更新中...）"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://www.yexxweb.com/hugo_conf2/" /><link rel="prev" href="https://www.yexxweb.com/make_heap/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Hugo的文件配置和博客功能增强（二）",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/www.yexxweb.com\/hugo_conf2\/"
+        },"image": ["https:\/\/www.yexxweb.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Hugo","wordcount":  4431 ,
+        "url": "https:\/\/www.yexxweb.com\/hugo_conf2\/","datePublished": "2022-01-27T23:40:58+08:00","dateModified": "2022-01-27T23:40:58+08:00","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": "https:\/\/www.yexxweb.com\/images\/header.png"},"author": {
+                "@type": "Person",
+                "name": "叶相相"
+            },"description": "博客功能增强与美化（持续更新中...）"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="叶相相的博客"><span class="header-title-pre"><i class='fas fa-book-reader fa-fw'></i></span>Yipxx</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"><i class='fas fa-book'></i> 文章 
+                        </a><a class="menu-item" href="/tags/"><i class='fas fa-tags'></i> 标签 
+                        </a><a class="menu-item" href="/categories/"><i class='fas fa-calendar-alt'></i> 分类 
+                        </a>
+                        <div class="dropdown">
+                            <a href="javascript:void(0);" class="menu-item menu-more dropbtn" title="" ><i class='fas fa-columns'></i> 专栏 
+                            </a>
+                            <div class="menu-more-content dropdown-content"><a href="/column/music/" title="" ><i class='fas fa-music'></i> 音乐 </a></div>
+                        </div>
+                    
+                        <div class="dropdown">
+                            <a href="javascript:void(0);" class="menu-item menu-more dropbtn" title="" ><i class='fas fa-gamepad'></i> 游戏 
+                            </a>
+                            <div class="menu-more-content dropdown-content"><a href="/games/tetris/" title="" ><i class='fas fa-cubes'></i> 俄罗斯方块 </a><a href="/games/dino/" title="" ><i class='fas fa-dragon'></i> 恐龙剑 </a><a href="/games/catch-the-cat/" title="" ><i class='fas fa-cat'></i> 抓住小猫 </a></div>
+                        </div>
+                    <a class="menu-item" href="/about/"><i class='far fa-window-restore'></i> 关于 
+                        </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="叶相相的博客"><span class="header-title-pre"><i class='fas fa-book-reader fa-fw'></i></span>Yipxx</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/"><i class='fas fa-book'></i> 文章 
+					</a><a class="menu-item" href="/tags/"><i class='fas fa-tags'></i> 标签 
+					</a><a class="menu-item" href="/categories/"><i class='fas fa-calendar-alt'></i> 分类 
+					</a>
+					<div class="dropdown">
+						<a href="javascript:void(0);" class="menu-item menu-more dropbtn" title="" ><i class='fas fa-columns'></i> 专栏 
+						</a>
+						<div class="menu-more-content dropdown-content"><a href="/column/music/" title="" ><i class='fas fa-music'></i> 音乐 </a></div>
+					</div>
+				
+					<div class="dropdown">
+						<a href="javascript:void(0);" class="menu-item menu-more dropbtn" title="" ><i class='fas fa-gamepad'></i> 游戏 
+						</a>
+						<div class="menu-more-content dropdown-content"><a href="/games/tetris/" title="" ><i class='fas fa-cubes'></i> 俄罗斯方块 </a><a href="/games/dino/" title="" ><i class='fas fa-dragon'></i> 恐龙剑 </a><a href="/games/catch-the-cat/" title="" ><i class='fas fa-cat'></i> 抓住小猫 </a></div>
+					</div>
+				<a class="menu-item" href="/about/"><i class='far fa-window-restore'></i> 关于 
+					</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Hugo的文件配置和博客功能增强（二）</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>叶相相</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/hugo%E7%B3%BB%E5%88%97/"><i class="far fa-folder fa-fw"></i>Hugo系列</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-01-27">2022-01-27</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 4431 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 9 分钟&nbsp;<span id="/hugo_conf2/" class="leancloud_visitors" data-flag-title="Hugo的文件配置和博客功能增强（二）">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/hugo-image4.png"
+        data-srcset="/images/hugo-image4.png, /images/hugo-image4.png 1.5x, /images/hugo-image4.png 2x"
+        data-sizes="auto"
+        alt="/images/hugo-image4.png"
+        title="博客功能增强与美化（持续更新中...）" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#添加全局的cdn变量">添加全局的<code>CDN</code>变量</a>
+      <ul>
+        <li><a href="#在md文件中使用">在md文件中使用</a></li>
+        <li><a href="#在模板文件中使用">在模板文件中使用</a></li>
+        <li><a href="#在javascript文件中使用">在JavaScript文件中使用</a></li>
+      </ul>
+    </li>
+    <li><a href="#valine评论功能添加">Valine评论功能添加</a>
+      <ul>
+        <li><a href="#leancloud的使用">LeanCloud的使用</a></li>
+      </ul>
+    </li>
+    <li><a href="#添加站点运行时间">添加站点运行时间</a></li>
+    <li><a href="#添加不蒜子网站计数">添加不蒜子网站计数</a></li>
+    <li><a href="#主题自带的admonition样式">主题自带的admonition样式</a></li>
+    <li><a href="#为图标添加动画效果">为图标添加动画效果</a></li>
+    <li><a href="#添加文章打赏功能">添加文章打赏功能</a>
+      <ul>
+        <li><a href="#配置文件添加相关变量">配置文件添加相关变量</a></li>
+        <li><a href="#新建模板文件rewardhtml">新建模板文件<code>reward.html</code></a></li>
+        <li><a href="#修改模板文件">修改模板文件</a></li>
+        <li><a href="#添加css代码">添加CSS代码</a></li>
+      </ul>
+    </li>
+    <li><a href="#菜单栏支持子菜单">菜单栏支持子菜单</a>
+      <ul>
+        <li><a href="#修改模板代码">修改模板代码</a></li>
+        <li><a href="#添加css样式">添加CSS样式</a></li>
+        <li><a href="#配置子菜单">配置子菜单</a></li>
+      </ul>
+    </li>
+    <li><a href="#如何添加自定义的页面">如何添加自定义的页面</a></li>
+    <li><a href="#背景添加动态线条效果">背景添加动态线条效果</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="添加全局的cdn变量">添加全局的<code>CDN</code>变量</h2>
+<p>对于一些静态资源，比如图片、音乐文件、第三方库等，如果有自己的cdn或者图床等，可以在站点配置文件自定义一个<code>cdn</code>变量，如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">[params]
+  # cdn变量，末尾不需要加/
+  cdnPrefix = &#34;http://xxxx&#34;
+</code></pre></td></tr></table>
+</div>
+</div><p>默认的 CDN 数据文件位于<code>themes/LoveIt/assets/data/cdn/</code>目录，可以在你的项目下相同路径存放你自己的数据文件：<code>assets/data/cdn/</code>。接下来就可以在你需要的地方使用该变量，大概有如下3种用法。</p>
+<h3 id="在md文件中使用">在md文件中使用</h3>
+<p>在md文件中可以用内置的<strong>shortcodes</strong>来使用该变量：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">{{&lt; param cdnPrefix &gt;}}
+
+![avatar.jpg]({{&lt; param cdnPrefix &gt;}}/images/avatar.jpg)
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="在模板文件中使用">在模板文件中使用</h3>
+<p>在layouts目录下有很多html文件，这些是用来渲染站点的模板文件，可以用Hugo的语法来引入该变量：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">{{ .Site.Params.cdnPrefix }}
+</code></pre></td></tr></table>
+</div>
+</div><p>如果在一个模板文件里有多个地方使用到该变量，可以定义一个局部变量来使用：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">{{- $cdn := .Site.Params.cdnPrefix -}}
+
+/* 使用局部变量 */
+{{ $cdn }}
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="在javascript文件中使用">在JavaScript文件中使用</h3>
+<p>由于JavaScript文件中不能使用上述的<strong>shortcodes</strong>或Hugo语法来引用变量，只能通过在<code>\layouts\partials\assets.html</code>中用JavaScript语法来引入该变量，如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">/* 这是可以应用于JavaScript文件的全局变量 */
+&lt;script&gt;
+	/* cdn for some static resources */
+	var $cdnPrefix = {{ .Site.Params.cdnPrefix }};
+&lt;/script&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>这样就可以在其他被引入的JavaScript文件中使用这个<code>$cdnPrefix</code>变量：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">$(function () {
+	$.backstretch([
+		  $cdnPrefix + &#34;/images/background/saber1.jpg&#34;
+	], { duration: 60000, fade: 1500 });
+});
+</code></pre></td></tr></table>
+</div>
+</div><p>如果是想在模板文件里引入某个自定义的JavaScript文件，如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">{{- /* 自定义的js文件 */ -}}
+&lt;script type=&#34;text/javascript&#34; src=&#34;{{ .Site.Params.cdnPrefix }}/js/custom.js&#34;&gt;&lt;/script&gt;
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="valine评论功能添加">Valine评论功能添加</h2>
+<ol>
+<li>
+<p>把<code>\themes\LoveIt\layouts\partials\comment.html</code>拷贝到站点根目录下的<code>\layouts\partials\comment.html</code>。</p>
+</li>
+<li>
+<p>打开拷贝后的<code>comment.html</code>，找到<code>Valine</code>相关的代码，把<code>{{- if $valine.enable -}}</code>和<code>{{- end -}}</code>之间的代码改成如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">{{- if $valine.enable -}}
+    &lt;div id=&#34;valine&#34; class=&#34;comment&#34;&gt;&lt;/div&gt;
+    &lt;script src=&#34;//unpkg.com/valine@latest/dist/Valine.min.js&#34;&gt;&lt;/script&gt;
+
+	&lt;script type=&#34;text/javascript&#34;&gt;
+		new Valine({
+			el: &#39;#valine&#39; ,
+			appId: &#39;{{ $valine.appId }}&#39;,
+			appKey: &#39;{{ $valine.appKey }}&#39;,
+			notify: &#39;{{ $valine.notify }}&#39;, 
+			verify: &#39;{{ $valine.verify }}&#39;, 
+			avatar:&#39;{{ $valine.avatar }}&#39;, 
+			placeholder: &#39;{{ $valine.placeholder }}&#39;,
+			visitor: &#39;{{ $valine.visitor }}&#39;
+		});
+	&lt;/script&gt;
+{{- end -}}
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<p>之后在站点配置文件里启用<code>valine</code>，然后填上从<code>LeanCloud</code>的应用中得到的<code>appId</code>和<code>appKey</code>就可以用了。并且在使用了<code>valine</code>的同时，还可以顺带启用阅读次数的统计功能。</p>
+<h3 id="leancloud的使用">LeanCloud的使用</h3>
+<ol>
+<li>
+<p>在<code>LeanCloud</code>官网注册账号；</p>
+</li>
+<li>
+<p>创建一个应用，然后进入该应用的配置，选择设置 -&gt; 应用凭证，然后复制该应用的<code>AppId</code>和<code>AppKey</code>到站点配置文件里;</p>
+</li>
+<li>
+<p>选择设置 -&gt; 安全中心，在Web安全域名中输入站点域名，或<code>http://localhost:1313</code>；</p>
+</li>
+<li>
+<p>选择数据存储 -&gt; 结构化数据，创建两个新的<code>Class</code>，<code>Comment</code>（评论会存在这里）和<code>Counter</code>（阅读次数统计）。</p>
+</li>
+</ol>
+<h2 id="添加站点运行时间">添加站点运行时间</h2>
+<p>将<code>\themes\LoveIt\layouts\partials\footer.html</code>拷贝到<code>\layouts\partials\footer.html</code>，打开拷贝后的文件，在<code>&lt;div class=&quot;footer-container&quot;&gt;</code>的下方添加如下代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">&lt;div class=&#34;footer-line&#34;&gt;
+	&lt;span id=&#34;run-time&#34;&gt;&lt;/span&gt;
+&lt;/div&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>然后在<code>custom.js</code>中添加如下代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">/* 站点运行时间 */
+function runtime() {
+	window.setTimeout(&#34;runtime()&#34;, 1000);
+	/* 请修改这里的起始时间 */
+    let startTime = new Date(&#39;12/10/2021 21:00:00&#39;);
+    let endTime = new Date();
+    let usedTime = endTime - startTime;
+    let days = Math.floor(usedTime / (24 * 3600 * 1000));
+    let leavel = usedTime % (24 * 3600 * 1000);
+    let hours = Math.floor(leavel / (3600 * 1000));
+    let leavel2 = leavel % (3600 * 1000);
+    let minutes = Math.floor(leavel2 / (60 * 1000));
+    let leavel3 = leavel2 % (60 * 1000);
+    let seconds = Math.floor(leavel3 / (1000));
+    let runbox = document.getElementById(&#39;run-time&#39;);
+    runbox.innerHTML = &#39;本站已运行&lt;i class=&#34;far fa-clock fa-fw&#34;&gt;&lt;/i&gt; &#39;
+        + ((days &lt; 10) ? &#39;0&#39; : &#39;&#39;) + days + &#39; 天 &#39;
+        + ((hours &lt; 10) ? &#39;0&#39; : &#39;&#39;) + hours + &#39; 时 &#39;
+        + ((minutes &lt; 10) ? &#39;0&#39; : &#39;&#39;) + minutes + &#39; 分 &#39;
+        + ((seconds &lt; 10) ? &#39;0&#39; : &#39;&#39;) + seconds + &#39; 秒 &#39;;
+}
+runtime();
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="添加不蒜子网站计数">添加不蒜子网站计数</h2>
+<p>在根目录的<code>config.toml</code>文件中加入如下代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">[params]
+...
+# 以下为需添加内容 #
+# busuanzi
+busuanzi = true
+busuanzi_site_offset = 100000
+</code></pre></td></tr></table>
+</div>
+</div><p>打开<code>\layouts\partials\footer.html</code>，添加如下代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">{{- if ne .Site.Params.footer.enable false -}}
+    &lt;footer class=&#34;footer&#34;&gt;
+        &lt;div class=&#34;footer-container&#34;&gt;
+            ...
+            &lt;!-- 以下为需添加内容 --&gt;
+			&lt;script async src=&#34;//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&#34;&gt;
+			&lt;/script&gt;
+            &lt;span id=&#34;busuanzi_container_site_pv&#34;&gt;
+                本站访问量：&lt;span id=&#34;busuanzi_value_site_pv&#34;&gt;&lt;/span&gt;次
+            &lt;/span&gt; | 
+            &lt;span id=&#34;busuanzi_container_site_uv&#34;&gt;
+                您是本站第 &lt;span id=&#34;busuanzi_value_site_uv&#34;&gt;&lt;/span&gt; 位访问者
+            &lt;/span&gt;
+            &lt;!-- 以上为需添加内容 --&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+{{- end -}}
+</code></pre></td></tr></table>
+</div>
+</div><p>如果需要更多的网站统计功能，可参考<a href="http://ibruce.info/2015/04/04/busuanzi/" target="_blank" rel="noopener noreffer">不蒜子博客</a>。</p>
+<h2 id="主题自带的admonition样式">主题自带的admonition样式</h2>
+<p><code>LoveIt</code>提供了<code>admonition</code><strong>shortcode</strong>，支持<strong>12</strong>种样式，可以在页面中插入提示的横幅。代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">{{&lt; admonition &gt;}}
+一个 **注意** 横幅
+{{&lt; /admonition &gt;}}
+
+{{&lt; admonition abstract &gt;}}
+一个 **摘要** 横幅
+{{&lt; /admonition &gt;}}
+
+{{&lt; admonition info &gt;}}
+一个 **信息** 横幅
+{{&lt; /admonition &gt;}}
+
+{{&lt; admonition tip &gt;}}
+一个 **技巧** 横幅
+{{&lt; /admonition &gt;}}
+
+{{&lt; admonition success &gt;}}
+一个 **成功** 横幅
+{{&lt; /admonition &gt;}}
+
+{{&lt; admonition question &gt;}}
+一个 **问题** 横幅
+{{&lt; /admonition &gt;}}
+
+{{&lt; admonition warning &gt;}}
+一个 **警告** 横幅
+{{&lt; /admonition &gt;}}
+
+{{&lt; admonition failure &gt;}}
+一个 **失败** 横幅
+{{&lt; /admonition &gt;}}
+
+{{&lt; admonition danger &gt;}}
+一个 **危险** 横幅
+{{&lt; /admonition &gt;}}
+
+{{&lt; admonition bug &gt;}}
+一个 **Bug** 横幅
+{{&lt; /admonition &gt;}}
+
+{{&lt; admonition example &gt;}}
+一个 **示例** 横幅
+{{&lt; /admonition &gt;}}
+
+{{&lt; admonition quote &gt;}}
+一个 **引用** 横幅
+{{&lt; /admonition &gt;}}
+</code></pre></td></tr></table>
+</div>
+</div><p>效果如下：</p>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>注意<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">一个 <strong>注意</strong> 横幅</div>
+        </div>
+    </div>
+<div class="details admonition abstract open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-list-ul fa-fw"></i>摘要<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">一个 <strong>摘要</strong> 横幅</div>
+        </div>
+    </div>
+<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw"></i>信息<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">一个 <strong>信息</strong> 横幅</div>
+        </div>
+    </div>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>技巧<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">一个 <strong>技巧</strong> 横幅</div>
+        </div>
+    </div>
+<div class="details admonition success open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-check-circle fa-fw"></i>成功<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">一个 <strong>成功</strong> 横幅</div>
+        </div>
+    </div>
+<div class="details admonition question open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-question-circle fa-fw"></i>问题<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">一个 <strong>问题</strong> 横幅</div>
+        </div>
+    </div>
+<div class="details admonition warning open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-exclamation-triangle fa-fw"></i>警告<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">一个 <strong>警告</strong> 横幅</div>
+        </div>
+    </div>
+<div class="details admonition failure open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-times-circle fa-fw"></i>失败<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">一个 <strong>失败</strong> 横幅</div>
+        </div>
+    </div>
+<div class="details admonition danger open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-skull-crossbones fa-fw"></i>危险<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">一个 <strong>危险</strong> 横幅</div>
+        </div>
+    </div>
+<div class="details admonition bug open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-bug fa-fw"></i>Bug<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">一个 <strong>Bug</strong> 横幅</div>
+        </div>
+    </div>
+<div class="details admonition example open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-list-ol fa-fw"></i>示例<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">一个 <strong>示例</strong> 横幅</div>
+        </div>
+    </div>
+<div class="details admonition quote open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-quote-right fa-fw"></i>引用<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">一个 <strong>引用</strong> 横幅</div>
+        </div>
+    </div>
+<h2 id="为图标添加动画效果">为图标添加动画效果</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">&lt;div class=&#34;fa-3x&#34;&gt;
+  &lt;i class=&#34;fas fa-spinner fa-spin&#34;&gt;&lt;/i&gt;
+  &lt;i class=&#34;fas fa-circle-notch fa-spin&#34;&gt;&lt;/i&gt;
+  &lt;i class=&#34;fas fa-sync fa-spin&#34;&gt;&lt;/i&gt;
+  &lt;i class=&#34;fas fa-cog fa-spin&#34;&gt;&lt;/i&gt;
+  &lt;i class=&#34;fas fa-spinner fa-pulse&#34;&gt;&lt;/i&gt;
+  &lt;i class=&#34;fas fa-stroopwafel fa-spin&#34;&gt;&lt;/i&gt;
+&lt;/div&gt;
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="添加文章打赏功能">添加文章打赏功能</h2>
+<h3 id="配置文件添加相关变量">配置文件添加相关变量</h3>
+<p>在<code>config.toml</code>添加如下变量：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">  [params.reward]                           # 文章打赏
+    enable = true
+    wechat = &#34;/images/wechat.png&#34;           # 微信二维码
+    alipay = &#34;/images/alipay.png&#34;           # 支付宝二维码
+</code></pre></td></tr></table>
+</div>
+</div><p>这里是对全局文章生效，也可以在每篇文章的文件头里添加如下变量来控制是否启用该功能：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">reward: false
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="新建模板文件rewardhtml">新建模板文件<code>reward.html</code></h3>
+<p>新建模板文件<code>/layouts/partials/single/reward.html</code>，内容如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">{{ if or .Params.reward (and .Site.Params.reward.enable (ne .Params.reward false)) -}}
+&lt;div class=&#34;post-reward&#34;&gt;
+  &lt;input type=&#34;checkbox&#34; name=&#34;reward&#34; id=&#34;reward&#34; hidden /&gt;
+  &lt;label class=&#34;reward-button&#34; for=&#34;reward&#34;&gt;{{ T &#34;reward&#34; }}&lt;/label&gt;
+  &lt;div class=&#34;qr-code&#34;&gt;
+    {{ $qrCode := .Site.Params.reward }}
+	{{- $cdnPrefix := .Site.Params.cdnPrefix -}}
+    {{ with $qrCode.wechat -}}
+      &lt;label class=&#34;qr-code-image&#34; for=&#34;reward&#34;&gt;
+        &lt;img class=&#34;image&#34; src=&#34;{{ $cdnPrefix }}{{ . }}&#34;&gt;
+        &lt;span&gt;{{ T &#34;rewardWechat&#34; }}&lt;/span&gt;
+      &lt;/label&gt;
+    {{- end }}
+    {{ with $qrCode.alipay -}}
+      &lt;label class=&#34;qr-code-image&#34; for=&#34;reward&#34;&gt;
+        &lt;img class=&#34;image&#34; src=&#34;{{ $cdnPrefix }}{{ . }}&#34;&gt;
+        &lt;span&gt;{{ T &#34;rewardAlipay&#34; }}&lt;/span&gt;
+      &lt;/label&gt;
+    {{- end }}
+  &lt;/div&gt;
+&lt;/div&gt;
+{{- end }}
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="修改模板文件">修改模板文件</h3>
+<p>将<code>/themes/LoveIt/layouts/posts/single.html</code>拷贝到<code>/layouts/posts/single.html</code>，打开拷贝后的文件，找到如下内容：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">{{- /* Content */ -}}
+&lt;div class=&#34;content&#34; id=&#34;content&#34;&gt;
+    {{- dict &#34;Content&#34; .Content &#34;Ruby&#34; $params.ruby &#34;Fraction&#34; $params.fraction &#34;Fontawesome&#34; $params.fontawesome | partial &#34;function/content.html&#34; | safeHTML -}}
+&lt;/div&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>修改成如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">{{- /* Content */ -}}
+&lt;div class=&#34;content&#34; id=&#34;content&#34;&gt;
+    {{- dict &#34;Content&#34; .Content &#34;Ruby&#34; $params.ruby &#34;Fraction&#34; $params.fraction &#34;Fontawesome&#34; $params.fontawesome | partial &#34;function/content.html&#34; | safeHTML -}}
+
+	{{- /* Reward */ -}}
+	{{- partial &#34;single/reward.html&#34; . -}}
+&lt;/div&gt;
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="添加css代码">添加CSS代码</h3>
+<p>在自定义的<code>_custom.scss</code>里添加如下样式：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">/* 打赏 */
+article .post-reward {
+    margin-top: 20px;
+    padding-top: 10px;
+    text-align: center;
+    border-top: 1px dashed #e6e6e6
+}
+
+article .post-reward .reward-button {
+    margin: 15px 0;
+    padding: 3px 7px;
+    display: inline-block;
+    color: #c05b4d;
+    border: 1px solid #c05b4d;
+    border-radius: 5px;
+    cursor: pointer
+}
+
+article .post-reward .reward-button:hover {
+    color: #fefefe;
+    background-color: #c05b4d;
+    transition: .5s
+}
+
+article .post-reward #reward:checked~.qr-code {
+    display: block
+}
+
+article .post-reward #reward:checked~.reward-button {
+    display: none
+}
+
+article .post-reward .qr-code {
+    display: none
+}
+
+article .post-reward .qr-code .qr-code-image {
+    display: inline-block;
+    min-width: 200px;
+    width: 40%;
+    margin-top: 15px
+}
+
+article .post-reward .qr-code .qr-code-image span {
+    display: inline-block;
+    width: 100%;
+    margin: 8px 0
+}
+
+article .post-reward .qr-code .image {
+    width: 200px;
+    height: 200px
+}
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="菜单栏支持子菜单">菜单栏支持子菜单</h2>
+<h3 id="修改模板代码">修改模板代码</h3>
+<p>将主题的<code>/themes/LoveIt/layouts/partials/header.html</code>拷贝一份到<code>layouts/partials/header.html</code>，找到如下代码，一共有两个地方，分别对应<strong>网页端</strong>和<strong>手机端</strong>：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="err">{{</span><span class="o">-</span><span class="w"> </span><span class="n">range</span><span class="w"> </span><span class="p">.</span><span class="n">Site</span><span class="p">.</span><span class="n">Menus</span><span class="p">.</span><span class="n">main</span><span class="w"> </span><span class="o">-</span><span class="err">}}</span><span class="w">
+</span><span class="w">    </span><span class="err">{{</span><span class="o">-</span><span class="w"> </span><span class="err">$</span><span class="n">url</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">URL</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">relLangURL</span><span class="w"> </span><span class="o">-</span><span class="err">}}</span><span class="w">
+</span><span class="w">    </span><span class="err">{{</span><span class="o">-</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="p">.</span><span class="n">Page</span><span class="w"> </span><span class="o">-</span><span class="err">}}</span><span class="w">
+</span><span class="w">        </span><span class="err">{{</span><span class="o">-</span><span class="w"> </span><span class="err">$</span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">RelPermalink</span><span class="w"> </span><span class="o">-</span><span class="err">}}</span><span class="w">
+</span><span class="w">    </span><span class="err">{{</span><span class="o">-</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="o">-</span><span class="err">}}</span><span class="w">
+</span><span class="w">    </span><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">class</span><span class="o">=</span><span class="s2">&#34;menu-item{{ if $.IsMenuCurrent `main` . | or ($.HasMenuCurrent `main` .) | or (eq $.RelPermalink $url) }} active{{ end }}&#34;</span><span class="w"> </span><span class="n">href</span><span class="o">=</span><span class="s2">&#34;{{ $url }}&#34;</span><span class="err">{{</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="p">.</span><span class="n">Title</span><span class="w"> </span><span class="err">}}</span><span class="w"> </span><span class="n">title</span><span class="o">=</span><span class="s2">&#34;{{ . }}&#34;</span><span class="err">{{</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="err">}}{{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">urls</span><span class="p">.</span><span class="n">Parse</span><span class="w"> </span><span class="err">$</span><span class="n">url</span><span class="p">).</span><span class="n">Host</span><span class="w"> </span><span class="err">}}</span><span class="w"> </span><span class="n">rel</span><span class="o">=</span><span class="s2">&#34;noopener noreffer&#34;</span><span class="w"> </span><span class="n">target</span><span class="o">=</span><span class="s2">&#34;_blank&#34;</span><span class="err">{{</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="err">}}</span><span class="o">&gt;</span><span class="w">
+</span><span class="w">        </span><span class="err">{{</span><span class="o">-</span><span class="w"> </span><span class="p">.</span><span class="n">Pre</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">safeHTML</span><span class="w"> </span><span class="err">}}</span><span class="w"> </span><span class="err">{{</span><span class="w"> </span><span class="p">.</span><span class="n">Name</span><span class="w"> </span><span class="err">}}</span><span class="w"> </span><span class="err">{{</span><span class="w"> </span><span class="p">.</span><span class="n">Post</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">safeHTML</span><span class="w"> </span><span class="o">-</span><span class="err">}}</span><span class="w">
+</span><span class="w">    </span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span><span class="w">
+</span><span class="w"></span><span class="err">{{</span><span class="o">-</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="o">-</span><span class="err">}}</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><p>将上述代码改为如下代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="err">{{</span><span class="o">-</span><span class="w"> </span><span class="n">range</span><span class="w"> </span><span class="p">.</span><span class="n">Site</span><span class="p">.</span><span class="n">Menus</span><span class="p">.</span><span class="n">main</span><span class="w"> </span><span class="o">-</span><span class="err">}}</span><span class="w">
+</span><span class="w">	</span><span class="err">{{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">.</span><span class="n">HasChildren</span><span class="w"> </span><span class="err">}}</span><span class="w">
+</span><span class="w">		</span><span class="o">&lt;</span><span class="k">div</span><span class="w"> </span><span class="n">class</span><span class="o">=</span><span class="s2">&#34;dropdown&#34;</span><span class="o">&gt;</span><span class="w">
+</span><span class="w">			</span><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="err">{{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">.</span><span class="n">URL</span><span class="w"> </span><span class="err">}}</span><span class="n">href</span><span class="o">=</span><span class="s2">&#34;{{ .URL }}&#34;</span><span class="err">{{</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="err">}}</span><span class="n">href</span><span class="o">=</span><span class="s2">&#34;javascript:void(0);&#34;</span><span class="err">{{</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="err">}}</span><span class="w"> </span><span class="n">class</span><span class="o">=</span><span class="s2">&#34;menu-item menu-more dropbtn&#34;</span><span class="w"> </span><span class="n">title</span><span class="o">=</span><span class="s2">&#34;{{ .Title }}&#34;</span><span class="w"> </span><span class="err">{{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">eq</span><span class="w"> </span><span class="p">.</span><span class="n">Post</span><span class="w"> </span><span class="s2">&#34;_blank&#34;</span><span class="w"> </span><span class="err">}}</span><span class="n">target</span><span class="o">=</span><span class="s2">&#34;_blank&#34;</span><span class="w"> </span><span class="n">rel</span><span class="o">=</span><span class="s2">&#34;noopener&#34;</span><span class="err">{{</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="err">}}</span><span class="o">&gt;</span><span class="w">
+</span><span class="w">				</span><span class="err">{{</span><span class="o">-</span><span class="w"> </span><span class="p">.</span><span class="n">Pre</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">safeHTML</span><span class="w"> </span><span class="err">}}</span><span class="w"> </span><span class="err">{{</span><span class="w"> </span><span class="p">.</span><span class="n">Name</span><span class="w"> </span><span class="err">}}</span><span class="w"> </span><span class="err">{{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">ne</span><span class="w"> </span><span class="p">.</span><span class="n">Post</span><span class="w"> </span><span class="s2">&#34;_blank&#34;</span><span class="w"> </span><span class="err">}}{{</span><span class="w"> </span><span class="p">.</span><span class="n">Post</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">safeHTML</span><span class="w"> </span><span class="o">-</span><span class="err">}}{{</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="err">}}</span><span class="w">
+</span><span class="w">			</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span><span class="w">
+</span><span class="w">			</span><span class="o">&lt;</span><span class="k">div</span><span class="w"> </span><span class="n">class</span><span class="o">=</span><span class="s2">&#34;menu-more-content dropdown-content&#34;</span><span class="o">&gt;</span><span class="w">
+</span><span class="w">				</span><span class="err">{{</span><span class="o">-</span><span class="w"> </span><span class="n">range</span><span class="w"> </span><span class="p">.</span><span class="n">Children</span><span class="w"> </span><span class="o">-</span><span class="err">}}</span><span class="w">
+</span><span class="w">					</span><span class="err">{{</span><span class="o">-</span><span class="w"> </span><span class="err">$</span><span class="n">url</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">URL</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">relLangURL</span><span class="w"> </span><span class="o">-</span><span class="err">}}</span><span class="w">
+</span><span class="w">					</span><span class="err">{{</span><span class="o">-</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="p">.</span><span class="n">Page</span><span class="w"> </span><span class="o">-</span><span class="err">}}</span><span class="w">
+</span><span class="w">						</span><span class="err">{{</span><span class="o">-</span><span class="w"> </span><span class="err">$</span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">RelPermalink</span><span class="w"> </span><span class="o">-</span><span class="err">}}</span><span class="w">
+</span><span class="w">					</span><span class="err">{{</span><span class="o">-</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="o">-</span><span class="err">}}</span><span class="w">
+</span><span class="w">						</span><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">href</span><span class="o">=</span><span class="s2">&#34;{{ $url }}&#34;</span><span class="w"> </span><span class="n">title</span><span class="o">=</span><span class="s2">&#34;{{ .Title }}&#34;</span><span class="w"> </span><span class="err">{{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">eq</span><span class="w"> </span><span class="p">.</span><span class="n">Post</span><span class="w"> </span><span class="s2">&#34;_blank&#34;</span><span class="w"> </span><span class="err">}}</span><span class="n">target</span><span class="o">=</span><span class="s2">&#34;_blank&#34;</span><span class="w"> </span><span class="n">rel</span><span class="o">=</span><span class="s2">&#34;noopener&#34;</span><span class="err">{{</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="err">}}</span><span class="o">&gt;</span><span class="err">{{</span><span class="o">-</span><span class="w"> </span><span class="p">.</span><span class="n">Pre</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">safeHTML</span><span class="w"> </span><span class="err">}}</span><span class="w"> </span><span class="err">{{</span><span class="w"> </span><span class="p">.</span><span class="n">Name</span><span class="w"> </span><span class="err">}}</span><span class="w"> </span><span class="err">{{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">ne</span><span class="w"> </span><span class="p">.</span><span class="n">Post</span><span class="w"> </span><span class="s2">&#34;_blank&#34;</span><span class="w"> </span><span class="err">}}{{</span><span class="w"> </span><span class="p">.</span><span class="n">Post</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">safeHTML</span><span class="w"> </span><span class="o">-</span><span class="err">}}{{</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="err">}}</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span><span class="w">
+</span><span class="w">				</span><span class="err">{{</span><span class="o">-</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="o">-</span><span class="err">}}</span><span class="w">
+</span><span class="w">			</span><span class="o">&lt;/</span><span class="k">div</span><span class="o">&gt;</span><span class="w">
+</span><span class="w">		</span><span class="o">&lt;/</span><span class="k">div</span><span class="o">&gt;</span><span class="w">
+</span><span class="w">	</span><span class="err">{{</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="err">}}</span><span class="w">
+</span><span class="w">		</span><span class="err">{{</span><span class="o">-</span><span class="w"> </span><span class="err">$</span><span class="n">url</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">URL</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">relLangURL</span><span class="w"> </span><span class="o">-</span><span class="err">}}</span><span class="w">
+</span><span class="w">		</span><span class="err">{{</span><span class="o">-</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="p">.</span><span class="n">Page</span><span class="w"> </span><span class="o">-</span><span class="err">}}</span><span class="w">
+</span><span class="w">			</span><span class="err">{{</span><span class="o">-</span><span class="w"> </span><span class="err">$</span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">RelPermalink</span><span class="w"> </span><span class="o">-</span><span class="err">}}</span><span class="w">
+</span><span class="w">		</span><span class="err">{{</span><span class="o">-</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="o">-</span><span class="err">}}</span><span class="w">
+</span><span class="w">		</span><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">class</span><span class="o">=</span><span class="s2">&#34;menu-item{{ if $.IsMenuCurrent `main` . | or ($.HasMenuCurrent `main` .) | or (eq $.RelPermalink $url) }} active{{ end }}&#34;</span><span class="w"> </span><span class="n">href</span><span class="o">=</span><span class="s2">&#34;{{ $url }}&#34;</span><span class="err">{{</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="p">.</span><span class="n">Title</span><span class="w"> </span><span class="err">}}</span><span class="w"> </span><span class="n">title</span><span class="o">=</span><span class="s2">&#34;{{ . }}&#34;</span><span class="err">{{</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="err">}}{{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">urls</span><span class="p">.</span><span class="n">Parse</span><span class="w"> </span><span class="err">$</span><span class="n">url</span><span class="p">).</span><span class="n">Host</span><span class="w"> </span><span class="err">}}</span><span class="w"> </span><span class="n">rel</span><span class="o">=</span><span class="s2">&#34;noopener noreffer&#34;</span><span class="w"> </span><span class="n">target</span><span class="o">=</span><span class="s2">&#34;_blank&#34;</span><span class="err">{{</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="err">}}</span><span class="o">&gt;</span><span class="w">
+</span><span class="w">			</span><span class="err">{{</span><span class="o">-</span><span class="w"> </span><span class="p">.</span><span class="n">Pre</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">safeHTML</span><span class="w"> </span><span class="err">}}</span><span class="w"> </span><span class="err">{{</span><span class="w"> </span><span class="p">.</span><span class="n">Name</span><span class="w"> </span><span class="err">}}</span><span class="w"> </span><span class="err">{{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">ne</span><span class="w"> </span><span class="p">.</span><span class="n">Post</span><span class="w"> </span><span class="s2">&#34;_blank&#34;</span><span class="w"> </span><span class="err">}}{{</span><span class="w"> </span><span class="p">.</span><span class="n">Post</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">safeHTML</span><span class="w"> </span><span class="o">-</span><span class="err">}}{{</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="err">}}</span><span class="w">
+</span><span class="w">		</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span><span class="w">
+</span><span class="w">	</span><span class="err">{{</span><span class="o">-</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="o">-</span><span class="err">}}</span><span class="w">
+</span><span class="w"></span><span class="err">{{</span><span class="o">-</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="o">-</span><span class="err">}}</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="添加css样式">添加CSS样式</h3>
+<p>在<code>_custom.scss</code>中添加如下代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">/* 子菜单栏 */
+.dropdown {
+  display: inline-block;
+}
+
+/* 子菜单的内容 (默认隐藏) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  line-height: 1.3rem;
+}
+
+/* 子菜单的链接 */
+.dropdown-content a {
+  padding: 10px 18px 10px 14px;
+  text-decoration: none;
+  display: block;
+  &amp; i {
+    margin-right: 3px;
+  }
+}
+
+/* 鼠标移上去后修改子菜单链接颜色 */
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+  border-radius: 4px;
+}
+
+/* 在鼠标移上去后显示子菜单 */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+@media screen and (max-width: 680px) {
+    .dropdown {
+      display: inline;
+    }
+  .dropdown:hover .dropdown-content {
+    display: inline;
+    z-index: 1;
+    margin-top: -2em;
+    margin-left: 3em;
+  }
+  .dropdown-content a:hover {
+    background-color: transparent;
+  }
+}
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="配置子菜单">配置子菜单</h3>
+<p>打开站点配置文件<code>config.toml</code>，添加子菜单到菜单栏里。子菜单其实和原本的菜单一样写法，只是多了一个<code>parent</code>属性，用来定位到对应的父菜单的<code>identifier</code>。下面是一个简单的子菜单定义方式（没有使用多语言功能）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"># 菜单配置
+[menu]
+  [[menu.main]]
+    identifier = &#34;posts&#34;
+    # 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标
+    pre = &#34;&lt;i class=&#39;fas fa-fw fa-archive&#39;&gt;&lt;/i&gt;&#34;
+    # 你可以在名称 (允许 HTML 格式) 之后添加其他信息, 例如图标
+    post = &#34;&#34;
+    name = &#34;归档&#34;
+    url = &#34;/posts/&#34;
+    title = &#34;&#34;
+    weight = 1
+  [[menu.main]]
+    pre = &#34;&lt;i class=&#39;fas fa-fw fa-link&#39;&gt;&lt;/i&gt;&#34;
+    name = &#34;友链&#34;
+    identifier = &#34;friends&#34;
+    url = &#34;/friends/&#34;
+    weight = 2
+
+  # 二级菜单
+  [[menu.main]]
+    parent = &#34;posts&#34;
+    pre = &#34;&lt;i class=&#39;fas fa-fw fa-th&#39;&gt;&lt;/i&gt;&#34;
+    name = &#34;分类&#34;
+    identifier = &#34;categories&#34;
+    url = &#34;/categories/&#34;
+    weight = 1
+  [[menu.main]]
+    parent = &#34;posts&#34;
+	identifier = &#34;tags&#34;
+    pre = &#34;&lt;i class=&#39;fas fa-fw fa-tag&#39;&gt;&lt;/i&gt;&#34;
+    post = &#34;_blank&#34;
+	name = &#34;标签&#34;
+	url = &#34;/tags/&#34;
+	title = &#34;&#34;
+	weight = 2
+</code></pre></td></tr></table>
+</div>
+</div><p>菜单栏还允许以下配置：</p>
+<ul>
+<li>通过给菜单配置一个<code>post = &quot;_blank&quot;</code>属性来将该菜单设置为在新窗口打开该链接，如果<code>post</code>属性填其他值则依然作为原本的功能使用：即给<code>name</code>添加后缀。</li>
+<li>通过设置<code>title</code>来添加超链的提示文本。</li>
+<li>父菜单可以通过将<code>url</code>设置为空来将其渲染为不跳转的超链：<code>url = &quot;&quot;</code>。</li>
+</ul>
+<h2 id="如何添加自定义的页面">如何添加自定义的页面</h2>
+<p>除了发布草稿和正文，我们还可以添加自定义的页面page。page不会像文章那样被渲染，而是被渲染成一个单独的页面，类似于你的文档、标签页面。</p>
+<p>如：</p>
+<ul>
+<li>
+<p>在站点根目录的<code>/content/</code>目录下，新建一个文件夹，比如<code>about</code>文件夹。然后在该文件夹里新建一个<code>index.md</code>文件，该文件将作为站点访问该目录的页面，你可以将其当成一篇特殊的文章。</p>
+</li>
+<li>
+<p>在<code>index.md</code>文件里加上下面的内容，实际上这里只需要<code>title</code>就够了，<code>date</code>这个日期属性可要可不要，因为<code>page</code>页面是看不到这个日期的：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">---
+title: &#34;关于&#34;
+date: 2022-01-27T23:10:00+08:00
+---
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>接下来你就可以像写普通文章一样，在这个<code>index.md</code>文件里随便写你想要展示的内容就行了。</p>
+</li>
+</ul>
+<h2 id="背景添加动态线条效果">背景添加动态线条效果</h2>
+<p>在<code>layouts/partials/header.html</code>的底部<code>{{- end -}}</code>之前添加如下代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">&lt;script type=&#34;text/javascript&#34;
+	color=&#34;220,220,220&#34; opacity=&#39;0.7&#39; zIndex=&#34;-2&#34; count=&#34;200&#34; src=&#34;//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js&#34;&gt;
+&lt;/script&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>其中：</p>
+<ul>
+<li>color：表示线条颜色，三个数字分别为(R,G,B)，默认：（0,0,0）；如，41,36,33（象牙黑）。</li>
+<li>opacity：表示线条透明度（0~1），默认：0.5。</li>
+<li>count：表示线条的总数量，默认：150。</li>
+<li>zIndex：表示背景的z-index属性，css属性用于控制所在层的位置，默认：-1。</li>
+</ul><div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden/>
+    <label class="reward-button" for="reward">赞赏支持</label>
+    <div class="qr-code">
+        <label class="qr-code-image" for="reward">
+            <img class="image" src="/images/wechat.PNG">
+            <span>微信打赏</span>
+        </label>
+        <label class="qr-code-image" for="reward">
+            <img class="image" src="/images/alipay.PNG">
+            <span>支付宝打赏</span>
+        </label>
+    </div>
+</div>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2022-01-27</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/hugo_conf2/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://www.yexxweb.com/hugo_conf2/" data-title="Hugo的文件配置和博客功能增强（二）" data-hashtags="Hugo"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://www.yexxweb.com/hugo_conf2/" data-hashtag="Hugo"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://www.yexxweb.com/hugo_conf2/" data-title="Hugo的文件配置和博客功能增强（二）" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://www.yexxweb.com/hugo_conf2/" data-title="Hugo的文件配置和博客功能增强（二）"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://www.yexxweb.com/hugo_conf2/" data-title="Hugo的文件配置和博客功能增强（二）" data-image="/images/hugo-image4.png"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://www.yexxweb.com/hugo_conf2/" data-title="Hugo的文件配置和博客功能增强（二）" data-description="博客功能增强与美化（持续更新中...）"><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://www.yexxweb.com/hugo_conf2/" data-title="Hugo的文件配置和博客功能增强（二）" data-description="博客功能增强与美化（持续更新中...）"><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://www.yexxweb.com/hugo_conf2/" data-title="Hugo的文件配置和博客功能增强（二）"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/hugo/">Hugo</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/make_heap/" class="prev" rel="prev" title="C&#43;&#43; 就地建堆的方法"><i class="fas fa-angle-left fa-fw"></i>C&#43;&#43; 就地建堆的方法</a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div>
+        
+        
+
+
+        
+
+            <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+
+            
+            
+
+            
+
+            <script type="text/javascript">
+                new Valine({
+                    el: '#valine' ,
+                    appId: 'zlq3iEuV1rvEQ2yrFzXkq1c2-9Nh9j0Va',
+                    appKey: 'yrX5V77JCi9iaJD3USgI9fAh',
+                    notify: '', 
+                    verify: '', 
+                    avatar:'mp', 
+                    placeholder: '说点什么吧...',
+                    visitor: 'true'
+                });
+            </script>
+            </div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container">
+
+            <div class="footer-line">
+
+                    <i class="fas fa-cog fa-spin"></i>
+                    <span id="run-time"></span>
+
+            </div>
+            <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+            </script>
+            <span id="busuanzi_container_site_pv">
+                <i class="fa fa-eye"></i> <span id="busuanzi_value_site_pv"></span>次
+            </span> | 
+            <span id="busuanzi_container_site_uv">
+                <i class="fa fa-user"></i> <span id="busuanzi_value_site_uv"></span>人
+            </span><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">叶相相</a></span><div class="footer-line"><span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span><span class="icp-splitter">&nbsp;|&nbsp;</span><br class="icp-br"/>
+                    <span class="icp"><a href="https://beian.miit.gov.cn/"  style="text-decoration:underline;color:#4169E1" target="_blank">浙ICP备2022000618号-1</a></span></div>
+        </div>
+    </footer>
+
+    <script type="text/javascript"
+            color="41,36,33" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+    </script>
+
+</div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script><script type="text/javascript" src="/js/custom.js"></script></body>
+</html>
