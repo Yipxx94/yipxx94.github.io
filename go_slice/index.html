@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Go的切片在函数传递中的用法 - 叶相相的博客</title><meta name="Description" content="解决go的切片作为函数参数在函数传递过程中的问题"><meta property="og:title" content="Go的切片在函数传递中的用法" />
+<meta property="og:description" content="解决go的切片作为函数参数在函数传递过程中的问题" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.yexxweb.com/go_slice/" /><meta property="og:image" content="https://www.yexxweb.com/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-03-03T16:48:50+08:00" />
+<meta property="article:modified_time" content="2022-03-03T16:48:50+08:00" /><meta property="og:site_name" content="叶相相的博客" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.yexxweb.com/logo.png"/>
+
+<meta name="twitter:title" content="Go的切片在函数传递中的用法"/>
+<meta name="twitter:description" content="解决go的切片作为函数参数在函数传递过程中的问题"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://www.yexxweb.com/go_slice/" /><link rel="prev" href="https://www.yexxweb.com/hugo_conf2/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Go的切片在函数传递中的用法",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/www.yexxweb.com\/go_slice\/"
+        },"image": ["https:\/\/www.yexxweb.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "golang","wordcount":  1853 ,
+        "url": "https:\/\/www.yexxweb.com\/go_slice\/","datePublished": "2022-03-03T16:48:50+08:00","dateModified": "2022-03-03T16:48:50+08:00","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": "https:\/\/www.yexxweb.com\/images\/header.png"},"author": {
+                "@type": "Person",
+                "name": "叶相相"
+            },"description": "解决go的切片作为函数参数在函数传递过程中的问题"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="叶相相的博客"><span class="header-title-pre"><i class='fas fa-book-reader fa-fw'></i></span>Yipxx</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"><i class='fas fa-book'></i> 文章 
+                        </a><a class="menu-item" href="/tags/"><i class='fas fa-tags'></i> 标签 
+                        </a><a class="menu-item" href="/categories/"><i class='fas fa-calendar-alt'></i> 分类 
+                        </a>
+                        <div class="dropdown">
+                            <a href="javascript:void(0);" class="menu-item menu-more dropbtn" title="" ><i class='fas fa-columns'></i> 专栏 
+                            </a>
+                            <div class="menu-more-content dropdown-content"><a href="/column/music/" title="" ><i class='fas fa-music'></i> 音乐 </a></div>
+                        </div>
+                    
+                        <div class="dropdown">
+                            <a href="javascript:void(0);" class="menu-item menu-more dropbtn" title="" ><i class='fas fa-gamepad'></i> 游戏 
+                            </a>
+                            <div class="menu-more-content dropdown-content"><a href="/games/tetris/" title="" ><i class='fas fa-cubes'></i> 俄罗斯方块 </a><a href="/games/dino/" title="" ><i class='fas fa-dragon'></i> 恐龙剑 </a><a href="/games/catch-the-cat/" title="" ><i class='fas fa-cat'></i> 抓住小猫 </a></div>
+                        </div>
+                    <a class="menu-item" href="/about/"><i class='far fa-window-restore'></i> 关于 
+                        </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="叶相相的博客"><span class="header-title-pre"><i class='fas fa-book-reader fa-fw'></i></span>Yipxx</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/"><i class='fas fa-book'></i> 文章 
+					</a><a class="menu-item" href="/tags/"><i class='fas fa-tags'></i> 标签 
+					</a><a class="menu-item" href="/categories/"><i class='fas fa-calendar-alt'></i> 分类 
+					</a>
+					<div class="dropdown">
+						<a href="javascript:void(0);" class="menu-item menu-more dropbtn" title="" ><i class='fas fa-columns'></i> 专栏 
+						</a>
+						<div class="menu-more-content dropdown-content"><a href="/column/music/" title="" ><i class='fas fa-music'></i> 音乐 </a></div>
+					</div>
+				
+					<div class="dropdown">
+						<a href="javascript:void(0);" class="menu-item menu-more dropbtn" title="" ><i class='fas fa-gamepad'></i> 游戏 
+						</a>
+						<div class="menu-more-content dropdown-content"><a href="/games/tetris/" title="" ><i class='fas fa-cubes'></i> 俄罗斯方块 </a><a href="/games/dino/" title="" ><i class='fas fa-dragon'></i> 恐龙剑 </a><a href="/games/catch-the-cat/" title="" ><i class='fas fa-cat'></i> 抓住小猫 </a></div>
+					</div>
+				<a class="menu-item" href="/about/"><i class='far fa-window-restore'></i> 关于 
+					</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Go的切片在函数传递中的用法</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>叶相相</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/go%E8%AF%AD%E6%B3%95/"><i class="far fa-folder fa-fw"></i>Go语法</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-03-03">2022-03-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1853 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;<span id="/go_slice/" class="leancloud_visitors" data-flag-title="Go的切片在函数传递中的用法">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/go_slice.png"
+        data-srcset="/images/go_slice.png, /images/go_slice.png 1.5x, /images/go_slice.png 2x"
+        data-sizes="auto"
+        alt="/images/go_slice.png"
+        title="解决go的切片作为函数参数在函数传递过程中的问题" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#slice切片">Slice——切片</a>
+      <ul>
+        <li><a href="#定义">定义</a></li>
+        <li><a href="#切片的长度和容量">切片的长度和容量</a></li>
+        <li><a href="#切片表达式">切片表达式</a>
+          <ul>
+            <li><a href="#简单切片表达式">简单切片表达式</a></li>
+            <li><a href="#完整切片表达式">完整切片表达式</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#append函数为切片添加元素">append()函数为切片添加元素</a>
+      <ul>
+        <li><a href="#作为函数参数的切片">作为函数参数的切片</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="前言">前言</h2>
+<p>在力扣刷题的过程中，如果像使用C++的引用一样来使用go的切片来进行递归，有时候会出现问题。下面我来详细的解释一下。</p>
+<h2 id="slice切片">Slice——切片</h2>
+<p>切片（Slice）是一个拥有相同类型元素的可变长度的序列。它是基于数组类型做的一层封装。它非常灵活，支持自动扩容。</p>
+<p>切片是一个引用类型，它的内部结构包含<strong>地址</strong>、<strong>长度</strong>和<strong>容量</strong>。切片一般用于快速地操作一块数据集合。</p>
+<h3 id="定义">定义</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">var name []T
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>name：表示变量名</li>
+<li>T：表示切片中的元素类型，如，int</li>
+</ul>
+<h3 id="切片的长度和容量">切片的长度和容量</h3>
+<p>切片拥有自己的长度和容量，我们可以通过使用内置的<code>len()</code>函数求长度，使用内置的<code>cap()</code>函数求切片的容量。</p>
+<h3 id="切片表达式">切片表达式</h3>
+<p>切片表达式从字符串、数组、指向数组或切片的指针构造子字符串或切片。它有两种变体：一种指定<code>low</code>和<code>high</code>两个索引界限值的简单的形式，另一种是除了<code>low</code>和<code>high</code>索引界限值外还指定容量的完整的形式。</p>
+<h4 id="简单切片表达式">简单切片表达式</h4>
+<p>切片的底层就是一个数组，所以我们可以基于数组通过切片表达式得到切片。 切片表达式中的<code>low</code>和<code>high</code>表示一个索引范围（左闭右开），得到的切片<code>长度=high-low</code>，容量等于得到的切片的底层数组的容量。</p>
+<p>如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">func main() {
+	a := [5]int{1, 2, 3, 4, 5}
+	s := a[1:3]  // s := a[low:high]
+	fmt.Printf(&#34;s:%v len(s):%v cap(s):%v\n&#34;, s, len(s), cap(s))
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>输出：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">s:[2 3] len(s):2 cap(s):4
+</code></pre></td></tr></table>
+</div>
+</div><p>可以省略切片表达式中的任何索引。省略了<code>low</code>则默认为0；省略了<code>high</code>则默认为切片操作数的长度:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">a[2:]  // 等同于 a[2:len(a)]
+a[:3]  // 等同于 a[0:3]
+a[:]   // 等同于 a[0:len(a)]
+</code></pre></td></tr></table>
+</div>
+</div><div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>注意<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">对于数组或字符串，如果<code>0 &lt;= low &lt;= high &lt;= len(a)</code>，则索引合法，否则就会索引越界（out of range）。</div>
+        </div>
+    </div>
+<h4 id="完整切片表达式">完整切片表达式</h4>
+<p>对于数组，指向数组的指针，或切片a（<strong>注意不能是字符串</strong>）支持完整切片表达式。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">a[low:high:max]
+</code></pre></td></tr></table>
+</div>
+</div><p>上述代码会将得到的结果切片的容量设置为<code>max-low</code>。在完整切片表达式中只有第一个索引值<code>（low）</code>可以省略；它默认为0。</p>
+<p>如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">func main() {
+	a := [5]int{1, 2, 3, 4, 5}
+	t := a[1:3:5]
+	fmt.Printf(&#34;t:%v len(t):%v cap(t):%v\n&#34;, t, len(t), cap(t))
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>输出：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">t:[2 3] len(t):2 cap(t):4
+</code></pre></td></tr></table>
+</div>
+</div><p>完整切片表达式需要满足的条件是<code>0 &lt;= low &lt;= high &lt;= cap(a) &lt;= max</code>，其他条件和简单切片表达式相同。</p>
+<h2 id="append函数为切片添加元素">append()函数为切片添加元素</h2>
+<p>Go语言的内置函数<code>append()</code>可以为切片动态添加元素。 可以一次添加一个元素，可以添加多个元素，也可以添加另一个切片中的元素。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">func main(){
+	var s []int
+	s = append(s, 1)        // [1]
+	s = append(s, 2, 3, 4)  // [1 2 3 4]
+	s2 := []int{5, 6, 7}  
+	s = append(s, s2...)    // [1 2 3 4 5 6 7]
+}
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>通过var声明的零值切片可以在append()函数直接使用，无需初始化。</strong></p>
+<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw"></i>信息<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">每个切片会指向一个底层数组，这个数组的容量够用就添加新增元素。当底层数组不能容纳新增的元素时，切片就会自动按照一定的策略进行“扩容”，此时该切片指向的底层数组就会更换。“扩容”操作往往发生在append()函数调用时，所以我们通常都需要用原变量接收append函数的返回值。</div>
+        </div>
+    </div>
+<p>如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">func main() {
+	//append()添加元素和切片扩容
+	var numSlice []int
+	for i := 0; i &lt; 10; i++ {
+		numSlice = append(numSlice, i)
+		fmt.Printf(&#34;%v  len:%d  cap:%d  ptr:%p\n&#34;, numSlice, len(numSlice), cap(numSlice), numSlice)
+	}
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>输出：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">[0]  len:1  cap:1  ptr:0xc0000a8000
+[0 1]  len:2  cap:2  ptr:0xc0000a8040
+[0 1 2]  len:3  cap:4  ptr:0xc0000b2020
+[0 1 2 3]  len:4  cap:4  ptr:0xc0000b2020
+[0 1 2 3 4]  len:5  cap:8  ptr:0xc0000b6000
+[0 1 2 3 4 5]  len:6  cap:8  ptr:0xc0000b6000
+[0 1 2 3 4 5 6]  len:7  cap:8  ptr:0xc0000b6000
+[0 1 2 3 4 5 6 7]  len:8  cap:8  ptr:0xc0000b6000
+[0 1 2 3 4 5 6 7 8]  len:9  cap:16  ptr:0xc0000b8000
+[0 1 2 3 4 5 6 7 8 9]  len:10  cap:16  ptr:0xc0000b800
+</code></pre></td></tr></table>
+</div>
+</div><p>可以看出：</p>
+<ul>
+<li><code>append()</code>函数将元素追加到切片的最后并返回该切片。</li>
+<li>切片numSlice的容量按照1，2，4，8，16这样的规则自动进行扩容，每次扩容后都是扩容前的2倍。</li>
+</ul>
+<h3 id="作为函数参数的切片">作为函数参数的切片</h3>
+<p>示例1：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">func main(){
+
+	slice:=[]int{1,2,3}
+	fmt.Printf(&#34;slice %v,slice address %p\n&#34;,slice,&amp;slice)
+	slice=changeSlice(slice)
+	fmt.Printf(&#34;slice %v,slice address %p&#34;,slice,&amp;slice)
+}
+func changeSlice(nums []int)[]int{
+	nums[1]=111
+	return nums
+
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>输出：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">slice [1 2 3],slice address 0xc0420023e0
+slice [1 111 3],slice address 0xc0420023e0
+</code></pre></td></tr></table>
+</div>
+</div><p>由示例1可以看出，外部切片中的值进行了改变，地址没有进行改变。</p>
+<p>示例2：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">func main(){
+
+	slice:=[]int{1,2,3}
+	fmt.Printf(&#34;slice %v,slice address %p\n&#34;,slice,&amp;slice)
+	slice=changeSlice(slice)
+	fmt.Printf(&#34;slice %v,slice address %p\n&#34;,slice,&amp;slice)
+}
+func changeSlice(nums []int)[]int{
+	fmt.Printf(&#34;nums: %v,nums addr: %p\n&#34;,nums,&amp;nums)
+	nums[1]=111
+	return nums
+
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>输出：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">slice [1 2 3],slice address 0xc04204a3a0
+nums: [1 2 3],nums addr: 0xc04204a400
+slice [1 111 3],slice address 0xc04204a3a0
+</code></pre></td></tr></table>
+</div>
+</div><p>由示例2可以看出，我们在函数中打印了传入函数的切片地址，发现和外部切片地址并不一样。</p>
+<p>当函数的参数是切片的时候，到底是传值还是传引用？从changeSlice函数中打出的参数s的地址，可以看出肯定不是传引用，毕竟引用都是一个地址才对。然而changeSlice函数内改变了s的值，也改变了原始变量slice的值，这个看起来像引用的现象，实际上正是我们前面讨论的<strong>切片共享底层数组</strong>的实现。</p>
+<p>即切片传递的时候，传的是数组的值，等效于从原始切片中再切了一次。原始切片slice和参数s切片的底层数组是一样的。因此修改函数内的切片，也就修改了数组。</p>
+<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw"></i>信息<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">当使用append()函数时，如果切片的容量不够，就会新生成一个底层数组，所以内存地址改变，并且改变新切片对原来的没有任何影响。</div>
+        </div>
+    </div><div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden/>
+    <label class="reward-button" for="reward">赞赏支持</label>
+    <div class="qr-code">
+        <label class="qr-code-image" for="reward">
+            <img class="image" src="/images/wechat.PNG">
+            <span>微信打赏</span>
+        </label>
+        <label class="qr-code-image" for="reward">
+            <img class="image" src="/images/alipay.PNG">
+            <span>支付宝打赏</span>
+        </label>
+    </div>
+</div>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2022-03-03</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/go_slice/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://www.yexxweb.com/go_slice/" data-title="Go的切片在函数传递中的用法" data-hashtags="golang"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://www.yexxweb.com/go_slice/" data-hashtag="golang"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://www.yexxweb.com/go_slice/" data-title="Go的切片在函数传递中的用法" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://www.yexxweb.com/go_slice/" data-title="Go的切片在函数传递中的用法"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://www.yexxweb.com/go_slice/" data-title="Go的切片在函数传递中的用法" data-image="/images/go_slice.png"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://www.yexxweb.com/go_slice/" data-title="Go的切片在函数传递中的用法" data-description="解决go的切片作为函数参数在函数传递过程中的问题"><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://www.yexxweb.com/go_slice/" data-title="Go的切片在函数传递中的用法" data-description="解决go的切片作为函数参数在函数传递过程中的问题"><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://www.yexxweb.com/go_slice/" data-title="Go的切片在函数传递中的用法"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/golang/">golang</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/hugo_conf2/" class="prev" rel="prev" title="Hugo的文件配置和博客功能增强（二）"><i class="fas fa-angle-left fa-fw"></i>Hugo的文件配置和博客功能增强（二）</a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div>
+        
+        
+
+
+        
+
+            <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+
+            
+            
+
+            
+
+            <script type="text/javascript">
+                new Valine({
+                    el: '#valine' ,
+                    appId: 'zlq3iEuV1rvEQ2yrFzXkq1c2-9Nh9j0Va',
+                    appKey: 'yrX5V77JCi9iaJD3USgI9fAh',
+                    notify: '', 
+                    verify: '', 
+                    avatar:'mp', 
+                    placeholder: '说点什么吧...',
+                    visitor: 'true'
+                });
+            </script>
+            </div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container">
+
+            <div class="footer-line">
+
+                    <i class="fas fa-cog fa-spin"></i>
+                    <span id="run-time"></span>
+
+            </div>
+            <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+            </script>
+            <span id="busuanzi_container_site_pv">
+                <i class="fa fa-eye"></i> <span id="busuanzi_value_site_pv"></span>次
+            </span> | 
+            <span id="busuanzi_container_site_uv">
+                <i class="fa fa-user"></i> <span id="busuanzi_value_site_uv"></span>人
+            </span><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">叶相相</a></span><div class="footer-line"><span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span><span class="icp-splitter">&nbsp;|&nbsp;</span><br class="icp-br"/>
+                    <span class="icp"><a href="https://beian.miit.gov.cn/"  style="text-decoration:underline;color:#4169E1" target="_blank">浙ICP备2022000618号-1</a></span></div>
+        </div>
+    </footer>
+
+    <script type="text/javascript"
+            color="41,36,33" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+    </script>
+
+</div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script><script type="text/javascript" src="/js/custom.js"></script></body>
+</html>

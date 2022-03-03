@@ -20,7 +20,7 @@
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://www.yexxweb.com/hugo_conf2/" /><link rel="prev" href="https://www.yexxweb.com/make_heap/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://www.yexxweb.com/hugo_conf2/" /><link rel="prev" href="https://www.yexxweb.com/make_heap/" /><link rel="next" href="https://www.yexxweb.com/go_slice/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/www.yexxweb.com\/hugo_conf2\/"
-        },"image": ["https:\/\/www.yexxweb.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Hugo","wordcount":  4431 ,
+        },"image": ["https:\/\/www.yexxweb.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Hugo","wordcount":  4525 ,
         "url": "https:\/\/www.yexxweb.com\/hugo_conf2\/","datePublished": "2022-01-27T23:40:58+08:00","dateModified": "2022-01-27T23:40:58+08:00","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": "https:\/\/www.yexxweb.com\/images\/header.png"},"author": {
@@ -139,8 +139,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Hugo的文件配置和博客功能增强（二）</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>叶相相</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/hugo%E7%B3%BB%E5%88%97/"><i class="far fa-folder fa-fw"></i>Hugo系列</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-01-27">2022-01-27</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 4431 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 9 分钟&nbsp;<span id="/hugo_conf2/" class="leancloud_visitors" data-flag-title="Hugo的文件配置和博客功能增强（二）">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-01-27">2022-01-27</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 4525 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 10 分钟&nbsp;<span id="/hugo_conf2/" class="leancloud_visitors" data-flag-title="Hugo的文件配置和博客功能增强（二）">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="featured-image"><img
@@ -157,6 +157,7 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
+    <li><a href="#前言">前言</a></li>
     <li><a href="#添加全局的cdn变量">添加全局的<code>CDN</code>变量</a>
       <ul>
         <li><a href="#在md文件中使用">在md文件中使用</a></li>
@@ -192,7 +193,9 @@
     <li><a href="#背景添加动态线条效果">背景添加动态线条效果</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h2 id="添加全局的cdn变量">添加全局的<code>CDN</code>变量</h2>
+            </div><div class="content" id="content"><h2 id="前言">前言</h2>
+<p>Hugo本身可以通过修改站点配置文件来完成页面的部分定制，如按钮、多语言等功能。本博客使用的是Hugo的<strong>LoveIt</strong>主题，本文也是基于该主题而写的，不过Hugo的美化步骤应该大同小异。</p>
+<h2 id="添加全局的cdn变量">添加全局的<code>CDN</code>变量</h2>
 <p>对于一些静态资源，比如图片、音乐文件、第三方库等，如果有自己的cdn或者图床等，可以在站点配置文件自定义一个<code>cdn</code>变量，如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1302,7 +1305,8 @@ date: 2022-01-27T23:10:00+08:00
         </section>
     </div>
 
-    <div class="post-nav"><a href="/make_heap/" class="prev" rel="prev" title="C&#43;&#43; 就地建堆的方法"><i class="fas fa-angle-left fa-fw"></i>C&#43;&#43; 就地建堆的方法</a></div>
+    <div class="post-nav"><a href="/make_heap/" class="prev" rel="prev" title="C&#43;&#43; 就地建堆的方法"><i class="fas fa-angle-left fa-fw"></i>C&#43;&#43; 就地建堆的方法</a>
+            <a href="/go_slice/" class="next" rel="next" title="Go的切片在函数传递中的用法">Go的切片在函数传递中的用法<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div>
         

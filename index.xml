@@ -4,9 +4,18 @@
         <link>https://www.yexxweb.com/</link>
         <description>个人学习与记录的网站</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>Yipxx@foxmail.com (叶相相)</managingEditor>
-            <webMaster>Yipxx@foxmail.com (叶相相)</webMaster><lastBuildDate>Thu, 27 Jan 2022 23:40:58 &#43;0800</lastBuildDate>
+            <webMaster>Yipxx@foxmail.com (叶相相)</webMaster><lastBuildDate>Thu, 03 Mar 2022 16:48:50 &#43;0800</lastBuildDate>
             <atom:link href="https://www.yexxweb.com/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Go的切片在函数传递中的用法</title>
+    <link>https://www.yexxweb.com/go_slice/</link>
+    <pubDate>Thu, 03 Mar 2022 16:48:50 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://www.yexxweb.com/go_slice/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/go_slice.png" referrerpolicy="no-referrer">
+            </div>解决go的切片作为函数参数在函数传递过程中的问题]]></description>
+</item><item>
     <title>Hugo的文件配置和博客功能增强（二）</title>
     <link>https://www.yexxweb.com/hugo_conf2/</link>
     <pubDate>Thu, 27 Jan 2022 23:40:58 &#43;0800</pubDate>
@@ -87,14 +96,5 @@
     <description><![CDATA[<div class="featured-image">
                 <img src="/images/markdown-expand.png" referrerpolicy="no-referrer">
             </div>简单介绍一些Markdown常用的扩展语法]]></description>
-</item><item>
-    <title>Markdown常用基本语法</title>
-    <link>https://www.yexxweb.com/markdown_basic/</link>
-    <pubDate>Sat, 11 Dec 2021 21:15:59 -0800</pubDate>
-    <author>作者</author>
-    <guid>https://www.yexxweb.com/markdown_basic/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="/images/markdown-image.png" referrerpolicy="no-referrer">
-            </div>简单介绍一些Markdown常用的基本语法]]></description>
 </item></channel>
 </rss>
