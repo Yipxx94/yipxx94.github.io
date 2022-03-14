@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Python - 标签 - 叶相相的博客</title>
+        <link>https://www.yexxweb.com/tags/python/</link>
+        <description>Python - 标签 - 叶相相的博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>Yipxx@foxmail.com (叶相相)</managingEditor>
+            <webMaster>Yipxx@foxmail.com (叶相相)</webMaster><lastBuildDate>Mon, 14 Mar 2022 11:24:30 &#43;0800</lastBuildDate><atom:link href="https://www.yexxweb.com/tags/python/" rel="self" type="application/rss+xml" /><item>
+    <title>Python的venv虚拟环境和pip包</title>
+    <link>https://www.yexxweb.com/python_venv/</link>
+    <pubDate>Mon, 14 Mar 2022 11:24:30 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://www.yexxweb.com/python_venv/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/python_venv.png" referrerpolicy="no-referrer">
+            </div>介绍项目开发中Python虚拟环境的创建和使用]]></description>
+</item></channel>
+</rss>

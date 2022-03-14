@@ -4,9 +4,18 @@
         <link>https://www.yexxweb.com/</link>
         <description>个人学习与记录的网站</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>Yipxx@foxmail.com (叶相相)</managingEditor>
-            <webMaster>Yipxx@foxmail.com (叶相相)</webMaster><lastBuildDate>Thu, 03 Mar 2022 16:48:50 &#43;0800</lastBuildDate>
+            <webMaster>Yipxx@foxmail.com (叶相相)</webMaster><lastBuildDate>Mon, 14 Mar 2022 11:24:30 &#43;0800</lastBuildDate>
             <atom:link href="https://www.yexxweb.com/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Python的venv虚拟环境和pip包</title>
+    <link>https://www.yexxweb.com/python_venv/</link>
+    <pubDate>Mon, 14 Mar 2022 11:24:30 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://www.yexxweb.com/python_venv/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/python_venv.png" referrerpolicy="no-referrer">
+            </div>介绍项目开发中Python虚拟环境的创建和使用]]></description>
+</item><item>
     <title>Go的切片在函数传递中的用法</title>
     <link>https://www.yexxweb.com/go_slice/</link>
     <pubDate>Thu, 03 Mar 2022 16:48:50 &#43;0800</pubDate>
@@ -87,14 +96,5 @@
     <description><![CDATA[<div class="featured-image">
                 <img src="/images/hugo-image.png" referrerpolicy="no-referrer">
             </div>利用Hugo在云服务器上搭建个人博客站点]]></description>
-</item><item>
-    <title>Markdown常用扩展语法</title>
-    <link>https://www.yexxweb.com/markdown_expand/</link>
-    <pubDate>Sun, 12 Dec 2021 14:15:59 -0800</pubDate>
-    <author>作者</author>
-    <guid>https://www.yexxweb.com/markdown_expand/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="/images/markdown-expand.png" referrerpolicy="no-referrer">
-            </div>简单介绍一些Markdown常用的扩展语法]]></description>
 </item></channel>
 </rss>
