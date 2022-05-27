@@ -2,13 +2,14 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://www.yexxweb.com/tags/c&#43;&#43;/</loc><lastmod>2022-05-16T18:58:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://www.yexxweb.com/categories/</loc><lastmod>2022-05-16T18:58:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://www.yexxweb.com/posts/</loc><lastmod>2022-05-16T18:58:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://www.yexxweb.com/tags/</loc><lastmod>2022-05-16T18:58:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://www.yexxweb.com/</loc><lastmod>2022-05-16T18:58:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://www.yexxweb.com/categories/%E7%AE%97%E6%B3%95/</loc><lastmod>2022-05-16T18:58:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://www.yexxweb.com/tree/</loc><lastmod>2022-05-16T18:58:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://www.yexxweb.com/tags/c&#43;&#43;/</loc><lastmod>2022-05-27T11:27:13&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://www.yexxweb.com/categories/</loc><lastmod>2022-05-27T11:27:13&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://www.yexxweb.com/posts/</loc><lastmod>2022-05-27T11:27:13&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://www.yexxweb.com/tags/</loc><lastmod>2022-05-27T11:27:13&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://www.yexxweb.com/recur/</loc><lastmod>2022-05-27T11:27:13&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://www.yexxweb.com/</loc><lastmod>2022-05-27T11:27:13&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://www.yexxweb.com/categories/%E7%AE%97%E6%B3%95/</loc><lastmod>2022-05-27T11:27:13&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://www.yexxweb.com/tree/</loc><lastmod>2022-05-16T18:58:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
             <loc>https://www.yexxweb.com/tags/python/</loc><lastmod>2022-03-14T11:24:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://www.yexxweb.com/python_venv/</loc><lastmod>2022-03-14T11:24:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://www.yexxweb.com/categories/python%E8%AF%AD%E6%B3%95/</loc><lastmod>2022-03-14T11:24:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
